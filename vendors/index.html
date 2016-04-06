@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+    <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+    <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+    <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+    <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+    <head>
+        <link rel="icon" href="http://www.kochind.com/files/favicon.ico" type="image/x-icon" />
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Vendor Documentation Requirements - Koch Industries</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- css: -->
+        <link rel="stylesheet" href="../assets/css/style.css">
+        <!-- endcss -->
+
+        <!-- HeaderJS: -->
+        <script src="../assets/js/modernizr.js"></script>
+        <!-- endHeaderJS -->
+
+        <!--FONTS-->
+        	<script src="https://use.typekit.net/ecp2sks.js"></script>
+        	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+        <!-- END FONT-->
+
+        <!--GOOGLE ANALYTICS-->
+        	<script>
+        	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        	  ga('create', 'UA-73653542-1', 'auto');
+        	  ga('send', 'pageview');
+        	</script>
+        <!--END GOOGLE ANALYTICS-->
+
+        <!--PIXEL SCROLLING CODE-->
+          <script>
+            //*****************************************************************
+            /** Predefined variables **/
+            EventNONInteraction = false; // This variable determines the event will be a noninertact event or not
+            Frequency = 10; // This variable determines the Frequency the event will be fired, MAKE SURE THE NUMBER ENTERED CAN BE DIVIDED BY 100 (10 means each 10 precent the event will fire)
+
+            GA_EventCategory = 'Page Interaction'; // Google Analytics event category
+            GA_EventAction = 'Scroll Down'; // Google Analytics event action.
+
+            /************ DON'T EDIT BELOW THIS PART ************/
+            _frequency = Frequency;
+            _repentance = 100 / Frequency;
+            var _scrollMatrix = new Array();
+            for (ix = 0; ix < _repentance; ix++) {
+                _scrollMatrix[ix] = [_frequency, 'false'];
+                _frequency = Frequency + _frequency;
+            }
+
+            document.onscroll = function (e) {
+            	var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+
+                for (iz = 0; iz < _scrollMatrix.length; iz++) {
+                    if ( (scrollTop + window.outerHeight >= window.innerHeight * _scrollMatrix[iz][0] / 100 )  && (_scrollMatrix[iz][1]== 'false') ) {
+                        _scrollMatrix[iz][1] = 'true';
+                        ga('send', 'event', GA_EventCategory, GA_EventAction, _scrollMatrix[iz][0]+'%'); 
+                    }
+                }
+            };
+          </script>
+        <!--END PIXEL SCROLLING CODE-->
+
+        <!--[if lt IE 9 ]>
+            <script>
+            window.location = '/updatebrowser/index.html';
+            </script>
+        <![endif]--> 
+
+
+        <meta property="og:title" content="Koch Industries">
+        <meta property="og:description" content="Food. Shelter. Clothing. Transportation. Creating life’s basic necessities for people around the world through various businesses in multiple industries.">
+        <meta property="og:image" content='http://www.kochind.com/images/homepage_bg_image_480.jpg' />
+
+
+        <link rel="canonical" href="http://www.kochind.com/vendors/" />
+    </head>
+        
+    <body>
+
+        <div class="mobile_nav_icon">
+            <div></div>
+        </div>
+
+        <section class="header_container">
+
+            <div class="header_bar_container" role="banner">
+                <div class="logo_container">
+                    <a href="/">
+                        <img src="/assets/images/logo_kii_white.svg" alt="Koch Industries logo" />
+                    </a>
+                </div> <!--logo_container-->
+            </div> <!--logo_nav_icon_container-->
+
+            <div class="links_container">
+
+                <div class="sub_level_nav_cover"></div>
+                <div class="mobile_nav_icon_cover"></div>
+
+                <div class="sub_level_nav_back_button">
+                    <div class="left_directional light"><div></div></div>
+                </div>
+
+                <div class="external_links_container">
+                    <ul class="site_links">
+                        <li>
+                            <a
+                                href="http://www.kochnews.com"
+                                target="_blank"
+                                onclick="ga('send', 'event', 'Koch News logo', 'click', 'Navigation');">
+                                <div class="koch_news_logo">
+                                    <p>
+                                        KOCHnews
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="http://www.wearekoch.com"
+                                target="_blank"
+                                onclick="ga('send', 'event', 'WAK logo', 'click', 'Navigation');">
+                                <div class="wak_logo"></div>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="social_media_links">
+                        <li>
+                            <a
+                                class="fa fa-facebook"
+                                href="https://www.facebook.com/KochIndustries"
+                                target="_blank"
+                                onclick="ga('send', 'event', 'Facebook logo', 'click', 'Navigation');">
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                class="fa fa-linkedin"
+                                href="https://www.linkedin.com/company/koch-industries"
+                                target="_blank"
+                                onclick="ga('send', 'event', 'LinkedIn logo', 'click', 'Navigation');">
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                class="fa fa-twitter"
+                                href="https://twitter.com/Koch_Industries"
+                                target="_blank"
+                                onclick="ga('send', 'event', 'Twitter logo', 'click', 'Navigation');">
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                class="fa fa-play"
+                                href="https://www.youtube.com/user/KochCompanies"
+                                target="_blank"
+                                onclick="ga('send', 'event', 'Youtube logo', 'click', 'Navigation');">
+                            </a>
+                        </li>
+                    </ul>
+                </div> <!--external_nav_container-->
+
+                <nav role="navigation">
+
+                    <ul> 
+                        <li class="about_nav_item top_level_nav_item">
+                            About 
+                            <i class="fa fa-angle-down"></i> 
+                            <ul class="nav_dropdown" itemscope itemtype="http://www.schema.org/SiteNavigationElement"> 
+                                <li class="sub_level_nav_item" itemprop="name">
+                                    <a itemprop="url" href="/whatwedo/"> 
+                                        What We Do
+                                    </a> 
+                                </li>
+                                <li class="sub_level_nav_item" itemprop="name"> 
+                                    <a itemprop="url" href="/philosophy/">
+                                        Philosophy 
+                                    </a>
+                                </li>  
+                                <li class="sub_level_nav_item" itemprop="name"> 
+                                    <a itemprop="url" href="/locations/">
+                                        Our Locations 
+                                    </a>
+                                </li> 
+                            </ul> 
+                        </li> 
+                        <li class="companies_nav_item top_level_nav_item" itemprop="name">
+                            Companies
+                            <i class="fa fa-angle-down"></i>
+                            <ul class="nav_dropdown" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+                                <li class="current sub_level_nav_item" itemprop="name"> 
+                                    <a class='current' href="/companies/">
+                                        Companies Overview 
+                                    </a>
+                                </li> 
+                                <li class="sub_level_nav_item" itemprop="name">
+                                    <a itemprop="url" href="/fhr/"> 
+                                        Flint Hills Resources
+                                    </a> 
+                                </li>
+                                <li class="sub_level_nav_item" itemprop="name"> 
+                                    <a itemprop="url" href="/gp/">
+                                        Georgia-Pacific 
+                                    </a>
+                                </li> 
+                                <li class="sub_level_nav_item" itemprop="name">
+                                    <a itemprop="url" href="/invista/"> 
+                                        INVISTA
+                                    </a> 
+                                </li>
+                                <li class="sub_level_nav_item" itemprop="name"> 
+                                    <a itemprop="url" href="/molex/">
+                                        Molex 
+                                    </a>
+                                </li> 
+                                <li class="sub_level_nav_item" itemprop="name">
+                                    <a itemprop="url" href="/kaes/"> 
+                                        Koch Ag &amp; Energy Solutions
+                                    </a> 
+                                </li>
+                                <li class="sub_level_nav_item" itemprop="name"> 
+                                    <a itemprop="url" href="/chemtech/">
+                                        Koch Chemical Technology Group 
+                                    </a>
+                                </li> 
+                                <li class="sub_level_nav_item" itemprop="name">
+                                    <a itemprop="url" href="/minerals/"> 
+                                        Koch Minerals
+                                    </a> 
+                                </li>
+                                <li class="sub_level_nav_item" itemprop="name"> 
+                                    <a itemprop="url" href="/kpl/">
+                                        Koch Pipeline 
+                                    </a>
+                                </li> 
+                                <li class="sub_level_nav_item" itemprop="name">
+                                    <a itemprop="url" href="/kst/"> 
+                                        Koch Supply &amp; Trading
+                                    </a> 
+                                </li>
+                                <li class="sub_level_nav_item" itemprop="name"> 
+                                    <a itemprop="url" href="/matador/">
+                                        Matador Cattle Company 
+                                    </a>
+                                </li> 
+                            </ul>
+                        </li> 
+                        <li class="careers_nav_item top_level_nav_item" itemprop="name">
+                            Careers 
+                            <i class="fa fa-angle-down"></i> 
+                            <ul class="nav_dropdown" itemscope itemtype="http://www.schema.org/SiteNavigationElement"> 
+                                <li class="sub_level_nav_item" itemprop="name">
+                                    <a itemprop="url" href="/careers/"> 
+                                        How We Work
+                                    </a> 
+                                </li>
+                                <li class="sub_level_nav_item" itemprop="name"> 
+                                    <a itemprop="url" href="/finance/">
+                                        Accounting, Finance &amp; Tax 
+                                    </a>
+                                </li> 
+                                <li class="sub_level_nav_item" itemprop="name">
+                                    <a itemprop="url" href="/engineering/"> 
+                                        Engineering
+                                    </a> 
+                                </li>
+                                <li class="sub_level_nav_item" itemprop="name"> 
+                                    <a itemprop="url" href="/it/">
+                                        Information Technology 
+                                    </a>
+                                </li> 
+                                <li class="sub_level_nav_item" itemprop="name">
+                                    <a itemprop="url" href="/operations/"> 
+                                        Operations &amp; Skilled Trades
+                                    </a> 
+                                </li>
+                                <li class="sub_level_nav_item" itemprop="name"> 
+                                    <a itemprop="url" href="/business/">
+                                        Business &amp; More 
+                                    </a>
+                                </li> 
+                                <li class="sub_level_nav_item" itemprop="name">
+                                    <a itemprop="url" href="/veterans/"> 
+                                        Veterans
+                                    </a> 
+                                </li>
+                                <li class="sub_level_nav_item" itemprop="name"> 
+                                    <a
+                                        itemprop="url"
+                                        href="http://www.kochcollegerecruiting.com"
+                                        target="_blank"
+                                        onclick="ga('send', 'event', 'Koch College Recruiting', 'click', 'Navigation');"> College 
+                                    </a>
+                                </li> 
+                                <li class="sub_level_nav_item" itemprop="name">
+                                    <a
+                                        itemprop="url" 
+                                        class="sub_level_nav_item_cta" 
+                                        href="https://kochcareers.taleo.net/careersection/2/moresearch.ftl?lang=en&searchExpanded=true&portal=101430233" 
+                                        target="_blank"> 
+                                        Apply Now
+                                    </a> 
+                                </li>
+                            </ul> <!--ul--> 
+                        </li>
+                        <li class="responsibility_nav_item top_level_nav_link" itemscope itemtype="http://www.schema.org/SiteNavigationElement" itemprop="name"> 
+                            <a itemprop="url" href="/responsibility/">
+                                Responsibility 
+                            </a>
+                        </li> 
+                        <li class="giving_nav_item top_level_nav_link" itemscope itemtype="http://www.schema.org/SiteNavigationElement" itemprop="name">
+                            <a itemprop="url" href="/giving/"> 
+                                Giving
+                            </a> 
+                        </li>
+                    </ul> 
+
+                    <div class="mobile_external_links_container">
+                        <ul class="site_links">
+                            <li>
+                                <a
+                                    href="http://www.wearekoch.com"
+                                    target="_blank"
+                                    onclick="ga('send', 'event', 'Koch News logo', 'click', 'Navigation');">
+                                    <img src="/assets/images/logo_wak_color.svg" alt="We Are Koch logo">
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="social_media_links">
+                            <li>
+                                <a
+                                    class="fa fa-facebook"
+                                    href="https://www.facebook.com/KochIndustries"
+                                    target="_blank"
+                                    onclick="ga('send', 'event', 'Facebook logo', 'click', 'Navigation');">
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    class="fa fa-linkedin"
+                                    href="https://www.linkedin.com/company/koch-industries"
+                                    target="_blank"
+                                    onclick="ga('send', 'event', 'LinkedIn logo', 'click', 'Navigation');">
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    class="fa fa-twitter"
+                                    href="https://twitter.com/Koch_Industries"
+                                    target="_blank"
+                                    onclick="ga('send', 'event', 'Twitter logo', 'click', 'Navigation');">
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    class="fa fa-play"
+                                    href="https://www.youtube.com/user/KochCompanies"
+                                    target="_blank"
+                                    onclick="ga('send', 'event', 'Youtube logo', 'click', 'Navigation');">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mobile_nav_footer_container">
+                        <ul class="mobile_nav_site_footer_links">
+                            <li>
+                                <a href="/contact/">
+                                    Contact Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/termsofuse/">
+                                    Terms of Use
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/privacypolicy/">
+                                    Privacy Policy
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/californiasupply/">
+                                    California Supply
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/vendors/">
+                                    Vendors
+                                </a>
+                            </li>
+                        </ul>
+
+                        <p class="copyright white">
+                            Koch Industries, Inc. All rights reserved. 
+                        </p>
+                    </div> <!-- mobile_nav_footer_links -->
+
+                </nav>
+            </div> <!--links_container-->
+
+        </section> <!--navigation_container-->
+
+
+
+        <article role="main">         
+
+            <div class="footer_page_container">
+                <h2>Vendor Documentation Requirements</h2>
+                
+                <p>
+                    <i>This page is for current Koch company vendors and consultants only. If you are not a current vendor or consultant, please do not complete and return the paperwork noted below. If you want information about becoming a Koch company vendor or consultant, please send an email to info@kochind.com; with Attn: Vendor Request in the subject line.</i>
+                </p>
+
+                <p>
+                    As a Koch company vendor who has submitted an invoice or signed contract, we are required by United States Internal Revenue Service regulations to obtain additional documentation for our files before an invoice can be properly processed.
+                </p>
+
+                <p>Please select and complete the applicable form noted below. Forms and instructions can be downloaded from the IRS Web site. Forms should be returned to the appropriate Koch company accounts payable department via fax or by mail to: Accounts Payable, 4111 E. 37th St. North, Wichita, Ks. 67203</p>
+
+                <p>It is important to note that this documentation will not be filed with the US IRS.  This documentation is for our files in the event of an audit by the IRS as proof of proper withholding.  If we do not receive the proper documentation, the IRS requires us to withhold tax at the maximum rate (up to 30 percent) on any dividend, interest or other income on US securities paid to your account.</p>
+
+                <p><b>US Residents</b> (including US Resident Alien)</p>
+
+                <p><b>W-9/Taxpayer Identification Number Information</b> — <u>Complete Part 1, 2 and 3</u> and return to the appropriate Koch company via fax or by mail to: Accounts Payable, 4111 E. 37th St. North, Wichita, KS 67220.</p>
+
+                <p>Failure to complete the form may result in a 28% backup withholding on reportable payments we make to your company.</p> 
+
+                <p><a class="text" href="https://www.irs.gov/pub/irs-pdf/fw9.pdf" target="_blank" onclick="ga('send', 'event', 'Text link-W-9 Form', 'click', 'Vendors');">Click here</a> to download the form from the IRS Web site.</p>
+
+                <p><b>For Non-US Residents</b> (Corporation, Partnership or other entity formed outside the US)</p>
+
+                <p><b>NOTE:</b> The original W-8 form (no scanned, faxed, or photocopies will be accepted) must be returned via US mail. Please send to the appropriate Koch company. Attn: Accounts Payable, 4111 E. 37th St. North, Wichita, KS 67220.</p>
+
+                <p><b>W-8BEN/Certificate of Foreign Status of Beneficial Owner for US Tax Withholding</b> — Your company should complete a Form W-8Ben if your company is (a) a foreign resident, (b) the beneficial owner of an amount subject to withholding, and (c) claiming a reduced rate or exemptions from withholding due to tax treaty benefits.
+                <br/>
+                For income from activities performed within the US, complete Part I, 2 and 4 of the form. Note that your company must provide a US Taxpayer Identification Number and the specific treaty information requested in Part 2 if you are claiming a reduced rate or exemption from withholding due to tax treaty benefits. See below for information about obtaining a Taxpayer Identification Number.</p>
+
+                <p>Failure to complete the form may result in a 30% withholding (foreign-person withholding rate) on reportable payments.</p>
+
+                <p><a class="text_link" href="https://www.irs.gov/pub/irs-pdf/fw8ben.pdf" target="_blank" onclick="ga('send', 'event', 'Text link-W-8BEN Form', 'click', 'Vendors');">Click here </a>to download the form the IRS Web site.</p>
+
+                <p><b>W-8ECI/Certificate of Foreign Person’s Claim for Exemption from Withholding on Income Effectively Connected with the Conduct of a Trade or Business in the US</b> — Your company should complete a Form W-8ECI if your company is (a) a foreign resident, (b) the beneficial owner of US source income that is, or deemed to be, effectively connected with the conduct of a trade or business with the US. If your company is receiving both effectively connected and not effectively connected income, your company must provide both a Form W-8ECI (for the effectively connected income) and the Form W-8BEN (for the income that is not effectively connected). For income that is effectively connected to the trade or business in the US, complete Part 1 and 2 of the form.</p>
+
+                <p><a class="text_link" href="https://www.irs.gov/pub/irs-pdf/fw8eci.pdf" target="_blank" onclick="ga('send', 'event', 'Text link-W-8ECI Form', 'click', 'Vendors');">Click here</a> to download the form from the IRS Web site.</p>
+
+                <p><b>How to Apply for a US Tax Identification Number</b></p>
+
+                <p>
+                    Apply by Phone— Call the Business and Specialty Tax Line at
+                    800-829-4933 between 7:00 a.m. – 10 p.m., Monday through Friday.<br/>
+                    Apply Online— <a class="text_link" href="https://www.irs.gov/Businesses/Small-Businesses-&-Self-Employed/Apply-for-an-Employer-Identification-Number-(EIN)-Online" target="_blank" onclick="ga('send', 'event', 'Text link-SS-4 Form', 'click', 'Vendors');">Click here</a> to complete Form SS-4.<br/> 
+                    Please note that not all business entities may use this method.
+                </p>
+
+                <p>If you have questions, please send an email to <a href="mailto:info@kochind.com?subject=Accounts%20Payable">info@kochind.com</a>; with the Koch company name and Attn: Accounts Payable in the subject line.</p>
+                
+            </div>
+
+            <div class="scroll_cta">
+                <p>Scroll</p> 
+                <div class="down_directional light">
+                    <div></div>
+                </div>
+            </div>
+
+            <div class="breadcrumb_container texture_bg white_gradient_bottom">
+                <div class="house_icon">
+                    <a href="/">
+                        <img src="/assets/images/house_icon.svg" alt="Breadcrumb house icon" />
+                    </a>
+                </div>
+                <p></p>
+            </div>
+
+            <footer role="contentinfo">
+                <p class="copyright dark_blue">
+                    Koch Industries, Inc. All rights reserved. 
+                </p>
+
+                <ul class="site_footer_links">
+                    <li>
+                        <a href="/contact/">
+                            Contact Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/termsofuse/">
+                            Terms of Use
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/privacypolicy/">
+                            Privacy Policy
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="http://www.kochcoc.com/"
+                            target="_blank"
+                            onclick="ga('send', 'event', 'Code of Conduct', 'click', 'Footer');">
+                            Code of Conduct
+                        </a>
+                    </li>
+                    <li> 
+                        <a href="/californiasupply/">
+                            California Supply
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/vendors/">
+                            Vendors
+                        </a>
+                    </li>
+                </ul>
+            </footer>
+
+             <div class="full_screen_video_container highight feature bg">
+                <div class="close_button light">
+                    <div></div>
+                </div>
+                <div class="video">
+                    <iframe
+                        width="100%"
+                        height="100%"
+                        src=""
+                        allowfullscreen
+                        frameborder="0">
+                    </iframe>
+                </div>
+            </div> <!--feature_video_container-->
+
+            <script type="application/ld+json">
+                {
+                    "@context":"http://schema.org",
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [{
+                    "@type":"ListItem",
+                    "position": 1,
+                    "item":{
+                    "@id":"http://www.kochind.com/whatwedo/",
+                    "name":"What We Do"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 2,
+                    "item":{
+                    "@id":"http://www.kochind.com/philosophy/",
+                    "name":"Business Philosophy"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 3,
+                    "item":{
+                    "@id":"http://www.kochind.com/locations/",
+                    "name":"Locations"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 4,
+                    "item":{
+                    "@id":"http://www.kochind.com/companies/",
+                    "name":"Companies"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 5,
+                    "item":{
+                    "@id":"http://www.kochind.com/fhr/",
+                    "name":"Flint Hills Resource"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 6,
+                    "item":{
+                    "@id":"http://www.kochind.com/gp/",
+                    "name":"Georgia-Pacific"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 7,
+                    "item":{
+                    "@id":"http://www.kochind.com/invista/",
+                    "name":"INVISTA"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 8,
+                    "item":{
+                    "@id":"http://www.kochind.com/molex/",
+                    "name":"Molex"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 9,
+                    "item":{
+                    "@id":"http://www.kochind.com/kaes/",
+                    "name":"Koch Ag & Energy Solutions"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 10,
+                    "item":{
+                    "@id":"http://www.kochind.com/chemtech/",
+                    "name":"Koch Chemical Technology Group"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 11,
+                    "item":{
+                    "@id":"http://www.kochind.com/minerals/",
+                    "name":"Koch Minerals"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 12,
+                    "item":{
+                    "@id":"http://www.kochind.com/kpl/",
+                    "name":"Koch Pipeline"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 13,
+                    "item":{
+                    "@id":"http://www.kochind.com/kst/",
+                    "name":"Koch Supply & Trading"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 14,
+                    "item":{
+                    "@id":"http://www.kochind.com/matador/",
+                    "name":"Matador Cattle Company"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 15,
+                    "item":{
+                    "@id":"http://www.kochind.com/careers/",
+                    "name":"How We Work"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 16,
+                    "item":{
+                    "@id":"http://www.kochind.com/finance/",
+                    "name":"Accounting, Finance & Tax"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 17,
+                    "item":{
+                    "@id":"http://www.kochind.com/engineering/",
+                    "name":"Engineering"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 18,
+                    "item":{
+                    "@id":"http://www.kochind.com/it/",
+                    "name":"Information Technology"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 19,
+                    "item":{
+                    "@id":"http://www.kochind.com/operations/",
+                    "name":"Operations & Manufacturing"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 20,
+                    "item":{
+                    "@id":"http://www.kochind.com/business/",
+                    "name":"Business & More"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 21,
+                    "item":{
+                    "@id":"http://www.kochind.com/veterans/",
+                    "name":"Veterans"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 22,
+                    "item":{
+                    "@id":"http://www.kochind.com/responsibility/",
+                    "name":"Responsibility"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 23,
+                    "item":{
+                    "@id":"http://www.kochind.com/giving/",
+                    "name":"Giving"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 24,
+                    "item":{
+                    "@id":"http://www.kochind.com/contact/",
+                    "name":"Contact"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 25,
+                    "item":{
+                    "@id":"http://www.kochind.com/termsofuse/",
+                    "name":"Terms of Use"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 26,
+                    "item":{
+                    "@id":"http://www.kochind.com/privacypolicy/",
+                    "name":"Privacy Policy"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 27,
+                    "item":{
+                    "@id":"http://www.kochind.com/californiasupply/",
+                    "name":"California Supply Chain Transparency"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 28,
+                    "item":{
+                    "@id":"http://www.kochind.com/californiasupply/",
+                    "name":"California Supply Chain Transparency"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 29,
+                    "item":{
+                    "@id":"http://www.kochind.com/faq/",
+                    "name":"Frequently Asked Questions"
+                    }
+                    },{
+                    "@type":"ListItem",
+                    "position": 30,
+                    "item":{
+                    "@id":"http://www.kochind.com/mrw/",
+                    "name":"Mike Row Works"
+                    }
+                    }]
+                }
+            </script>
+
+
+            
+        </article>
+        
+        <!-- FooterJS: -->
+        <script src="../assets/js/main.js"></script>
+        <!-- endFooterJS -->   
+
+    </body>
+</html>

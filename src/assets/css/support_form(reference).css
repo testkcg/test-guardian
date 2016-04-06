@@ -1,0 +1,111 @@
+/*--import Boubourn--*/
+  @import "bourbon";
+/*--END import Bourbon--*/
+
+.jotform-form {
+	width: 99%;
+	max-width: 750px;
+	margin: 0;
+	padding: 0;
+}
+
+.form-all {
+	width: 100%;
+	font-size: 14px;
+	font-family: "proxima-nova", sans-serif;
+	color: #555555;
+	background-color: none;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: center top;
+	background-repeat: repeat;
+	border: 1px solid transparent;
+}
+
+.form-label {
+	display: block;
+    margin: 0 0 .5rem 0;
+    font-size: 1rem;
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #000006;
+}
+
+.form-line {
+	padding: 0;
+}
+.form-line.form-line-column {
+	width: 100%;
+	margin: 0 0 1rem 0;
+	padding: 0;
+}
+
+.form-textarea-limit textarea {
+	width: 95%;
+}
+.form-dropdown {
+	width: 100%;
+    padding: .75rem .5rem!important;
+    font-family: "proxima-nova", sans-serif;
+    color: #000006;
+    background: #ebeced;
+    border-radius: 0%!important;
+    border: none!important;
+}
+
+.supernova {
+	height: 100%;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: center top;
+	background-repeat: repeat;
+	background-image: none;
+	background-color: none;
+	background-color: #ffffff;
+}
+.supernova body {
+	background-color: transparent;
+}
+
+
+
+button#input_2 {
+	display: inline-block;
+	padding: .5em 1.75rem;
+	margin: .5rem;
+	font-family: "proxima-nova", sans-serif;
+	font-size: 1rem;
+	font-weight: 700;
+	text-align: center;
+	border-radius: .175rem;
+	text-transform: uppercase;
+	transition: all .25s ease-out;
+	cursor: pointer; 
+	color: #002d5b;
+      border: 2px solid #00a8e1;
+      background: rgba(255, 255, 255, .25);
+}
+button#input_2:hover {
+	color: #96c6d4;
+    background: #002d5b;
+    border: 1px solid #002d5b;
+}
+
+.form-dropdown,
+.form-radio-item,
+.form-checkbox-item,
+.form-radio-other-input,
+.form-checkbox-other-input,
+.form-captcha input,
+.form-spinner input,
+.form-error-message,
+.form-textbox,
+.form-textarea {
+padding: .5rem;
+border: 1px solid #333740!important;
+}
+
+
+
+
