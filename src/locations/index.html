@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+    <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+    <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+    <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+    <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+    <head>
+        <link rel="icon" href="http://www.kochind.com/files/favicon.ico" type="image/x-icon" />
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Our Locations - Koch Industries</title>
+        <meta name="description" content="With more than 100,000 employees in more than 60 countries, Koch companies create life’s basic necessities for people in the U.S. and around the world.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- css: -->
+        <!-- endcss -->
+        
+        <!-- HeaderJS: -->
+        <!-- endHeaderJS -->
+
+        <!--(bake /includes/head_tag_references.html)-->
+
+        <link rel="canonical" href="http://www.kochind.com/locations/" />
+         
+    </head>
+           
+    <body class="locations about">
+
+        <!--(bake /includes/navigation_header.html)-->
+
+         <span id="load">
+            <div>
+                <span></span><span></span><span></span><span></span><span></span>
+                <p>Loading</p>
+            </div>  
+        </span>
+
+        <article role="main">
+
+            <div class="inactive_map_cover"></div>
+
+            <div id="map-canvas" style="width:100%; height: 100%;"></div>
+
+            <section class="location_info_window">
+                <div class="close_button light">
+                    <div></div>
+                </div>
+
+                <div class="level_1_location_job_count_container">
+                    <span class="level_1_location_title"></span>
+                    <span class="level_1_location_job_count"></span>
+                </div> <!--level_1_location_job_count_container-->
+
+                <div class="level_1_company_presence_container">
+                    <span class="company_presence_title">Company Presence</span>
+                    <ul class="level_1_location_company_presence_list"></ul>
+                </div> <!--level_1_company_presence_container-->
+
+                <div class="level_2_location_fact_sheet_container">
+                    <span class="level_2_location_fact_sheet_title"></span>
+
+                    <a href="" class="download_button" download>
+                        <span class="file_info">
+                            Download State Fact Sheet
+                        </span>
+                        <i class="fa fa-download"></i>
+                    </a>
+                </div> <!--level_2_location_fact_sheet_container-->
+
+                <div class="level_2_location_company_presence_container">
+                    <span class="company_presence_title">Company Presence</span>
+                    <ul class="level_2_location_company_presence_list"></ul>
+                </div> <!--level_2_location_company_presence_container-->
+
+                <div class="level_2_location_job_count_container">
+                    <span class="level_2_location_job_count_title"></span>
+                    <span class="level_2_location_job_count"></span>
+                </div> <!--level_2_location_job_count_container-->
+
+                <div class="level_2_location_wages_container">
+                    <span class="level_2_location_wages_title"></span>
+                    <span class="level_2_location_wages"></span>
+                </div> <!--level_2_location_wages_container-->
+
+            </section> <!--location_info_window-->
+
+            <section class="companies_checklist active">
+                <div class="slide_toggle_button active">
+                    <div class="right_directional light">
+                        <div></div>
+                    </div>
+                </div>
+                <h4>
+                    Explore our global presence
+                </h4>
+
+                <p class="checklist_intro"> 
+                    Koch companies employ over 100,000 people across more than 60 countries. Click any business below to see its locations.
+                </p>
+                
+                <div class="company_checkbox_container">
+                    <span
+                        data-company-id="flinthillsresources"
+                        data-company-name="Flint Hills Resources"
+                        class="company_checkbox flinthillsresources"
+                        onclick="ga('send', 'event', 'FHR locations display', 'click', 'Locations');">
+                    </span> 
+                    <p>Flint Hills Resources</p>
+                </div>
+
+                <div class="company_checkbox_container">
+                    <span
+                        data-company-id="georgiapacific"
+                        data-company-name="Georgia-Pacific"
+                        class="company_checkbox georgiapacific inactive"
+                        onclick="ga('send', 'event', 'GP locations display', 'click', 'Locations');">
+                    </span>
+                    <p>Georgia-Pacific</p>
+                </div>
+
+                <div class="company_checkbox_container">
+                    <span
+                        data-company-id="invista"
+                        data-company-name="INVISTA"
+                        class="company_checkbox invista inactive"
+                        onclick="ga('send', 'event', 'INVISTA locations display', 'click', 'Locations');">
+                    </span>
+                    <p>INVISTA</p>
+                </div>
+
+                <div class="company_checkbox_container">
+                    <span
+                        data-company-id="kochagenergysolutions"
+                        data-company-name="Koch Ag &amp; Energy Solutions"
+                        class="company_checkbox kochagenergysolutions inactive"
+                        onclick="ga('send', 'event', 'KAES locations display', 'click', 'Locations');">
+                    </span>
+                    <p>Koch Ag &amp; Energy Solutions</p>
+                </div>
+
+                <div class="company_checkbox_container">
+                    <span
+                        data-company-id="kochchemicaltechnologygroup"
+                        data-company-name="Koch Chemical Technology Group"
+                        class="company_checkbox kochchemicaltechnologygroup inactive"
+                        onclick="ga('send', 'event', 'Koch Chemical Technology Group locations display', 'click', 'Locations');">
+                    </span>
+                    <p>Koch Chemical Technology Group</p>
+                </div>
+
+                <div class="company_checkbox_container">
+                    <span
+                        data-company-id="kochindustriesincandother"
+                        data-company-name="Koch Industires"
+                        class="company_checkbox kochindustriesincandother inactive"
+                        onclick="ga('send', 'event', 'KII locations display', 'click', 'Locations');">
+                    </span> 
+                    <p>Koch Industries</p>
+                </div>
+
+                <div class="company_checkbox_container">
+                    <span
+                        data-company-id="kochminerals"
+                        data-company-name="Koch Minerals"
+                        class="company_checkbox kochminerals inactive"
+                        onclick="ga('send', 'event', 'Minerals locations display', 'click', 'Locations');">
+                    </span>
+                    <p>Koch Minerals</p>
+                </div>
+
+                <div class="company_checkbox_container">
+                    <span
+                        data-company-id="kochpipelinecompany"
+                        data-company-name="Koch Pipeline Company"
+                        class="company_checkbox kochpipelinecompany inactive"
+                        onclick="ga('send', 'event', 'KPL locations display', 'click', 'Locations');">
+                    </span>
+                    <p>Koch Pipeline Company</p>
+                </div>
+
+                <div class="company_checkbox_container">
+                    <span
+                        data-company-id="kochsupplytrading"
+                        data-company-name="Koch Supply \u0026 Trading"
+                        class="company_checkbox kochsupplytrading inactive"
+                        onclick="ga('send', 'event', 'KST locations display', 'click', 'Locations');">
+                    </span> 
+                    <p>Koch Supply &amp; Trading</p>
+                </div>
+
+                <div class="company_checkbox_container">
+                    <span
+                        data-company-id="matadorcattlecompany"
+                        data-company-name="Matador Cattle Company"
+                        class="company_checkbox matadorcattlecompany inactive"
+                        onclick="ga('send', 'event', 'Matador locations display', 'click', 'Locations');">
+                    </span>
+                    <p>Matador Cattle Company</p>
+                </div>
+
+                <div class="company_checkbox_container">
+                    <span
+                        data-company-id="molex"
+                        data-company-name="Molex"
+                        class="company_checkbox molex inactive"
+                        onclick="ga('send', 'event', 'Molex locations display', 'click', 'Locations');">
+                    </span>
+                    <p>Molex</p>
+                </div>
+
+                <div class="checklist_controls">
+                    <div class="company_checkbox_container">
+                        <span
+                            class="company_checkbox viewall inactive"
+                            data-company-id="viewall"
+                            onclick="ga('send', 'event', 'View All locations display', 'click', 'Locations');">
+                        </span> 
+                        <p>View All</p>
+                    </div>
+
+                    <div class="company_checkbox_container">
+                        <div
+                            class="close_button dark company_checkbox clearall"
+                            data-company-id="clear"
+                            onclick="ga('send', 'event', 'Remove All locations display', 'click', 'Locations');">
+                            <div></div>
+                        </div>
+                        <p class="clearall">Clear</p>
+                    </div>
+                </div> <!-- checklist_controls -->
+
+            </section> <!--companies_checklist-->
+            
+
+            <!--MOBILE LOCATIONS HTML-->
+
+                <section class="mobile_locations_info">
+                    
+                    <div class="left_directional dark back_button">
+                        <div></div>
+                    </div>
+
+                    <div class="logo_underlay"></div>
+
+                    <div class="selected_company_logo"></div>
+
+                    <div class="level_1_location_info active">
+                        <div class="intro_section">
+                            <h4>
+                                Explore our global presence
+                            </h4>
+                            
+                            <p class="checklist_intro"> 
+                                Koch companies employ over 100,000 people across more than 60 countries. Click any business below to see its locations.
+                            </p>
+                        </div>
+
+                        <ul class="companies_list">
+                            <li class="companies_list_option">
+                                <span
+                                    data-company-id="flinthillsresources"
+                                    data-company-name="Flint Hills Resources"
+                                    class="company_checkbox flinthillsresources"
+                                    onclick="ga('send', 'event', 'FHR mobile selection', 'click', 'Locations');">Flint Hills Resources</span> 
+
+                                <div class="right_directional dark">
+                                    <div></div>
+                                </div>
+                            </li>
+
+                            <li class="companies_list_option">
+                                <span
+                                    data-company-id="georgiapacific"
+                                    data-company-name="Georgia-Pacific"
+                                    class="company_checkbox georgiapacific inactive"
+                                    onclick="ga('send', 'event', 'GP mobile selection', 'click', 'Locations');">Georgia-Pacific</span>
+
+                                <div class="right_directional dark">
+                                    <div></div>
+                                </div>
+                            </li>
+
+                            <li class="companies_list_option">
+                                <span
+                                    data-company-id="invista"
+                                    data-company-name="INVISTA"
+                                    class="company_checkbox invista inactive"
+                                    onclick="ga('send', 'event', 'INVISTA mobile selection', 'click', 'Locations');">INVISTA</span>
+
+                                <div class="right_directional dark">
+                                    <div></div>
+                                </div>
+                            </li>
+
+                            <li class="companies_list_option">
+                                <span
+                                    data-company-id="kochagenergysolutions"
+                                    data-company-name="Koch Ag &amp; Energy Solutions"
+                                    class="company_checkbox kochagenergysolutions inactive"
+                                    onclick="ga('send', 'event', 'KAES mobile selection', 'click', 'Locations');">Koch Ag &amp; Energy Solutions</span>
+
+                                <div class="right_directional dark">
+                                    <div></div>
+                                </div>
+                            </li>
+
+                            <li class="companies_list_option">
+                                <span
+                                    data-company-id="kochchemicaltechnologygroup"
+                                    data-company-name="Koch Chemical Technology Group"
+                                    class="company_checkbox kochchemicaltechnologygroup inactive"
+                                    onclick="ga('send', 'event', 'Koch Chemical Technology Group mobile selection', 'click', 'Locations');">Koch Chemical Technology Group</span>
+
+                                <div class="right_directional dark">
+                                    <div></div>
+                                </div>
+                            </li>
+
+                            <li class="companies_list_option">
+                                <span
+                                    data-company-id="kochindustriesincandother"
+                                    data-company-name="Koch Industires"
+                                    class="company_checkbox kochindustriesincandother inactive"
+                                    onclick="ga('send', 'event', 'KII mobile selection', 'click', 'Locations');">Koch Industries</span>
+
+                                <div class="right_directional dark">
+                                    <div></div>
+                                </div>
+                            </li>
+
+                            <li class="companies_list_option">
+                                <span
+                                    data-company-id="kochminerals"
+                                    data-company-name="Koch Minerals"
+                                    class="company_checkbox kochminerals inactive"
+                                    onclick="ga('send', 'event', 'Koch Minerals mobile selection', 'click', 'Locations');">Koch Minerals</span>
+
+                                <div class="right_directional dark">
+                                    <div></div>
+                                </div>
+                            </li>
+
+                            <li class="companies_list_option">
+                                <span
+                                    data-company-id="kochpipelinecompany"
+                                    data-company-name="Koch Pipeline Company"
+                                    class="company_checkbox kochpipelinecompany inactive"
+                                    onclick="ga('send', 'event', 'KPL mobile selection', 'click', 'Locations');">Koch Pipeline Company</span>
+
+                                <div class="right_directional dark">
+                                    <div></div>
+                                </div>
+                            </li>
+
+                            <li class="companies_list_option">
+                                <span
+                                    data-company-id="kochsupplytrading"
+                                    data-company-name="Koch Supply &amp; Trading"
+                                    class="company_checkbox kochsupplytrading inactive"
+                                    onclick="ga('send', 'event', 'KST mobile selection', 'click', 'Locations');">Koch Supply &amp; Trading</span> 
+
+                                <div class="right_directional dark">
+                                    <div></div>
+                                </div>
+                            </li>
+
+                            <li class="companies_list_option">
+                                <span
+                                    data-company-id="matadorcattlecompany"
+                                    data-company-name="Matador Cattle Company"
+                                    class="company_checkbox matadorcattlecompany inactive"
+                                    onclick="ga('send', 'event', 'Matador mobile selection', 'click', 'Locations');">Matador Cattle Company</span>
+
+                                <div class="right_directional dark">
+                                    <div></div>
+                                </div>
+                            </li>
+
+                            <li class="companies_list_option">
+                                <span
+                                    data-company-id="molex"
+                                    data-company-name="Molex"
+                                    class="company_checkbox molex inactive"
+                                    onclick="ga('send', 'event', 'Molex mobile selection', 'click', 'Locations');">Molex</span>
+
+                                <div class="right_directional dark">
+                                    <div></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div> <!--companies view-->
+
+                    <div class="level_2_location_info offset_right">
+
+                        <div class="company_dropdown_container">
+                            <div class="dropdown_list_container">
+                                <div class="down_directional dark">
+                                    <div></div>
+                                </div>
+
+                                <select class="company_dropdown">
+                                    <option
+                                        value="Flint Hills Resources"
+                                        data-company-id="flinthillsresources">Flint Hills Resources</option>
+                                    <option
+                                        value="Georgia-Pacific"
+                                        data-company-id="georgiapacific">Georgia-Pacific</option>
+                                    <option
+                                        value="INVISTA"
+                                        data-company-id="invista">INVISTA</option>
+                                    <option
+                                        value="Koch Ag &amp; Energy Solutions"
+                                        data-company-id="kochagenergysolutions">Koch Ag &amp; Energy Solutions</option>
+                                    <option
+                                        value="Koch Chemical Technology Group"
+                                        data-company-id="kochchemicaltechnologygroup">Koch Chemical Technology Group</option>
+                                    <option
+                                        value="Koch Industries"
+                                        data-company-id="kochindustriesincandother">Koch Industries</option>
+                                    <option
+                                        value="Koch Minerals"
+                                        data-company-id="kochminerals">Koch Minerals</option>
+                                    <option
+                                        value="Koch Pipeline Company"
+                                        data-company-id="kochpipelinecompany">Koch Pipeline Company</option>
+                                    <option
+                                        value="Koch Supply &amp; Trading"
+                                        data-company-id="kochsupplytrading">Koch Supply &amp; Trading</option>
+                                    <option
+                                        value="Matador Cattle Company"
+                                        data-company-id="matadorcattlecompany">Matador Cattle Company</option>
+                                    <option
+                                        value="Molex"
+                                        data-company-id="molex">Molex</option>
+                                </select>
+                            </div>
+                        </div> <!--company_dropdown_container-->
+
+                        <ul class="countries_list"></ul>
+                    </div> <!--level_2_location_info-->
+                    
+                    <div class="level_3_location_info_non_us_location">
+                        <div class="country_title">
+                            <span></span>
+                        </div>
+
+                        <div class="country_jobs_container">
+                            <p class="jobs_header">Jobs</p>
+                            <span></span>
+                        </div>
+
+                        <div class="country_companies_container">
+                            <p class="companies_header">Company Presence</p>
+                        </div>
+                    </div>
+                    <div class="level_3_location_info_us_location">
+                        <ul class="states_list"></ul>
+                    </div>
+
+                    <div class="level_4_location_info offset_right">
+                        <div class="state_title">
+                            <span></span>
+                        </div>
+                        <div class="state_jobs_container">
+                            <p class="jobs_header">Jobs</p>
+                            <span></span>
+                        </div>
+                        <div class="state_wages">
+                            <p class="wages_header">Wages &amp; Benefits</p>
+                            <span></span>
+                        </div>
+                        <div class="state_jobs_link_container">
+                            <a
+                                class="button button_style_2"
+                                href=""
+                                target="_blank">
+                            </a>
+                        </div>
+                        <div class="cities_info_container">
+                            <div class="company_presence">
+                                <span>Company Presence</span>
+                            </div>
+                            <div class="state_city_dropdown_container">
+                                <div class="dropdown_list_container">
+                                    <div class="down_directional dark">
+                                        <div></div>
+                                    </div>
+
+                                    <select class="state_city_dropdown">
+                                    </select>
+                                </div>
+                                <div class="state_city_company_container"></div>
+                            </div>
+                        </div>
+                    </div> <!--level_4_location_info-->
+                </section>
+            <!--END MOBILE LOCATIONS HMTL-->
+            
+            <!--(bake /includes/footer.html)-->
+
+        </article>
+        
+        <!-- FooterJS: -->
+        <!-- endFooterJS -->
+
+        <!--GOOGLE MAP API-->
+            <script src="http://maps.googleapis.com/maps/api/js?v=3"></script>
+            
+            <script>
+                $(document).ready(function() {
+                    if( $(window).width() > 640 ) {
+                       $.getScript('/assets/js/locations_desktop.js');
+                    }
+                    else {
+                        $.getScript('/assets/js/locations_mobile.js');
+                    }
+                });
+            </script>           
+        <!--END GOOGLE MAP API-->
+           
+    </body>
+</html>
