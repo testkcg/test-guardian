@@ -229,19 +229,6 @@ module.exports = function(grunt) {
 
 
 
-    linkChecker: {
-      dev: {
-        site: 'kochind.dev',
-        options: {
-          initialPort: 80
-        }
-      }
-    },
-
-    
-
-
-
     watch: {
       sass: {
         files: ['src/assets/css/*.scss'],
@@ -250,7 +237,7 @@ module.exports = function(grunt) {
       },
       bake: {
         files: ['src/**/*.html', 'src/*.html' ],
-        tasks: ['newer:bake', 'injector']
+        tasks: ['newer:bake', 'newer:relativize']
       },
       copy: {
         files: ['src/assets/js/*.js'],
@@ -273,5 +260,4 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-injector');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-link-checker');
 };

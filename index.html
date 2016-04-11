@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+    <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+    <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+    <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+    <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+    <head>
+        <link rel="icon" href="http://www.kochind.com/files/favicon.ico" type="image/x-icon" />
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Koch Industries</title>
+        <meta name="description" content="Food. Shelter. Clothing. Transportation. Creating life’s basic necessities for people around the world through various businesses in multiple industries.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- css: -->
+        <link rel="stylesheet" href="../dist/assets/css/style.css">
+        <link rel="stylesheet" href="../dist/assets/css/slick.css">
+        <!-- endcss -->
+
+        <!-- HeaderJS: -->
+        <script src="../dist/assets/js/modernizr.js"></script>
+        <!-- endHeaderJS -->
+
+        <!--(bake /includes/head_tag_references.html)-->
+
+        <link rel="canonical" href="http://www.kochind.com" />
+        
+        <!--CRITICAL CSS-->
+            <!--Inline CSS included here to get the homepage image to user as fast as possible for low connection areas-->
+            <style>
+                .homepage_slider_container .jwplayer {
+                    position: absolute;
+                    min-width: 100%;
+                    min-height: 40rem;
+                    top: 50%;
+                    right: 0;
+                    left: 0;
+                    margin: 0 auto;
+                    background: url( /assets/images/homepage_bg_image_1600.jpg ) center center no-repeat;
+                    background-size: cover;
+                    -webkit-transform: translateY(-50%);
+                    -moz-transform: translateY(-50%);
+                    -ms-transform: translateY(-50%);
+                    -o-transform: translateY(-50%);
+                    transform: translateY(-50%);
+                }
+                @media (max-width: 64em) {
+                    .homepage_slider_container .jwplayer {
+                        display: none;
+                    }
+                }
+            </style>
+        <!--END CRITICAL CSS-->
+       
+    </head>
+        
+    <body class="homepage">
+        
+        <!--(bake /includes/navigation_header.html)-->
+
+        <article class="homepage_template" role="main">
+
+            <section class="homepage_slider_container">
+                <div class="slide bg_video_slide"> 
+
+                    <div class="video_cover"></div>
+                    <div class="slide_cover"></div>
+                    
+                    <div class="jwplayer_container">
+                        <script src="http://video.kochcreativegroupdev.com/players/iCldG7Xv-x2n83pVM.js"></script>    
+                    </div>
+                                       
+                    <div class="slide_content_display_type">
+                        <h1 class="top_type">
+                            Goods
+                        </h1>
+                        <h1 class="bottom_type">
+                            Made Better
+                        </h1>
+                        <p>
+                            <b>Food. Shelter. Clothing. Transportation.</b> Koch is essential to creating life’s basic necessities for people the world over. While relentlessly exploring <a href="whatwedo/index.html">ways to do it even better.</a>
+                        </p>
+                    </div> <!--slide_content_display_type-->
+                </div> <!--slide-->
+
+                <!-- <div class="slide slide_image">
+                    <div class="slide_content">
+                        <h1>
+                            Slide 2 - CTA
+                        </h1>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur eligendi architecto in obcaecati pariatur dolore sapiente perferendis cumque.
+                        </p>
+                        <a href="" class="button_style_2">
+                            Click Here
+                        </a>
+                    </div>
+                </div> -->
+
+            </section> <!--homepage_slider_container-->
+
+        </article> <!--home_template-->
+        
+        <!--SSCHEMA FOR SEO-->
+            <script type="application/ld+json">
+                {
+                  "@context": "http://schema.org",
+                  "@type": "Organization",
+                  "name": "Koch Industries",
+                  "alternateName": [
+                      "Koch Industries, Inc.",
+                      "Koch Companies"
+                  ],
+                  "address":{
+                    "@type": "PostalAddress",
+                    "streetAddress": "4111 E 37th St N",
+                    "addressLocality": "Wichita",
+                    "addressRegion": "KS",
+                    "postalCode":"67220",
+                    "addressCountry":"US"
+                  },
+                  "telephone": "316-828-5500",
+                  "email": "info@kochind.com",
+                  "logo": "https://upload.wikimedia.org/wikipedia/commons/1/16/Koch_logo.svg",
+                  "url": "http://www.kochind.com/",
+                  "sameAs": [
+                      "https://plus.google.com/112402666240550919788",
+                      "https://www.facebook.com/KochIndustries/",
+                      "https://www.linkedin.com/company/koch-industries",
+                      "https://twitter.com/Koch_Industries",
+                      "https://www.youtube.com/user/KochCompanies",
+                      "https://www.crunchbase.com/organization/koch-industries",
+                      "http://www.indeed.com/cmp/Koch-Industries",
+                      "https://www.glassdoor.com/Overview/Working-at-Koch-Industries-EI_IE2864.11,26.htm",
+                      "https://kochcareers.taleo.net/careersection/2/moresearch.ftl",
+                      "http://wearekoch.com/",
+                      "http://www.kochnews.com/",
+                      "https://en.wikipedia.org/wiki/Koch_Industries"     
+                  ]
+                }
+            </script>
+        <!--END SCHEMA FOR SEO-->
+
+        <!--(bake /includes/footer.html)-->
+
+        <!-- FooterJS: -->
+        <!-- endFooterJS -->
+
+    </body>
+</html>
