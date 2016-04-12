@@ -56,7 +56,8 @@ module.exports = function(grunt) {
           'dist/updatebrowser/index.html' : ['dist/assets/css/style.css', 'dist/assets/css/upgrade_browser.css'],
           'dist/vendors/index.html' : ['dist/assets/css/style.css'],
           'dist/veterans/index.html' : ['dist/assets/css/style.css'],
-          'dist/whatwedo/index.html' : ['dist/assets/css/style.css', 'dist/assets/css/what_we_do.css']
+          'dist/whatwedo/index.html' : ['dist/assets/css/style.css', 'dist/assets/css/what_we_do.css'],
+          'dist/404.html' : ['dist/assets/css/style.css']
         }
       },
 
@@ -143,7 +144,7 @@ module.exports = function(grunt) {
           'dist/vendors/index.html' : ['dist/assets/js/main.js'],
           'dist/veterans/index.html' : ['dist/assets/js/main.js'],
           'dist/whatwedo/index.html' : ['dist/assets/js/main.js', 'dist/assets/js/skrollr.js'],
-          'dist/404.html' : ['dist/assets/js/main.js']
+          'dis404.html' : ['dist/assets/js/main.js']
         }
       }
     },
@@ -206,7 +207,8 @@ module.exports = function(grunt) {
               "dist/updatebrowser/index.html": "src/updatebrowser/index.html",
               "dist/vendors/index.html": "src/vendors/index.html",
               "dist/veterans/index.html": "src/veterans/index.html",
-              "dist/whatwedo/index.html": "src/whatwedo/index.html"  
+              "dist/whatwedo/index.html": "src/whatwedo/index.html",
+              'dist/404.html' : ['src/404.html']
             }
         }
     },
@@ -237,7 +239,7 @@ module.exports = function(grunt) {
       },
       bake: {
         files: ['src/**/*.html', 'src/*.html' ],
-        tasks: ['newer:bake', 'newer:relativize']
+        tasks: ['newer:bake', 'injector']
       },
       copy: {
         files: ['src/assets/js/*.js'],

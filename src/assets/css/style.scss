@@ -92,7 +92,7 @@
   } //body.what_we_do
 
   body.page_not_found {
-    .scroll_cta {
+    .breadcrumb_container, .scroll_cta {
       display: none!important;
     }
   }
