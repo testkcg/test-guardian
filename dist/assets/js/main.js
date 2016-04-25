@@ -11,8 +11,11 @@
 		var pageTitle = document.title,
 			n = pageTitle.indexOf(' - '),
 			pageTitle = pageTitle.substring(0, n != -1 ? n : pageTitle.length),
-			breadCrumb = $('.breadcrumb_container p');
+			breadCrumb = $('.breadcrumb_link a span'),
+			breadCrumbLink = $('.breadcrumb_link a'),
+			pageUrl = window.location.href;
 
+		breadCrumbLink.attr('href', pageUrl);
 		breadCrumb.empty().append(pageTitle);
 	}
 	dynamicBreadcrumb();
@@ -160,12 +163,24 @@
 					}
 			}
 
+			function timedStopVideo() {
+				var videoCover = $('.video_cover'),
+					jwPlayer = $('.jwplayer');
+
+				setTimeout(function(){
+					videoCover.fadeIn();
+					jwPlayer.remove();
+				}, 120000);
+			}
+
 			//On play remove image cover
 			jwplayer().onPlay(function() {
 				var videoCover = $('.video_cover');
 				videoCover.fadeOut();
 
 				setVideoWidth();
+
+				timedStopVideo();
 			});
 				
 			//On error display image cover

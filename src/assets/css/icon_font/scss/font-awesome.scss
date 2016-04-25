@@ -134,6 +134,25 @@
     }
   }
 } //.fa-linkedin 
+.glassdoor_icon {
+  height: 1.4375rem;
+  width: 1.4375rem;
+  border-radius: 50%;
+  &:hover {
+    background-color: $glassdoor_green;
+    &:before {
+      background-image: url( /assets/images/logo_glassdoor_white.svg );
+    }
+  }
+  &:before {
+    height: 1.1rem;
+    width: .8rem;
+    margin: .15rem .3rem .2rem .15rem;
+    background-image: url( /assets/images/logo_glassdoor_color.svg );
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
 
 
 

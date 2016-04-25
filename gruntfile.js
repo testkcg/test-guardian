@@ -144,7 +144,7 @@ module.exports = function(grunt) {
           'dist/vendors/index.html' : ['dist/assets/js/main.js'],
           'dist/veterans/index.html' : ['dist/assets/js/main.js'],
           'dist/whatwedo/index.html' : ['dist/assets/js/main.js', 'dist/assets/js/skrollr.js'],
-          'dis404.html' : ['dist/assets/js/main.js']
+          'dist/404.html' : ['dist/assets/js/main.js']
         }
       }
     },
@@ -154,7 +154,7 @@ module.exports = function(grunt) {
     sass: {                              // Task
       dist: {                            // Target
         options: {                       // Target options
-          style: 'compressed',
+          style: 'expanded',
           loadPath: require('node-bourbon').includePaths
         },
         files: {                         // Dictionary of files
@@ -164,7 +164,8 @@ module.exports = function(grunt) {
           'dist/assets/css/style.css': 'src/assets/css/style.scss',
           'dist/assets/css/upgrade_browser.css': 'src/assets/css/upgrade_browser.scss',
           'dist/assets/css/variables_and_mixins.css': 'src/assets/css/variables_and_mixins.scss',
-          'dist/assets/css/what_we_do.css': 'src/assets/css/what_we_do.scss'
+          'dist/assets/css/what_we_do.css': 'src/assets/css/what_we_do.scss',
+          'dist/assets/css/icon_font/scss/font-awesome.css': 'src/assets/css/icon_font/scss/font-awesome.scss'
         }
       }
     },
@@ -224,7 +225,8 @@ module.exports = function(grunt) {
           {src: ['src/assets/js/locations_mobile.js'], dest: 'dist/assets/js/locations_mobile.js'},
           {src: ['src/assets/js/main.js'], dest: 'dist/assets/js/main.js'},
           {src: ['src/assets/js/skrollr.js'], dest: 'dist/assets/js/skrollr.js'},
-          {src: ['src/assets/js/slick.js'], dest: 'dist/assets/js/slick.js'}
+          {src: ['src/assets/js/slick.js'], dest: 'dist/assets/js/slick.js'},
+          {src: ['src/assets/images/*'], dest: 'dist/assets/images/*'}
         ]
       }
     },
@@ -233,12 +235,12 @@ module.exports = function(grunt) {
 
     watch: {
       sass: {
-        files: ['src/assets/css/*.scss'],
+        files: ['src/assets/css/**'],
         tasks: ['newer:sass'],
         options : { nospawn : true, relative:true }
       },
       bake: {
-        files: ['src/**/*.html', 'src/*.html' ],
+        files: ['src/**/*.html', 'src/*.html', 'includes/*.html'],
         tasks: ['newer:bake', 'injector']
       },
       copy: {

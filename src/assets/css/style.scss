@@ -43,7 +43,7 @@
     -webkit-font-smoothing:antialiased;
     -webkit-text-size-adjust:100%;
   }
- article {
+  article {
     position: relative;
     height: 100%;
   }
@@ -954,6 +954,7 @@
         }
         div.koch_news_logo {
           p {
+            margin-bottom: 0;
             color: $blue;
             font-size: 1rem;
             font-weight: 600;
@@ -1003,6 +1004,9 @@
     .site_links {
       display: inline-block;
       vertical-align: middle;
+      @include breakpoint(ten_twenty_four) {
+        margin: 0 0 .5rem 0;
+      }
       li {
         display: inline-block;
         margin-right: .75rem;
@@ -1028,6 +1032,9 @@
       li {
         display: inline-block;
         margin-right: .5rem;
+        &:last-child {
+          margin-right: 0;
+        }
       } //li
       a {
         display: inline-block;
@@ -1410,7 +1417,25 @@
     }
   }
 } //mod_container
-  
+
+
+
+
+// Homepage campaign content
+  .homepage_campaign_primary {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url( /assets/images/homepage_bg_image_1600.jpg ) center center no-repeat;
+    background-size: cover;
+  }  
+  .homepage_campaign_secondary {}  
+// END homepage campaign content
+
+
+
+
+
 .support_logos {
     margin: 1rem auto 0 auto;
     img.kii_logo {
@@ -3448,10 +3473,15 @@ i.click_logo_cta {
           }
 
           &.left {
-            left: 3rem;
+            left: 10%;
+            max-width: inherit;
             @include breakpoint(seven_sixty_eight) {
               left: 2rem;
             }
+          }
+          &.bottom {
+            top: auto;
+            bottom: 1rem;
           }
           &.center {
             width: 100%;
@@ -3469,6 +3499,25 @@ i.click_logo_cta {
               right: 2rem;
             }
           }
+
+          &.play_video_cta {
+            text-align: left;
+            @include breakpoint(ten_twenty_four) {
+              text-align: center;
+            }
+            &.left {
+              left: 8.5%;
+              @include breakpoint(ten_twenty_four) {
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+              }
+            }
+            &.bottom {
+              top: auto;
+              bottom: 1rem;
+            }
+          } //&.play_cta
 
           h3 { margin: .5rem auto 0 auto; }
           a.button, .fa-play-button { margin: .75rem auto 0 auto; }
@@ -3655,6 +3704,25 @@ i.click_logo_cta {
               right: 2rem;
             }
           }
+
+          &.play_video_cta {
+            text-align: left;
+            @include breakpoint(ten_twenty_four) {
+              text-align: center;
+            }
+            &.left {
+              left: 8.5%;
+              @include breakpoint(ten_twenty_four) {
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+              }
+            }
+            &.bottom {
+              top: auto;
+              bottom: 1rem;
+            }
+          } //&.play_cta
 
           h3 { margin: .5rem auto 0 auto; }
           a.button, .fa-play-button { margin: .75rem auto 0 auto; }
@@ -5014,10 +5082,26 @@ i.click_logo_cta {
     p.contact_company {
       font-weight: 600;
     }
+    &.social_list {
+      li {
+        display: inline-block;
+        margin-right: 1rem;
+      }
+      a {
+        span {
+          display: inline-block;
+          vertical-align: middle;
+          margin-top: .15rem;
+          color: $gray;
+          font-weight: 600;
+          font-family: $sans_serif_font;
+        }
+      }
+    }
   } //contact_list
 
   .grant_request_form_container {
-    padding-top: 1.5rem;
+    padding: 1.5rem 0;
     #grant_request_form {
       display: none;
       width: 31.25rem; //500px
@@ -5074,6 +5158,9 @@ i.click_logo_cta {
     color: $gray;
     font-size: .8rem;
     font-weight: 600;
+    a {
+      color: $gray;
+    }
   }
 } //breadcrumb_container
 
@@ -5408,11 +5495,13 @@ footer {
 .fa-twitter {
   position: relative;
   display: inline-block;
+  vertical-align: middle;
   height: 1.4375rem; //23px
   width: 1.4375rem; //23px
   border-radius: 50%;
   background: none;
   @include transition( all .25s ease-in-out );
+  @include breakpoint(ten_twenty_four) {}
   &:before {
     content: "\f099";
     position: absolute;
@@ -5432,10 +5521,23 @@ footer {
       color: $white;
     }
   } //&:hover
+  @include breakpoint(ten_twenty_four) {
+    background: $twitter_blue;
+    &:before {
+      color: $white;
+    }
+  }
+  &.active {
+    background: $twitter_blue;
+    &:before {
+      color: $white;
+    }
+  }
 } //fa-twitter
 .fa-facebook {
   position: relative;
   display: inline-block;
+  vertical-align: middle;
   height: 1.4375rem; //23px
   width: 1.4375rem; //23px
   border-radius: 50%;
@@ -5459,10 +5561,23 @@ footer {
       color: $white;
     }
   }
+  @include breakpoint(ten_twenty_four) {
+    background: $facebook_blue;
+    &:before {
+      color: $white;
+    }
+  }
+  &.active {
+    background: $facebook_blue;
+    &:before {
+      color: $white;
+    }
+  }
 } //fa-facebook
 .fa-play {
   position: relative;
   display: inline-block;
+  vertical-align: middle;
   height: 1.4375rem; //23px
   width: 1.4375rem; //23px
   border-radius: 50%;
@@ -5489,10 +5604,23 @@ footer {
       color: $white;
     }
   }
+  @include breakpoint(ten_twenty_four) {
+    background: red;
+    &:before {
+      color: $white;
+    }
+  }
+  &.active {
+    background: red;
+    &:before {
+      color: $white;
+    }
+  }
 } //.fa-play
 .fa-linkedin {
   position: relative;
   display: inline-block;
+  vertical-align: middle;
   height: 1.4375rem; //23px
   width: 1.4375rem; //23px
   border-radius: 50%;
@@ -5518,7 +5646,101 @@ footer {
       color: $white;
     }
   }
+  @include breakpoint(ten_twenty_four) {
+    background: #007bb6;
+    &:before {
+      color: $white;
+    }
+  }
+  &.active {
+    background: #007bb6;
+    &:before {
+      color: $white;
+    }
+  }
 } //.fa-linkedin 
+.fa-google-plus {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  height: 1.4375rem; //23px
+  width: 1.4375rem; //23px
+  border-radius: 50%;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  &:before {
+    content: "\f0d5";
+    position: absolute;
+    top: 0;
+    right: .2rem;
+    bottom: 0;
+    left: 0;
+    width: 10px;
+    height: 16px;
+    margin: auto auto .15rem auto;
+    font-size: 1rem !important;
+    color: $blue;
+  }
+  &:hover {
+    background: $google_plus_red;
+    &:before {
+      color: $white;
+    }
+  }
+  @include breakpoint(ten_twenty_four) {
+    background: $google_plus_red;
+    &:before {
+      color: $white;
+    }
+  }
+  &.active {
+    background: $google_plus_red;
+    &:before {
+      color: $white;
+    }
+  }
+} //.fa-google-plus 
+.glassdoor_icon {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  height: 1.4375rem;
+  width: 1.4375rem;
+  border-radius: 50%;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  &:before {
+    content: '';
+    position: absolute;
+    left: .3rem;
+    bottom: .15rem;
+    height: 1.1rem;
+    width: .8rem;
+    background-image: url( /assets/images/logo_glassdoor_color.svg );
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  &:hover {
+    background-color: $glassdoor_green;
+    &:before {
+      background-image: url( /assets/images/logo_glassdoor_white.svg );
+    }
+  }
+  @include breakpoint(ten_twenty_four) {
+    background-color: $glassdoor_green;
+    &:before {
+      background-image: url( /assets/images/logo_glassdoor_white.svg );
+    }
+  }
+  &.active {
+    background-color: $glassdoor_green;
+    &:before {
+      background-image: url( /assets/images/logo_glassdoor_white.svg );
+    }
+  }
+} //glassdoor_icon
 
 
 
@@ -5622,6 +5844,39 @@ footer {
       }
     } //play_button_3
   } //fa_play_button
+
+  .play_cta_1 {
+    @include breakpoint(ten_twenty_four) {
+      text-align: center;
+    }
+    .fa_play_button {
+      display: inline-block;
+      vertical-align: middle;
+      height: 45px!important;
+      width: 45px!important;
+      margin: .5rem!important;
+      background: $white;
+      border: 1px solid $blue;
+      &:before {
+        height: 25px!important;
+        width: 15px!important;
+        color: $blue;
+        font-size: 1.5rem!important;
+      }
+    }
+    .cta {
+      display: inline-block;
+      vertical-align: middle;
+      font-family: $sans_serif_font;
+      font-weight: 700;
+      color: $white;
+      text-transform: uppercase;
+      @include breakpoint(ten_twenty_four) {
+        display: block;
+        font-size: .9rem;
+      }
+    }
+  } //play_cta_1
 // END PLAY BUTTON
 
 // NAV

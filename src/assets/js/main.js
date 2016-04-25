@@ -11,8 +11,11 @@
 		var pageTitle = document.title,
 			n = pageTitle.indexOf(' - '),
 			pageTitle = pageTitle.substring(0, n != -1 ? n : pageTitle.length),
-			breadCrumb = $('.breadcrumb_container p');
+			breadCrumb = $('.breadcrumb_link a span'),
+			breadCrumbLink = $('.breadcrumb_link a'),
+			pageUrl = window.location.href;
 
+		breadCrumbLink.attr('href', pageUrl);
 		breadCrumb.empty().append(pageTitle);
 	}
 	dynamicBreadcrumb();
@@ -160,12 +163,24 @@
 					}
 			}
 
+			function timedStopVideo() {
+				var videoCover = $('.video_cover'),
+					jwPlayer = $('.jwplayer');
+
+				setTimeout(function(){
+					videoCover.fadeIn();
+					jwPlayer.remove();
+				}, 120000);
+			}
+
 			//On play remove image cover
 			jwplayer().onPlay(function() {
 				var videoCover = $('.video_cover');
 				videoCover.fadeOut();
 
 				setVideoWidth();
+
+				timedStopVideo();
 			});
 				
 			//On error display image cover
@@ -259,24 +274,45 @@
 
 	function fullScreenVideo() {
 		var headerPlayButton = $('.subpage_header_mod .fa_play_button'),
+			headerPlayCTA = $('.subpage_header_mod .play_cta'),
+
 			featurePlayButton = $('.feature_content_container .fa_play_button'),
+			featurePlayCTA = $('.feature_content_container .play_cta'),
+
 			featurePlayButtonMobile = $('.feature_bg .fa_play_button'),
+			featurePlayCTAMobile = $('.feature_bg .play_cta'),
+
 			highlightPlayButton = $('.highlights_section .fa_play_button'),
+			highlightPlayCTA = $('.highlights_section .play_cta'),
+
 			highlight2PlayButton = $('.highlights_section_new .fa_play_button'),
+			highlight2PlayCTA = $('.highlights_section_new .play_cta'),
+
             splitHighlightsPlayButton = $('.split_highlights_mod .fa_play_button'),
+            splitHighlightsPlayCTA = $('.split_highlights_mod .play_cta'),
+
 			highlightSliderPlayButton = $('.highlights_slider_container .fa_play_button'),
+			highlightSliderPlayCTA = $('.highlights_slider_container .play_cta'),
+
 			fullScreenVideoContainer = $('.full_screen_video_container'),
 			videoIframeContainer = $('.full_screen_video_container .video'),
 			videoIframe = $('.full_screen_video_container .video iframe'),
 			closeButton = $('.full_screen_video_container .close_button');
 
-		featurePlayButton
+		headerPlayButton
+			.add(headerPlayCTA)
+			.add(featurePlayButton)
+			.add(featurePlayCTA)
 			.add(featurePlayButtonMobile)
-			.add(headerPlayButton)
+			.add(featurePlayCTAMobile)
 			.add(highlightPlayButton)
+			.add(highlightPlayCTA)
 			.add(highlight2PlayButton)
+			.add(highlight2PlayCTA)
             .add(splitHighlightsPlayButton)
+            .add(splitHighlightsPlayCTA)
 			.add(highlightSliderPlayButton)
+			.add(highlightSliderPlayCTA)
 			.click( function() {
 				var embedLink = $(this).attr("data-url");
 				var videoURL = embedLink+"?rel=0&controls=1&showinfo=0&autoplay=1&wmode=transparent";
