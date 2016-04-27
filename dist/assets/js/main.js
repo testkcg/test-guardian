@@ -206,6 +206,62 @@
 
 
 
+/*--HOMEPAGE CAMPAIGN CONTENT SCROLLING--*/
+	function homepageAnchorScrolling() {
+		//if user is on homepage, to prevent variable errors on subpages
+		if ( $('body').is('.homepage') && $(window).width() > 1024 ) {
+			var homepageCampaignIntro = $('.homepage_campaign_intro'),
+				homepageCampaignIntroDistanceFromTop = $('.homepage_campaign_intro').offset().top,
+				homepageCampaignIntroAnchor = true,
+
+				homepageCampaignSupportFirstContent = $('.homepage_campaign_support_first_content'),
+				homepageCampaignSupportFirstContentHeight = $('.homepage_campaign_support_first_content').outerHeight(),
+				homepageCampaignSupportFirstContentAnchor = true,
+			    
+			    pixelsScrolled,
+			    homepageCampaignIntroTopHolder;
+
+			    $(window).scroll(function() {
+
+					pixelsScrolled = $(window).scrollTop();
+
+					//Once the primary section hit the top of browser window
+				    if ( $(window).scrollTop() >= homepageCampaignIntroDistanceFromTop ) {
+				    	
+				    	//Get pixels scrolled when primary section hits the top
+				    	if ( homepageCampaignIntroAnchor ) {
+				    		homepageCampaignIntroAnchor = false,
+				    		pixelsScrolledReset = $(window).scrollTop();
+				    	}
+
+				    	if ( homepageCampaignSupportFirstContentAnchor) {
+				    		//Push the primary section down with top positioning to mimic a fixed position
+					    	homepageCampaignIntroTopHolder = pixelsScrolled-pixelsScrolledReset;
+					    	homepageCampaignIntro.css({'top':homepageCampaignIntroTopHolder+'px'});
+				    	}
+				    	
+
+				    	console.log(homepageCampaignIntroTopHolder);
+				    	console.log(homepageCampaignSupportFirstContentHeight);
+
+				    	//Once the first part of the secondary section scrolls the height of the first copy block release the primary section to continue scrolling
+				    	if (homepageCampaignIntroTopHolder >= homepageCampaignSupportFirstContentHeight) {
+				    		homepageCampaignIntro.css({'top':'auto', 'bottom':-homepageCampaignSupportFirstContentHeight+'px'});
+				    	}
+				    	else if (homepageCampaignIntroTopHolder <= homepageCampaignSupportFirstContentHeight) {
+				    		console.log('test');
+				    	}
+				    }
+				});
+		}
+	}
+	homepageAnchorScrolling();
+/*--END HOMEPAGE CAMPAIGN CONENT SCROLLING--*/
+
+
+
+
+
 /*--FEATURE VIDEO--*/
 
 	function videoScaling() {
@@ -274,24 +330,45 @@
 
 	function fullScreenVideo() {
 		var headerPlayButton = $('.subpage_header_mod .fa_play_button'),
+			headerPlayCTA = $('.subpage_header_mod .play_cta'),
+
 			featurePlayButton = $('.feature_content_container .fa_play_button'),
+			featurePlayCTA = $('.feature_content_container .play_cta'),
+
 			featurePlayButtonMobile = $('.feature_bg .fa_play_button'),
+			featurePlayCTAMobile = $('.feature_bg .play_cta'),
+
 			highlightPlayButton = $('.highlights_section .fa_play_button'),
+			highlightPlayCTA = $('.highlights_section .play_cta'),
+
 			highlight2PlayButton = $('.highlights_section_new .fa_play_button'),
+			highlight2PlayCTA = $('.highlights_section_new .play_cta'),
+
             splitHighlightsPlayButton = $('.split_highlights_mod .fa_play_button'),
+            splitHighlightsPlayCTA = $('.split_highlights_mod .play_cta'),
+
 			highlightSliderPlayButton = $('.highlights_slider_container .fa_play_button'),
+			highlightSliderPlayCTA = $('.highlights_slider_container .play_cta'),
+
 			fullScreenVideoContainer = $('.full_screen_video_container'),
 			videoIframeContainer = $('.full_screen_video_container .video'),
 			videoIframe = $('.full_screen_video_container .video iframe'),
 			closeButton = $('.full_screen_video_container .close_button');
 
-		featurePlayButton
+		headerPlayButton
+			.add(headerPlayCTA)
+			.add(featurePlayButton)
+			.add(featurePlayCTA)
 			.add(featurePlayButtonMobile)
-			.add(headerPlayButton)
+			.add(featurePlayCTAMobile)
 			.add(highlightPlayButton)
+			.add(highlightPlayCTA)
 			.add(highlight2PlayButton)
+			.add(highlight2PlayCTA)
             .add(splitHighlightsPlayButton)
+            .add(splitHighlightsPlayCTA)
 			.add(highlightSliderPlayButton)
+			.add(highlightSliderPlayCTA)
 			.click( function() {
 				var embedLink = $(this).attr("data-url");
 				var videoURL = embedLink+"?rel=0&controls=1&showinfo=0&autoplay=1&wmode=transparent";

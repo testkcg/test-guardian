@@ -206,6 +206,62 @@
 
 
 
+/*--HOMEPAGE CAMPAIGN CONTENT SCROLLING--*/
+	function homepageAnchorScrolling() {
+		//if user is on homepage, to prevent variable errors on subpages
+		if ( $('body').is('.homepage') && $(window).width() > 1024 ) {
+			var homepageCampaignIntro = $('.homepage_campaign_intro'),
+				homepageCampaignIntroDistanceFromTop = $('.homepage_campaign_intro').offset().top,
+				homepageCampaignIntroAnchor = true,
+
+				homepageCampaignSupportFirstContent = $('.homepage_campaign_support_first_content'),
+				homepageCampaignSupportFirstContentHeight = $('.homepage_campaign_support_first_content').outerHeight(),
+				homepageCampaignSupportFirstContentAnchor = true,
+			    
+			    pixelsScrolled,
+			    homepageCampaignIntroTopHolder;
+
+			    $(window).scroll(function() {
+
+					pixelsScrolled = $(window).scrollTop();
+
+					//Once the primary section hit the top of browser window
+				    if ( $(window).scrollTop() >= homepageCampaignIntroDistanceFromTop ) {
+				    	
+				    	//Get pixels scrolled when primary section hits the top
+				    	if ( homepageCampaignIntroAnchor ) {
+				    		homepageCampaignIntroAnchor = false,
+				    		pixelsScrolledReset = $(window).scrollTop();
+				    	}
+
+				    	if ( homepageCampaignSupportFirstContentAnchor) {
+				    		//Push the primary section down with top positioning to mimic a fixed position
+					    	homepageCampaignIntroTopHolder = pixelsScrolled-pixelsScrolledReset;
+					    	homepageCampaignIntro.css({'top':homepageCampaignIntroTopHolder+'px'});
+				    	}
+				    	
+
+				    	console.log(homepageCampaignIntroTopHolder);
+				    	console.log(homepageCampaignSupportFirstContentHeight);
+
+				    	//Once the first part of the secondary section scrolls the height of the first copy block release the primary section to continue scrolling
+				    	if (homepageCampaignIntroTopHolder >= homepageCampaignSupportFirstContentHeight) {
+				    		homepageCampaignIntro.css({'top':'auto', 'bottom':-homepageCampaignSupportFirstContentHeight+'px'});
+				    	}
+				    	else if (homepageCampaignIntroTopHolder <= homepageCampaignSupportFirstContentHeight) {
+				    		console.log('test');
+				    	}
+				    }
+				});
+		}
+	}
+	homepageAnchorScrolling();
+/*--END HOMEPAGE CAMPAIGN CONENT SCROLLING--*/
+
+
+
+
+
 /*--FEATURE VIDEO--*/
 
 	function videoScaling() {

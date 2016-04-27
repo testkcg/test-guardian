@@ -210,6 +210,22 @@
   }
 }
 
+.soft_blue_gradient_bottom {
+  &:before {
+    content: '';
+    position: absolute;
+    height: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000006+30,000006+100&0+30,1+100 */
+    background: -moz-linear-gradient(top, rgba(151,199,212,0) 30%, rgba(151,199,212,.5) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(151,199,212,0) 30%,rgba(151,199,212,.5) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(151,199,212,0) 30%,rgba(151,199,212,.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000006', endColorstr='#000006',GradientType=0 ); /* IE6-9 */
+  }
+}
+
 .texture_bg {
   background: url( /assets/images/texture.jpg );
 } //texture_bg
