@@ -326,7 +326,7 @@ function setStateNames(stateDefiner) {
 //Get the JSON
   function getData() {
     $.ajax({
-        url : 'location_data.json',
+        url : '../data/location_data.json',
         type: 'GET',
         success : parseJSON
     });

@@ -10,6 +10,7 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-injector": "^0.6.1",
     "grunt-newer": "^1.2.0",
+    "grunt-sync": "^0.5.2",
     "node-bourbon": "^4.2.8"
   },
   "dependencies": {

@@ -162,7 +162,7 @@
                         </li>
                         <li>
                             <a
-                                class="fa fa-play"
+                                class="fa fa-youtube-play"
                                 href="https://www.youtube.com/user/KochCompanies"
                                 target="_blank"
                                 onclick="ga('send', 'event', 'Youtube logo', 'click', 'Navigation');"
@@ -601,25 +601,39 @@
                 </div>
             </section> <!--mod_container-->
 
+            <div
+                class="breadcrumb_container texture_bg white_gradient_bottom"
+                itemscope
+                itemtype="http://schema.org/BreadcrumbList">
+                <div
+                    class="house_icon"
+                    itemprop="itemListElement"
+                    itemscope
+                    itemtype="http://schema.org/ListItem">
+                    <a itemprop="item" href="/">
+                        <img
+                            src="/assets/images/house_icon.svg"
+                            alt="Breadcrumb house icon" />
+                        <span itemprop="name" style="display: none;">Home</span>
+                    </a>
+                </div>
+                <p
+                    class="breadcrumb_link"
+                    itemprop="itemListElement"
+                    itemscope 
+                    itemtype="http://schema.org/ListItem">
+                    <a itemprop="item" href="http://www.kochind.com/business/">
+                        <span itemprop="name">Business &amp; More</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </p>
+            </div> <!--breadcrumb_container-->
+
             <div class="scroll_cta">
                 <p>Scroll</p> 
                 <div class="down_directional light">
                     <div></div>
                 </div>
-            </div>
-
-            <div class="breadcrumb_container texture_bg white_gradient_bottom">
-                <div class="house_icon">
-                    <a href="/">
-                        <img src="/assets/images/house_icon.svg" alt="Breadcrumb house icon" />
-                    </a>
-                </div>
-                <p class="breadcrumb_link" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                    <a itemprop="item" href="">
-                        <span itemprop="name"></span>
-                    </a>
-                    <meta itemprop="position" content="1" />
-                </p>
             </div>
 
             <footer role="contentinfo">
@@ -679,223 +693,21 @@
                 </div>
             </div> <!--feature_video_container-->
 
-            <!--<script type="application/ld+json">
-                {
-                    "@context":"http://schema.org",
-                    "@type": "BreadcrumbList",
-                    "itemListElement": [{
-                    "@type":"ListItem",
-                    "position": 1,
-                    "item":{
-                    "@id":"http://www.kochind.com/whatwedo/",
-                    "name":"What We Do"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 2,
-                    "item":{
-                    "@id":"http://www.kochind.com/philosophy/",
-                    "name":"Business Philosophy"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 3,
-                    "item":{
-                    "@id":"http://www.kochind.com/locations/",
-                    "name":"Locations"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 4,
-                    "item":{
-                    "@id":"http://www.kochind.com/companies/",
-                    "name":"Companies"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 5,
-                    "item":{
-                    "@id":"http://www.kochind.com/fhr/",
-                    "name":"Flint Hills Resource"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 6,
-                    "item":{
-                    "@id":"http://www.kochind.com/gp/",
-                    "name":"Georgia-Pacific"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 7,
-                    "item":{
-                    "@id":"http://www.kochind.com/invista/",
-                    "name":"INVISTA"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 8,
-                    "item":{
-                    "@id":"http://www.kochind.com/molex/",
-                    "name":"Molex"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 9,
-                    "item":{
-                    "@id":"http://www.kochind.com/kaes/",
-                    "name":"Koch Ag & Energy Solutions"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 10,
-                    "item":{
-                    "@id":"http://www.kochind.com/chemtech/",
-                    "name":"Koch Chemical Technology Group"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 11,
-                    "item":{
-                    "@id":"http://www.kochind.com/minerals/",
-                    "name":"Koch Minerals"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 12,
-                    "item":{
-                    "@id":"http://www.kochind.com/kpl/",
-                    "name":"Koch Pipeline"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 13,
-                    "item":{
-                    "@id":"http://www.kochind.com/kst/",
-                    "name":"Koch Supply & Trading"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 14,
-                    "item":{
-                    "@id":"http://www.kochind.com/matador/",
-                    "name":"Matador Cattle Company"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 15,
-                    "item":{
-                    "@id":"http://www.kochind.com/careers/",
-                    "name":"How We Work"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 16,
-                    "item":{
-                    "@id":"http://www.kochind.com/finance/",
-                    "name":"Accounting, Finance & Tax"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 17,
-                    "item":{
-                    "@id":"http://www.kochind.com/engineering/",
-                    "name":"Engineering"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 18,
-                    "item":{
-                    "@id":"http://www.kochind.com/it/",
-                    "name":"Information Technology"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 19,
-                    "item":{
-                    "@id":"http://www.kochind.com/operations/",
-                    "name":"Operations & Manufacturing"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 20,
-                    "item":{
-                    "@id":"http://www.kochind.com/business/",
-                    "name":"Business & More"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 21,
-                    "item":{
-                    "@id":"http://www.kochind.com/veterans/",
-                    "name":"Veterans"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 22,
-                    "item":{
-                    "@id":"http://www.kochind.com/responsibility/",
-                    "name":"Responsibility"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 23,
-                    "item":{
-                    "@id":"http://www.kochind.com/giving/",
-                    "name":"Giving"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 24,
-                    "item":{
-                    "@id":"http://www.kochind.com/contact/",
-                    "name":"Contact"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 25,
-                    "item":{
-                    "@id":"http://www.kochind.com/termsofuse/",
-                    "name":"Terms of Use"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 26,
-                    "item":{
-                    "@id":"http://www.kochind.com/privacypolicy/",
-                    "name":"Privacy Policy"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 27,
-                    "item":{
-                    "@id":"http://www.kochind.com/californiasupply/",
-                    "name":"California Supply Chain Transparency"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 28,
-                    "item":{
-                    "@id":"http://www.kochind.com/californiasupply/",
-                    "name":"California Supply Chain Transparency"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 29,
-                    "item":{
-                    "@id":"http://www.kochind.com/faq/",
-                    "name":"Frequently Asked Questions"
-                    }
-                    },{
-                    "@type":"ListItem",
-                    "position": 30,
-                    "item":{
-                    "@id":"http://www.kochind.com/mrw/",
-                    "name":"Mike Row Works"
-                    }
-                    }]
-                }
-            </script>-->
+            <!--BRIGHT TAG TRACKING CODE-->
+                <script type="text/javascript">
+                  (function () {
+                    var tagjs = document.createElement("script");
+                    var s = document.getElementsByTagName("script")[0];
+                    tagjs.async = true;
+                    tagjs.src = "//s.btstatic.com/tag.js#site=DeXJMAI";
+                    s.parentNode.insertBefore(tagjs, s);
+                  }());
+                </script>
+
+                <noscript>
+                  <iframe src="//s.thebrighttag.com/iframe?c=DeXJMAI" width="1" height="1" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                </noscript>
+            <!--END BRIGHT TAG TRACKING CODE-->
 
 
             <section class="careers_footer">

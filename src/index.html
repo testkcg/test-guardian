@@ -59,7 +59,6 @@
 
             <section class="homepage_slider_container">
                 <div class="slide bg_video_slide"> 
-
                     <div class="video_cover"></div>
                     <div class="slide_cover"></div>
                     
@@ -75,9 +74,20 @@
                             Made Better
                         </h1>
                         <p>
-                            <b>Food. Shelter. Clothing. Transportation.</b> Koch is essential to creating life’s basic necessities for people the world over. While relentlessly exploring <a href="whatwedo/index.html">ways to do it even better.</a>
+                            <b>Food. Shelter. Clothing. Transportation.</b> Koch is essential to creating life’s basic necessities for people the world over. While relentlessly exploring <a href="whatwedo/index.html" onclick="ga('send', 'event', 'Ways to do it even better - text link', 'click', 'Homepage');">ways to do it even better.</a>
                         </p>
                     </div> <!--slide_content_display_type-->
+
+                    <a
+                        class="scroll_icon"
+                        href="#campaign"
+                        onclick="ga('send', 'event', 'Scroll Icon', 'click', 'Homepage');">
+                          <img
+                            class="blue_directional"
+                            src="/assets/images/icon_blue_arrow.svg"
+                            alt="Click here to scroll to the Koch Ind. campaign section" />
+                    </a>
+
                 </div> <!--slide-->
 
                 <!-- <div class="slide slide_image">
@@ -96,169 +106,163 @@
 
             </section> <!--homepage_slider_container-->
 
-            <section class="homepage_campaign_section">
-              <div class="homepage_campaign_intro">
-                <div class="homepage_campaign_intro_bg_image"></div>
+            <section
+                id="campaign"
+                class="homepage_campaign_section">
 
-                <div class="max_width_container">
-                  <div class="content_section right middle text_align_center">
-                    <h2 class="dark_gray">
-                      Growing a Stronger Planet
-                    </h2>
-                    <p>
-                      As humans, our population is rapidly expanding. Our planet, however, is not. In a world where many already go hungry, we all have a very clear, very daunting challenge on our hands. Fortunately, we also have John Kruse. <a href="">Read his story.</a>
-                    </p>
-                    <img src="/assets/images/homepage_campaign_kruse_video_thumb.jpg" alt="">
-                  </div>
-                </div> <!--max_width_container-->
-              </div> <!--primary_section-->
+                <div class="homepage_campaign_intro_hero kruse_bg"></div> <!--homepage_campaign_intro_hero-->
 
-              <div class="homepage_campaign_support soft_blue_gradient_bottom">
-                <div class="max_width_container">
-
-                  <div class="info_mod">
-                    <div class="info_mod_copy_container homepage_campaign_support_first_content">
-                      <div class="copy text_align_center">
-                        <span class="dark_gray">IN THE YEAR 2050,</span>
-                        <h2 class="dark_blue">9 BILLION<br/>HUNGRY PEOPLE</h2>
-                        <span class="dark_gray">WILL SHOW UP FOR DINNER.</span>
-                        <span class="divider"></span>
+                <div class="homepage_campaign_intro_content_container">
+                    <div class="homepage_campaign_intro_content">
+                        <h2 class="dark_gray">
+                          Growing a Stronger Planet
+                        </h2>
                         <p>
-                          At Koch Industries, many of our companies are devoted to helping the world’s food producers achieve the yields required to feed a growing planet.
+                          As humans, our population is rapidly expanding. Our planet, however, is not. In a world where many already go hungry, we all have a very clear, very daunting challenge on our hands. Fortunately, we also have people like John Kruse.
                         </p>
-                      </div>
+                        <div
+                            class="play_cta_2 play_cta"
+                            data-url="https://www.youtube.com/embed/mqZr4Ed39vU"
+                            onclick="ga('send', 'event', 'Campaign Intro video - John Kruse', 'click', 'Homepage');">
+                            <i
+                                class="fa fa_play_button play_button_3 md active"
+                                data-url="https://www.youtube.com/embed/mqZr4Ed39vU"
+                                onclick="ga('send', 'event', 'Campaign Intro video - John Kruse', 'click', 'Homepage');"></i>
+                            <span class="cta dark_blue">View John's Mission</span>
+                        </div>
                     </div>
-                  </div>
+                </div> <!--homepage_campaign_intro_content_container-->
 
-                  <div class="info_mod">
-                    <div class="info_mod_copy_container">
-                      <div class="copy text_align_right">
-                        <h6 class="dark_blue">Fertilizer 2.0</h6>
-                        <p>
-                          Koch Agronomic Services creates enhanced efficiency fertilizers that more precisely deliver nutrients to plants – optimizing yields while reducing nitrogen loss to the environment.
+                <div class="homepage_campaign_support">
+
+                    <div class="homepage_campaign_support_bg"></div> <!--homepage_campaign_support_bg-->
+
+                    <div class="max_width_container">
+                        <div class="info_mod">
+                            <div class="info_mod_content_container center homepage_campaign_support_first_content">
+                              <div class="copy_container">
+                                <h2 class="dark_blue">Abundant Food.<br/>Clean Water.</h2>
+                                <span class="dark_gray">WE’RE WORKING HARD TO SECURE BOTH.</span>
+                                <span class="divider"></span>
+                                <p>
+                                  By the year 2050, Earth will be home to 9 billion people. At Koch Industries, we’re innovating ways to help producers meet the increased demand for reliable supplies of delicious, nourishing food. And the potable water to wash it down.
+                                </p>
+                              </div>
+                            </div>
+                        </div>
+
+                        <div class="info_mod">
+                            <div class="info_mod_content_container copy left">
+                              <div class="copy_container">
+                                <h6 class="cta dark_blue">Advanced Filtration</h6>
+                                <p>
+                                    At <a class="text_link_U blue" href="http://www.kochmembrane.com/" target="_blank" onclick="ga('send', 'event', 'Koch Membrane link - text link', 'click', 'Homepage');">Koch Membrane Systems</a>, scientists like Manny Singh create the latest technology to filter surface and wastewater into clean drinking water for areas affected by drought. 
+                                </p>
+                              </div>
+                            </div>
+
+                            <div class="info_mod_content_container image right background_image_1">
+                                <div class="info_mod_info_image_content_container center">
+                                    <i
+                                        class="fa fa_play_button play_button_3 active"
+                                        data-url="https://www.youtube.com/embed/-SFXZyjeNwg"
+                                        onclick="ga('send', 'event', 'Campaign Support Video - Image', 'click', 'Homepage');">
+                                    </i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info_mod">
+                            <div class="info_mod_content_container copy right">
+                              <div class="copy_container">
+                                <h6 class="dark_blue">HAVE YOUR STEAK AND ETHANOL, TOO</h6>
+                                <p>
+                                  At <a class="text_link_U blue" href="https://www.fhr.com" target="_blank" onclick="ga('send', 'event', 'FHR link - text link', 'click', 'Homepage');">Flint Hills Resources</a>, we produce ethanol from corn. One major byproduct is dried distillers grains, power-packed nutrition used to feed livestock all over the world.  
+                                </p>
+                              </div>
+                            </div>
+
+                            <div class="info_mod_content_container image left background_image_2"></div>
+                        </div>
+
+                        <div class="info_mod">
+                            <div class="info_mod_content_container copy left">
+                              <div class="copy_container">
+                                <h6 class="dark_blue">Fertilizer 2.0</h6>
+                                <p>
+                                  <a class="text_link_U blue" href="http://www.kochfertilizer.com/" target="_blank" onclick="ga('send', 'event', 'KAES link - text link', 'click', 'Homepage');">Koch Agronomic Services</a> creates enhanced efficiency fertilizers that more precisely deliver nutrients to plants – optimizing yields while reducing nitrogen loss to the environment.
+                                </p>
+                              </div>
+                            </div>
+
+                            <div class="info_mod_content_container image right background_image_3"></div>
+                        </div>
+                    </div>
+
+                    <section class="homepage_campaign_divider text_align_center bg_white white_gradient_top">
+                      <a
+                        href="/whatwedo/"
+                        class="dark_blue"
+                        onclick="ga('send', 'event', 'Explor more CTA - section link', 'click', 'Homepage');">
+                          <span>Explore more of the ways we’re making the goods that make life better.</span>
+                          <img
+                            class="blue_directional right"
+                            src="/assets/images/icon_blue_arrow.svg"
+                            alt="Click here to view the What We Do page" />
+                      </a>
+                    </section>
+
+                    <section class="homepage_campaign_tertiary_container">
+                        
+                        <div class="tertiary_bg_image responsibility"></div>
+
+                        <div class="homepage_campaign_tertiary_content text_align_center">
+                            <img
+                                src="/assets/images/icon_responsibility_award_white.svg"
+                                alt="Koch Industries - Environmental Protection Agency Award" />
+                            <h2 class="white">Responsibility Thrives</h2>
+                            <p class="white"> 
+                                For two years in a row, the Environmental Protection Agency has named Koch Industries the number one U.S.-based parent company in pollution prevention initiatives.<br/>
+                                <a class="text_link_U white" href="/responsibility/" target="" onclick="ga('send', 'event', 'Responsibility link - text link', 'click', 'Homepage');">See our responsibility story.</a>
+                            </p>
+                        </div>
+                    </section> 
+
+                    <div
+                        class="breadcrumb_container texture_bg white_gradient_bottom"
+                        itemscope
+                        itemtype="http://schema.org/BreadcrumbList">
+                        <div
+                            class="house_icon"
+                            itemprop="itemListElement"
+                            itemscope
+                            itemtype="http://schema.org/ListItem">
+                            <a itemprop="item" href="/">
+                                <img
+                                    src="/assets/images/house_icon.svg"
+                                    alt="Breadcrumb house icon" />
+                                <span itemprop="name" style="display: none;">Home</span>
+                            </a>
+                        </div>
+                        <p
+                            class="breadcrumb_link"
+                            itemprop="itemListElement"
+                            itemscope 
+                            itemtype="http://schema.org/ListItem">
+                            <a itemprop="item" href="http://www.kochind.com/termsofuse/">
+                                <span itemprop="name">Home</span>
+                            </a>
+                            <meta itemprop="position" content="1" />
                         </p>
-                      </div>
-                    </div>
+                    </div> <!--breadcrumb_container-->
 
-                    <div class="info_mod_image_container background_image_1"></div>
-                  </div>
+                    <!--(bake /includes/footer.html)-->
 
-                  <div class="info_mod">
-                    <div class="info_mod_image_container background_image_2"></div>
-                    <div class="info_mod_copy_container">
-                      <div class="copy text_align_left">
-                        <h6 class="dark_blue">HAVE YOUR STEAK AND ETHANOL, TOO</h6>
-                        <p>
-                          At Flint Hills Resources, we produce ethanol from corn. One major byproduct is dried distillers grains, power-packed nutrition used to feed livestock all over the world.  
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                </div> 
+            </section> <!--homepage_campaign_section-->
 
-                  <div class="info_mod">
-                    <div class="info_mod_copy_container">
-                      <div class="copy text_align_right">
-                        <h6 class="dark_blue">MICROBES MAKE MORE MEALS</h6>
-                        <p>
-                          Soil microbes hold the promise to help plants unleash their natural potential for greater yields and drought resistance. Koch Biological Solutions is leading this scientific breakthrough.
-                        </p>
-                      </div>
-                    </div>
-                    <div class="info_mod_image_container background_image_3"></div>
-                  </div>
-
-                </div>
-              </div> <!--homepage_campaign_support-->
-
-              <section class="homepage_campaign_divider text_align_center">
-                <span class="dark_blue">
-                  Explore more of the ways we’re making the goods that make life better.
-                </span>
-              </section>
-
-              <section class="homepage_campaign_tertiary_container">
-                <div class="homepage_campaign_tertiary_content text_align_center">
-                  <img src="/assets/images/icon_responsibility_award_white.svg" alt="Koch Industries - Environmental Protection Agency Award">
-                  <h2 class="white">Responsibility Thrives</h2>
-                  <p class="white"> 
-                    For two years in a row, the Environmental Protection Agency has named Koch Industries the number one U.S.-based parent company in pollution prevention initiatives. See our responsibility story.
-                  </p>
-                </div>
-              </section> <!--homepage_campaign_tertiary_content-->
-
-            </section> <!--homepage_support-->
         </article> <!--home_template-->
-
-        <div
-            class="breadcrumb_container texture_bg white_gradient_bottom"
-            itemscope
-            itemtype="http://schema.org/BreadcrumbList">
-            <div
-                class="house_icon"
-                itemprop="itemListElement"
-                itemscope
-                itemtype="http://schema.org/ListItem">
-                <a itemprop="item" href="/">
-                    <img
-                        src="/assets/images/house_icon.svg"
-                        alt="Breadcrumb house icon" />
-                    <span itemprop="name" style="display: none;">Home</span>
-                </a>
-            </div>
-            <p
-                class="breadcrumb_link"
-                itemprop="itemListElement"
-                itemscope 
-                itemtype="http://schema.org/ListItem">
-                <a itemprop="item" href="http://www.kochind.com">
-                    <span itemprop="name">Home</span>
-                </a>
-                <meta itemprop="position" content="1" />
-            </p>
-        </div> <!--breadcrumb_container-->
         
-        <!--SSCHEMA FOR SEO-->
-            <script type="application/ld+json">
-                {
-                  "@context": "http://schema.org",
-                  "@type": "Organization",
-                  "name": "Koch Industries",
-                  "alternateName": [
-                      "Koch Industries, Inc.",
-                      "Koch Companies"
-                  ],
-                  "address":{
-                    "@type": "PostalAddress",
-                    "streetAddress": "4111 E 37th St N",
-                    "addressLocality": "Wichita",
-                    "addressRegion": "KS",
-                    "postalCode":"67220",
-                    "addressCountry":"US"
-                  },
-                  "telephone": "316-828-5500",
-                  "email": "info@kochind.com",
-                  "logo": "https://upload.wikimedia.org/wikipedia/commons/1/16/Koch_logo.svg",
-                  "url": "http://www.kochind.com/",
-                  "sameAs": [
-                      "https://plus.google.com/+kochindustries",
-                      "https://www.facebook.com/KochIndustries/",
-                      "https://www.linkedin.com/company/koch-industries",
-                      "https://twitter.com/Koch_Industries",
-                      "https://www.youtube.com/user/KochCompanies",
-                      "https://www.crunchbase.com/organization/koch-industries",
-                      "http://www.indeed.com/cmp/Koch-Industries",
-                      "https://www.glassdoor.com/Overview/Working-at-Koch-Industries-EI_IE2864.11,26.htm",
-                      "https://kochcareers.taleo.net/careersection/2/moresearch.ftl",
-                      "http://wearekoch.com/",
-                      "http://www.kochnews.com/",
-                      "https://en.wikipedia.org/wiki/Koch_Industries"     
-                  ]
-                }
-            </script>
-        <!--END SCHEMA FOR SEO-->
-
-        
-
         <!-- FooterJS: -->
         <!-- endFooterJS -->
 

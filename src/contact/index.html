@@ -210,6 +210,34 @@
                 </ul>
             </div>
 
+            <div
+                class="breadcrumb_container texture_bg white_gradient_bottom"
+                itemscope
+                itemtype="http://schema.org/BreadcrumbList">
+                <div
+                    class="house_icon"
+                    itemprop="itemListElement"
+                    itemscope
+                    itemtype="http://schema.org/ListItem">
+                    <a itemprop="item" href="/">
+                        <img
+                            src="/assets/images/house_icon.svg"
+                            alt="Breadcrumb house icon" />
+                        <span itemprop="name" style="display: none;">Home</span>
+                    </a>
+                </div>
+                <p
+                    class="breadcrumb_link"
+                    itemprop="itemListElement"
+                    itemscope 
+                    itemtype="http://schema.org/ListItem">
+                    <a itemprop="item" href="http://www.kochind.com/contact/">
+                        <span itemprop="name">Contact</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </p>
+            </div> <!--breadcrumb_container-->
+
             <!--(bake /includes/footer.html)-->
             
         </article>

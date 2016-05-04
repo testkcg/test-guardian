@@ -25,6 +25,7 @@ module.exports = function(grunt) {
         },
         files: {
           'dist/index.html' : ['dist/assets/css/style.css', 'dist/assets/css/slick.css'],
+          'dist/homepage_v2/index.html' : ['dist/assets/css/style.css', 'dist/assets/css/slick.css'],
           'dist/business/index.html' : ['dist/assets/css/style.css'],
           'dist/californiasupply/index.html' : ['dist/assets/css/style.css'],
           'dist/careers/index.html' : ['dist/assets/css/style.css'],
@@ -36,7 +37,7 @@ module.exports = function(grunt) {
           'dist/fhr/index.html' : ['dist/assets/css/style.css'],
           'dist/finance/index.html' : ['dist/assets/css/style.css'],
           'dist/giving/index.html' : ['dist/assets/css/style.css'],
-          'dist/gp/index.html' : ['dist/assets/css/style.css'],
+          'dist/gp/index.html' : ['dist/assets/css/style.css', 'dist/assets/css/slick.css'],
           'dist/invista/index.html' : ['dist/assets/css/style.css', 'dist/assets/css/slick.css'],
           'dist/it/index.html' : ['dist/assets/css/style.css'],
           'dist/kaes/index.html' : ['dist/assets/css/style.css'],
@@ -69,6 +70,7 @@ module.exports = function(grunt) {
         },
         files: {
           'dist/index.html' : ['dist/assets/js/modernizr.js'],
+          'dist/homepage_v2/index.html' : ['dist/assets/js/modernizr.js'],
           'dist/business/index.html' : ['dist/assets/js/modernizr.js'],
           'dist/californiasupply/index.html' : ['dist/assets/js/modernizr.js'],
           'dist/careers/index.html' : ['dist/assets/js/modernizr.js'],
@@ -112,6 +114,7 @@ module.exports = function(grunt) {
         },
         files: {
           'dist/index.html' : ['dist/assets/js/main.js', 'dist/assets/js/slick.js'],
+          'dist/homepage_v2/index.html' : ['dist/assets/js/main.js', 'dist/assets/js/slick.js'],
           'dist/business/index.html' : ['dist/assets/js/main.js'],
           'dist/californiasupply/index.html' : ['dist/assets/js/main.js'],
           'dist/careers/index.html' : ['dist/assets/js/main.js' ],
@@ -123,7 +126,7 @@ module.exports = function(grunt) {
           'dist/fhr/index.html' : ['dist/assets/js/main.js'],
           'dist/finance/index.html' : ['dist/assets/js/main.js'],
           'dist/giving/index.html' : ['dist/assets/js/main.js'],
-          'dist/gp/index.html' : ['dist/assets/js/main.js'],
+          'dist/gp/index.html' : ['dist/assets/js/main.js', 'dist/assets/js/slick.js'],
           'dist/invista/index.html' : ['dist/assets/js/main.js', 'dist/assets/js/slick.js'],
           'dist/it/index.html' : ['dist/assets/js/main.js'],
           'dist/kaes/index.html' : ['dist/assets/js/main.js'],
@@ -177,6 +180,7 @@ module.exports = function(grunt) {
             options: {},
             files: {
               "dist/index.html": "src/index.html",
+              "dist/homepage_v2/index.html": "src/homepage_v2/index.html",
               "dist/business/index.html": "src/business/index.html",
               "dist/californiasupply/index.html": "src/californiasupply/index.html",
               "dist/careers/index.html": "src/careers/index.html",
@@ -235,7 +239,7 @@ module.exports = function(grunt) {
 
     watch: {
       sass: {
-        files: ['src/assets/css/**'],
+        files: ['src/assets/css/*.scss'],
         tasks: ['newer:sass'],
         options : { nospawn : true, relative:true }
       },
@@ -264,4 +268,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-injector');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-sync');
 };

@@ -1908,6 +1908,15 @@ if ( $(window).width() > 1024 ) {
 //END SET THE INTRO SLIDE
 
 
+	var scroll_CTA = $('.scroll_CTA'),	
+		slideHeight = $(document).height();
+
+	scroll_CTA.click(function(event) {
+		$('html, body').animate({ 'scrollTop': slideHeight }, 600);
+		return false;
+	})
+
+
 
 
 
