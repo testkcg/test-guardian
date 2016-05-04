@@ -135,14 +135,27 @@
 
 // HOMEPAGE SLIDER
     .homepage_slider_container {
-        position: absolute;
+        position: fixed;
         overflow: hidden;
         width: 100%;
-        height: 85%;
+        height: 77.5%;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
+        @include breakpoint(ten_twenty_four) {
+            position: relative;
+        }
+
+        .scroll_icon {
+            position: absolute;
+            z-index: 100;
+            right: 0;
+            left: 0;
+            width: 2.5rem;
+            bottom: 2rem;
+            margin: 0 auto;
+        }
 
         .jwplayer {
             position: absolute;
@@ -279,7 +292,7 @@
             max-width: 36rem;
             margin: auto;
             text-align: center;
-            @include transform( translateY( -45%) );
+            @include transform( translateY( -40%) );
             @include breakpoint(ten_twenty_four) {
                 max-width: 30rem;
             }
@@ -296,7 +309,6 @@
                 text-transform: uppercase;
                 color: $white;
                 line-height: 1;
-                text-shadow: 1px 1px 3px rgba(0, 0, 0, .75);
                 @include breakpoint(ten_twenty_four) {
                     font-size: 7rem;
                 }
@@ -316,7 +328,6 @@
                 line-height: .75;
                 color: $white;
                 border-bottom: 1px solid $white;
-                text-shadow: 1px 1px 3px rgba(0, 0, 0, .75);
                 @include breakpoint(ten_twenty_four) {
                     font-size: 3.25rem;
                 }
@@ -429,7 +440,7 @@
     .slider_container.gp {
         overflow-x: hidden;
         height: 560px;
-        background: url( texture );
+        background: url( /assets/images/texture.jpg );
         @include breakpoint(ten_twenty_four) {
             height: 510px;
         }

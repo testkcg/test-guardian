@@ -140,6 +140,24 @@
   /* IE6-9 */
 }
 
+.soft_blue_gradient_bottom:before {
+  content: '';
+  position: absolute;
+  height: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000006+30,000006+100&0+30,1+100 */
+  background: -moz-linear-gradient(top, rgba(151, 199, 212, 0) 30%, rgba(151, 199, 212, 0.5) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(151, 199, 212, 0) 30%, rgba(151, 199, 212, 0.5) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(151, 199, 212, 0) 30%, rgba(151, 199, 212, 0.5) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000006', endColorstr='#000006',GradientType=0 );
+  /* IE6-9 */
+}
+
 .texture_bg {
   background: url(/assets/images/texture.jpg);
 }
@@ -286,14 +304,30 @@
 
 /*--MANUALLY ADDED CSS--*/
 .homepage_slider_container {
-  position: absolute;
+  position: fixed;
   overflow: hidden;
   width: 100%;
-  height: 85%;
+  height: 77.5%;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  /*--481--*/
+  /*--481--*/
+}
+@media (max-width: 64em) {
+  .homepage_slider_container {
+    position: relative;
+  }
+}
+.homepage_slider_container .scroll_icon {
+  position: absolute;
+  z-index: 100;
+  right: 0;
+  left: 0;
+  width: 2.5rem;
+  bottom: 2rem;
+  margin: 0 auto;
 }
 .homepage_slider_container .jwplayer {
   position: absolute;
@@ -464,11 +498,11 @@
   max-width: 36rem;
   margin: auto;
   text-align: center;
-  -webkit-transform: translateY(-45%);
-  -moz-transform: translateY(-45%);
-  -ms-transform: translateY(-45%);
-  -o-transform: translateY(-45%);
-  transform: translateY(-45%);
+  -webkit-transform: translateY(-40%);
+  -moz-transform: translateY(-40%);
+  -ms-transform: translateY(-40%);
+  -o-transform: translateY(-40%);
+  transform: translateY(-40%);
   /*--481--*/
   /*--481--*/
   /*--481--*/
@@ -493,7 +527,6 @@
   text-transform: uppercase;
   color: #ffffff;
   line-height: 1;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
   /*--481--*/
   /*--481--*/
   /*--481--*/
@@ -521,7 +554,6 @@
   line-height: .75;
   color: #ffffff;
   border-bottom: 1px solid #ffffff;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
   /*--481--*/
   /*--481--*/
   /*--481--*/
@@ -659,7 +691,7 @@
 .slider_container.gp {
   overflow-x: hidden;
   height: 560px;
-  background: url(texture);
+  background: url(/assets/images/texture.jpg);
   /*--481--*/
   /*--481--*/
   /*--481--*/

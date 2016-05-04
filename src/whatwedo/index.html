@@ -53,12 +53,11 @@
             <div class="scroll_CTA">
                 <i class="scroll_icon">
                     <img
-                        src="/assets/images/scroll_icon.svg"
-                        alt="Scroll Icon" />
+                            class="blue_directional"
+                            src="/assets/images/icon_blue_arrow.svg"
+                            alt="Click here to scroll to the learn the 16 way Koch Industries helps make your life better."
+                            onclick="ga('send', 'event', 'Scroll Icon', 'click', 'What We Do');" />
                 </i>
-                <p>
-                    Scroll
-                </p>
             </div> <!--scroll_CTA-->
         </section> <!--parallax_slide_intro-->
 
@@ -551,6 +550,34 @@
                     </div> <!--slide_content-->
                 </div> <!--slide_max_width_container-->
             </section> <!--slide_16-->
+
+            <div
+                class="breadcrumb_container texture_bg white_gradient_bottom"
+                itemscope
+                itemtype="http://schema.org/BreadcrumbList">
+                <div
+                    class="house_icon"
+                    itemprop="itemListElement"
+                    itemscope
+                    itemtype="http://schema.org/ListItem">
+                    <a itemprop="item" href="/">
+                        <img
+                            src="/assets/images/house_icon.svg"
+                            alt="Breadcrumb house icon" />
+                        <span itemprop="name" style="display: none;">Home</span>
+                    </a>
+                </div>
+                <p
+                    class="breadcrumb_link"
+                    itemprop="itemListElement"
+                    itemscope 
+                    itemtype="http://schema.org/ListItem">
+                    <a itemprop="item" href="http://www.kochind.com/whatwedo/">
+                        <span itemprop="name">What We Do</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </p>
+            </div> <!--breadcrumb_container-->
 
             <!--(bake /includes/footer.html)-->
             

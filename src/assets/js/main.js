@@ -7,18 +7,18 @@
 /*--END JQUERY--*/
 
 /*--WRITE PAGE SPECIFIC BREADCRUMB--*/
-	function dynamicBreadcrumb() {
-		var pageTitle = document.title,
-			n = pageTitle.indexOf(' - '),
-			pageTitle = pageTitle.substring(0, n != -1 ? n : pageTitle.length),
-			breadCrumb = $('.breadcrumb_link a span'),
-			breadCrumbLink = $('.breadcrumb_link a'),
-			pageUrl = window.location.href;
+	// function dynamicBreadcrumb() {
+	// 	var pageTitle = document.title,
+	// 		n = pageTitle.indexOf(' - '),
+	// 		pageTitle = pageTitle.substring(0, n != -1 ? n : pageTitle.length),
+	// 		breadCrumb = $('.breadcrumb_link a span'),
+	// 		breadCrumbLink = $('.breadcrumb_link a'),
+	// 		pageUrl = window.location.href;
 
-		breadCrumbLink.attr('href', pageUrl);
-		breadCrumb.empty().append(pageTitle);
-	}
-	dynamicBreadcrumb();
+	// 	breadCrumbLink.attr('href', pageUrl);
+	// 	breadCrumb.empty().append(pageTitle);
+	// }
+	// dynamicBreadcrumb();
 /*--END WRITE PAGE SPECIFIC BREADCRUMB--*/
 
 
@@ -136,6 +136,7 @@
 
 
 
+
 /*--HOMEPAGE VIDEO--*/
 	$(document).ready(function(){
 
@@ -208,52 +209,62 @@
 
 /*--HOMEPAGE CAMPAIGN CONTENT SCROLLING--*/
 	function homepageAnchorScrolling() {
-		//if user is on homepage, to prevent variable errors on subpages
-		if ( $('body').is('.homepage') && $(window).width() > 1024 ) {
-			var homepageCampaignIntro = $('.homepage_campaign_intro'),
-				homepageCampaignIntroDistanceFromTop = $('.homepage_campaign_intro').offset().top,
-				homepageCampaignIntroAnchor = true,
 
-				homepageCampaignSupportFirstContent = $('.homepage_campaign_support_first_content'),
-				homepageCampaignSupportFirstContentHeight = $('.homepage_campaign_support_first_content').outerHeight(),
-				homepageCampaignSupportFirstContentAnchor = true,
-			    
-			    pixelsScrolled,
-			    homepageCampaignIntroTopHolder;
+		function scrollPagePositioning() {
 
-			    $(window).scroll(function() {
+			//if user is on homepage, to prevent variable errors on subpages
+			if ( $('body').is('.homepage') && $(window).width() > 1024 ) {
+				var homepageCampaignSection = $('.hompage_campaign_section'),
 
-					pixelsScrolled = $(window).scrollTop();
+					homepageCampaignIntro = $('.homepage_campaign_intro_hero'),
+					homepageCampaignIntroHeight = $('.homepage_campaign_intro_hero').height(),
+					homepageCampaignIntroContentContainer = $('.homepage_campaign_intro_content_container'),
 
-					//Once the primary section hit the top of browser window
-				    if ( $(window).scrollTop() >= homepageCampaignIntroDistanceFromTop ) {
-				    	
-				    	//Get pixels scrolled when primary section hits the top
-				    	if ( homepageCampaignIntroAnchor ) {
-				    		homepageCampaignIntroAnchor = false,
-				    		pixelsScrolledReset = $(window).scrollTop();
-				    	}
+					homepageCampaignSupport = $('.homepage_campaign_support'),
+					homepageCampaignSupportFirstContent = $('.homepage_campaign_support_first_content'),
+					homepageCampaignSupportFirstContentHeight = $('.homepage_campaign_support_first_content').outerHeight(),
 
-				    	if ( homepageCampaignSupportFirstContentAnchor) {
-				    		//Push the primary section down with top positioning to mimic a fixed position
-					    	homepageCampaignIntroTopHolder = pixelsScrolled-pixelsScrolledReset;
-					    	homepageCampaignIntro.css({'top':homepageCampaignIntroTopHolder+'px'});
-				    	}
-				    	
+					homepageSliderContainer = $('.homepage_slider_container'),
 
-				    	console.log(homepageCampaignIntroTopHolder);
-				    	console.log(homepageCampaignSupportFirstContentHeight);
+					pixelsScrolled = $(window).scrollTop(),
+					pixelReset,
 
-				    	//Once the first part of the secondary section scrolls the height of the first copy block release the primary section to continue scrolling
-				    	if (homepageCampaignIntroTopHolder >= homepageCampaignSupportFirstContentHeight) {
-				    		homepageCampaignIntro.css({'top':'auto', 'bottom':-homepageCampaignSupportFirstContentHeight+'px'});
-				    	}
-				    	else if (homepageCampaignIntroTopHolder <= homepageCampaignSupportFirstContentHeight) {
-				    		console.log('test');
-				    	}
-				    }
-				});
-		}
+					homepageCampaignIntroAnchorTiming;
+
+
+					//If the user has scrolled the height of the campaign intro stick it to the top
+					if (pixelsScrolled >= homepageCampaignIntroHeight) {
+						homepageCampaignIntro.css({'position':'fixed', 'top':'0px'});
+						homepageCampaignSupport.css({'top':homepageCampaignIntroHeight});
+						homepageCampaignIntroContentContainer.css({'position':'fixed'});
+						homepageSliderContainer.css({'opacity':'0'});
+					}
+					else {
+						homepageCampaignIntro.css({'position':'relative'});
+						homepageCampaignSupport.css({'top':'auto'});
+						homepageCampaignIntroContentContainer.css({'position':'absolute'});
+						homepageSliderContainer.css({'opacity':'1'});
+					}
+
+					//Define how long the intro section should be stuck at the top
+					homepageCampaignIntroAnchorTiming = (homepageCampaignSupport.offset().top-pixelsScrolled)+homepageCampaignSupportFirstContentHeight;
+
+					//If the user has scrolled the designated pixels release it and move it up with a calculated top margin
+					if ( homepageCampaignIntroAnchorTiming <= homepageCampaignIntroHeight ) {
+						var marginCounter = -1*( (pixelsScrolled-homepageCampaignIntroHeight)-homepageCampaignSupportFirstContentHeight );
+						homepageCampaignIntro.css({'margin-top': marginCounter});
+						homepageCampaignIntroContentContainer.css({'margin-top': marginCounter});
+					}
+					else {
+						homepageCampaignIntro.css({'margin-top': '0px'});
+						homepageCampaignIntroContentContainer.css({'margin-top': '0px'});
+					}
+		    	} 
+		    } //function scrollPagePositioning()
+
+	    	$(window).on("resize scroll load", function(event) {
+	    		scrollPagePositioning();
+	    	});
 	}
 	homepageAnchorScrolling();
 /*--END HOMEPAGE CAMPAIGN CONENT SCROLLING--*/
@@ -263,7 +274,6 @@
 
 
 /*--FEATURE VIDEO--*/
-
 	function videoScaling() {
 		if ( $(window).width() > 1024 ) {
 			var videoIframeContainer = $('.full_screen_video_container .video'),
@@ -329,59 +339,31 @@
 	}
 
 	function fullScreenVideo() {
-		var headerPlayButton = $('.subpage_header_mod .fa_play_button'),
-			headerPlayCTA = $('.subpage_header_mod .play_cta'),
-
-			featurePlayButton = $('.feature_content_container .fa_play_button'),
-			featurePlayCTA = $('.feature_content_container .play_cta'),
-
-			featurePlayButtonMobile = $('.feature_bg .fa_play_button'),
-			featurePlayCTAMobile = $('.feature_bg .play_cta'),
-
-			highlightPlayButton = $('.highlights_section .fa_play_button'),
-			highlightPlayCTA = $('.highlights_section .play_cta'),
-
-			highlight2PlayButton = $('.highlights_section_new .fa_play_button'),
-			highlight2PlayCTA = $('.highlights_section_new .play_cta'),
-
-            splitHighlightsPlayButton = $('.split_highlights_mod .fa_play_button'),
-            splitHighlightsPlayCTA = $('.split_highlights_mod .play_cta'),
-
-			highlightSliderPlayButton = $('.highlights_slider_container .fa_play_button'),
-			highlightSliderPlayCTA = $('.highlights_slider_container .play_cta'),
+		var playButton = $('.fa_play_button'),
+			playCTA = $('.play_cta'),
 
 			fullScreenVideoContainer = $('.full_screen_video_container'),
 			videoIframeContainer = $('.full_screen_video_container .video'),
 			videoIframe = $('.full_screen_video_container .video iframe'),
 			closeButton = $('.full_screen_video_container .close_button');
 
-		headerPlayButton
-			.add(headerPlayCTA)
-			.add(featurePlayButton)
-			.add(featurePlayCTA)
-			.add(featurePlayButtonMobile)
-			.add(featurePlayCTAMobile)
-			.add(highlightPlayButton)
-			.add(highlightPlayCTA)
-			.add(highlight2PlayButton)
-			.add(highlight2PlayCTA)
-            .add(splitHighlightsPlayButton)
-            .add(splitHighlightsPlayCTA)
-			.add(highlightSliderPlayButton)
-			.add(highlightSliderPlayCTA)
-			.click( function() {
-				var embedLink = $(this).attr("data-url");
-				var videoURL = embedLink+"?rel=0&controls=1&showinfo=0&autoplay=1&wmode=transparent";
-				
-				fullScreenVideoContainer.toggle();
-				videoIframe.attr('src', videoURL);
+		playButton
+			.add(playCTA)
+			.click( function(event) {
+			var embedLink = $(this).attr("data-url");
+			var videoURL = embedLink+"?rel=0&controls=1&showinfo=0&autoplay=1&wmode=transparent";
+			
+			fullScreenVideoContainer.toggle();
+			videoIframe.attr('src', videoURL);
 
-				if ($(this).hasClass('wideShot') ) {
-					videoScalingWideShot();
-				}
-				else {
-					videoScaling();
-				}
+			if ($(this).hasClass('wideShot') ) {
+				videoScalingWideShot();
+			}
+			else {
+				videoScaling();
+			}
+
+			event.stopPropagation();
 		});
 
 		closeButton
@@ -653,15 +635,25 @@
 
 /*--Jump link smooth scrolling--*/
 	$(function() {
-	  $('a[href*=#]:not([href=#])').click(function() {
+	  $('a[href*=#]:not([href=#])').click(function(event) {
 	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-	      var target = $(this.hash);
-	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-	      if (target.length) {
-	        $('html,body').animate({
-	          scrollTop: target.offset().top - 85
-	        }, 1000);
-	      }
+			var target = $(this.hash);
+			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      
+			if ( $('body').is('.homepage') ) {
+				$('html,body').animate({
+					scrollTop: target.offset().top
+				}, 1000);
+
+				event.preventDefault();
+			}
+			else {
+				if (target.length) {
+					$('html,body').animate({
+					scrollTop: target.offset().top - 85
+					}, 1000);
+				}
+			}
 	    }
 	  });
 	});
