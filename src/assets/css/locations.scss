@@ -1,0 +1,941 @@
+/*--bourbon library import--*/
+    @import "bourbon";
+/*--END bourbon library import--*/
+
+
+
+
+
+/*--COLORS--*/
+  $white: #ffffff;
+  $black: #000000;
+
+  $dark_blue: #002d5b;
+  $dark_blue_2: #00468e;
+  $blue: #00a8e1;
+  $light_blue: #26abff;
+  $soft_blue: #96c6d4;
+  
+  $dark_gray: #000006;
+  $gray: #333740;
+  $light_gray: #ebeced;
+  $super_light_gray: #f6f6f7;
+  
+  $facebook_blue: #3b5998;
+  $twitter_blue: #55acee;
+  $linked_in_blue : #007bb6;
+
+  $koch_ind_blue: #005b7c;
+  $koch_ind_light_blue: #63cbe8;
+  $koch_ind_soft_blue: #c2e7f2;
+  $koch_ind_light_gray: #ebeced;
+/*--END COLORS--*/
+
+/*--MAP COLORS--*/
+	$flinthillsresources_map_color: #0d4d6e;
+	$georgiapacific_map_color: #ED804F;
+	$invista_map_color: #EB4350;
+	$kochagenergysolutions_map_color: #7EC274;
+	$kbs_map_color: #00e4ff;
+	$kochchemicaltechnologygroup_map_color: #8A8EC2;
+	$kochindustriesincandother_map_color: #00a8e1;
+	$kochminerals_map_color: #FEE56C;
+	$kochpipelinecompany_map_color: #2394A3;
+	$kochsupplytrading_map_color: #9B9B9B;
+	$matadorcattlecompany_map_color: #783342;
+	$molex_map_color: #945EA6;
+	$checklist_controls_map_color: #9B9B9B;
+/*--END MAP COLORS--*/
+
+
+
+/*--FONTS--*/
+  $header_font: "azo-sans-web",sans-serif;
+  $sans_serif_font: "proxima-nova", sans-serif;
+  $slab_font: "museo-slab",serif;
+/*--END FONTS--*/
+
+
+
+/*--BREAKPOINTS--*/
+@mixin breakpoint($point) {
+  /*--481--*/
+    @if $point == three_twenty{
+      @media (max-width: 20em)  { @content; }
+    }
+    /*--481--*/
+  	@if $point == four_eighty{
+  		@media (max-width: 30.0625em)  { @content; }
+  	}
+  	/*--601--*/
+  	@else if $point == six_forty{
+    	@media (max-width: 40em)  { @content; }
+  	}
+  	/*--768--*/
+  	@else if $point == seven_sixty_eight{
+    	@media (max-width: 48em)  { @content; }
+  	}
+    /*--850--*/
+    @else if $point == eight_fifty{
+      @media (max-width: 53.125em)  { @content; }
+    }
+  	/*--1024--*/
+  	@else if $point == ten_twenty_four{
+    	@media (max-width: 64em)  { @content; }
+  	}
+  	/*--1200--*/
+  	@else if $point == twelve_hundred{
+    	@media (max-width: 75em)  { @content; }
+  	}
+  	/*--1600--*/
+  	@else if $point == sixteen_hundred{
+    	@media (max-width: 100em)  { @content; }
+  	}
+    /*--2000--*/
+    @else if $point == two_thousand{
+      @media (max-width: 125em)  { @content; }
+    }
+}
+/*--END BREAKPOINTS--*/
+
+
+
+
+
+* { box-sizing: border-box; }
+
+html {
+	font-size:100%;
+	height: 100%;
+	-webkit-text-rendering: optimizeLegibility;
+	-moz-text-rendering: optimizeLegibility;
+	-o-text-rendering: optimizeLegibility;
+	-ms-text-rendering: optimizeLegibility;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	-ms-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	-webkit-overflow-scrolling: touch;
+}
+body {
+	position: relative;
+	overflow: auto;
+	margin:0;
+	padding:0;
+	height:100%;
+	width:100%;
+	-webkit-font-smoothing:antialiased;
+	-webkit-text-size-adjust:100%;
+}
+article {
+	position: relative;
+	height: 100%;
+}
+
+body.locations {
+	min-height: 60rem;
+	@include breakpoint(six_forty) {
+	  min-height: inherit;
+	}
+	> article {
+		overflow: hidden;
+		@include breakpoint(six_forty) {
+			overflow: auto;
+		}
+	}
+	.scroll_cta {
+	  display: none!important;
+	}
+	.breadcrumb_container {
+		position: absolute;
+		bottom: 3rem;
+		@include breakpoint(ten_twenty_four) {
+			bottom: 0rem;
+		}
+	}
+	footer {
+	  position: absolute;
+	  bottom: 0;
+	  width: 100%;
+	  @include breakpoint(six_forty) {
+	    position: relative;
+	  }
+	} //footer
+} //body.locations
+
+
+#map-canvas {
+	width: 100%;
+	height: 100%;
+	@include breakpoint(six_forty) {
+		display: none;
+	}
+}
+.inactive_map_cover {
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba( 000, 000, 000, .5);
+	z-index: 200;
+	&.active {
+		display: block;
+	}
+}
+
+.companies_checklist {
+	position: absolute;
+	z-index: 100;
+	top: 47.75%;
+	right: -25rem; //400px
+	width: 25rem; //400px
+	padding: 2rem;
+	background: $light_gray;
+	@include transform( translateY( -47.5% ) );
+	@include transition( all .25s ease-in-out );
+	@include breakpoint(ten_twenty_four) {
+		right: -21.25rem;
+		width: 21.25rem;
+	}
+
+	@include breakpoint(six_forty) {
+		display: none;
+	}
+	
+	&.active { right: 0px; }
+
+	h4 {
+		padding-bottom: 1rem;
+		border-bottom: 1px dotted $gray;
+	}
+
+	p.checklist_intro { margin: 0 0 1rem 0; }
+
+	.slide_toggle_button {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: auto;
+		width: 3rem;
+		margin-left: -3rem;
+		padding: 1rem 1rem 1rem .85rem;
+		color: $white;
+        background: rgba( 0, 168, 225, .5 );
+        @include transform( rotateY(180deg) );
+		&.active {
+			@include transform( rotateY(0deg) );
+		}
+	} // .fa-chevron-right, .fa-chevron-left 	
+
+	.company_checkbox_container {
+		padding: .5rem 0 0 0;
+		&.last-child { padding-bottom: 0; }
+
+		span.company_checkbox {
+			display: inline-block;
+			vertical-align: middle;
+			height: 1rem;
+			width: 1rem;
+			border-radius: 50%;
+			border: 2px solid $white;
+			cursor: pointer;
+			&.inactive {
+				background: none!important;
+			} //&.active
+			&.flinthillsresources { background: $flinthillsresources_map_color };
+			&.georgiapacific { background: $georgiapacific_map_color };
+			&.invista { background: $invista_map_color };
+			&.kochagenergysolutions { background: $kochagenergysolutions_map_color };
+			&.kbs { background: $kbs_map_color };
+			&.kochchemicaltechnologygroup { background: $kochchemicaltechnologygroup_map_color };
+			&.kochindustriesincandother { background: $kochindustriesincandother_map_color };
+			&.kochminerals { background: $kochminerals_map_color };
+			&.kochpipelinecompany { background: $kochpipelinecompany_map_color };
+			&.kochsupplytrading { background: $kochsupplytrading_map_color };
+			&.matadorcattlecompany { background: $matadorcattlecompany_map_color };
+			&.molex { background: $molex_map_color };
+			&.clearall, &.viewall { background: $checklist_controls_map_color; }
+		} //span.company_checkbox
+		
+		p {
+			display: inline-block;
+			vertical-align: middle;
+			margin-left: .5rem;
+			&.no_result {
+				font-style: italic;
+				color: #969696;
+			}
+		}
+	} // company_checkbox_container
+
+	.checklist_controls {
+		margin-top: 1.5rem;
+		padding-top: 1rem;
+		text-align: center;
+		border-top: 1px dotted $gray;
+		.company_checkbox_container {
+			display: inline-block;
+			width: auto;
+			padding: 0 1rem;
+			p {
+				margin-left: .15rem;
+				text-transform: uppercase;
+				color: $gray;
+				font-size: .9rem;
+			}
+		} // company_checkbox_container
+		.close_button {
+			position: relative;
+			display: inline-block;
+			opacity: .6;
+			height: 1.25rem;
+			width: 1.25rem;
+			top: auto;
+			right: auto;
+			vertical-align: middle;
+			color: $gray;
+			font-size: 1.5rem!important;
+		}
+	} // checklist_controls
+} //companies_checklist
+
+.location_info_window {
+	display: none;
+	z-index: 900;
+	position: absolute;
+	top: calc(50% + 1rem); //25px
+	left: calc(50% - 4.5625rem); //73px
+	width: 32.5rem;
+	height: auto;
+	background: $white;
+	-webkit-box-shadow: -5px 6px 60px -8px rgba(0,0,0,0.5);
+	-moz-box-shadow: -5px 6px 60px -8px rgba(0,0,0,0.5);
+	box-shadow: -5px 6px 60px -8px rgba(0,0,0,0.5);
+	@include breakpoint(ten_twenty_four) {
+		top: 50%;
+		right: 0;
+		left: 0;
+		margin: 0 auto;
+		@include transform( translateY(-50%) );
+	}
+	&:before {
+		content: '';
+        position: absolute;
+        z-index: 100;
+        top: auto;
+        right: auto;
+        top: -1.25rem; //20px
+        left: 10%;
+        width: 0; 
+        height: 0; 
+        border-top: none;
+        border-right: 1.25rem solid transparent;
+        border-bottom: 1.25rem solid $dark_blue;
+        border-left: 1.25rem solid transparent;
+        @include breakpoint(ten_twenty_four) {
+        	display: none;
+        }	
+	}
+	&.active {
+		display: block;
+		margin-top: 0;
+	}
+	.close_button {
+		position: absolute;
+		top: .85rem;
+		right: 1rem;
+	}
+
+	.level_1_location_job_count_container {
+		display: block;	
+		padding: 1.5rem 1rem 1rem 1rem;
+		color: $white;
+		background: $dark_blue;
+		.level_1_location_title {
+			display: inline-block;
+			vertical-align: middle;
+			font-size: 1.15rem;
+			font-weight: 500;
+			font-family: $sans_serif_font;
+		}
+		.level_1_location_job_count {
+			display: inline-block;
+			vertical-align: middle;
+			padding: 0 0 0 .5rem;
+			font-weight: 600;
+			font-size: 1.25rem;
+			font-family: $slab_font;
+			color: $light_blue;
+		}
+	} //level_1_job_count_container
+
+	.level_1_company_presence_container {
+		display: none;
+		padding: 1rem;
+		border-bottom: 1px dotted $gray;
+		&.active {
+			display: block;
+		}
+		.company_presence_title {
+			display: block;
+			padding: 0 0 .25rem 0;
+			font-size: 1rem;
+			font-family: $sans_serif_font;
+			color: $dark_blue;
+		}
+		.level_1_location_company_presence_list {
+			li {
+				display: inline-block;
+				padding: 0 .25rem 0 0;
+				font-size: .8rem;
+				font-family: $sans_serif_font;
+				color: $gray;
+			}
+		}
+	} //level_1_company_presence_container
+
+	.level_2_location_fact_sheet_container {
+		display: none;
+		overflow: auto;
+		padding: 1rem;
+		border-bottom: 1px dotted $gray;
+		&.active {
+			display: block;
+		}
+		.level_2_location_fact_sheet_title {
+			float: left;
+			vertical-align: middle;
+			padding: .5rem 1rem 0 0;
+			font-size: 1.15rem;
+			font-weight: 500;
+			font-family: $sans_serif_font;
+			color: $dark_blue;
+		}
+		.download_button {
+			display: none;
+			float: right;
+			vertical-align: middle;
+		}
+	} //level_2_location_fact_sheet_container
+
+	.level_2_location_company_presence_container {
+		display: none;
+		padding: 1rem;
+		border-bottom: 1px dotted $gray;
+		.company_presence_title {
+			display: block;
+			padding: 0 0 .25rem 0;
+			font-size: 1.15rem;
+			font-weight: 500;
+			font-family: $sans_serif_font;
+			color: $dark_blue;
+		}
+		.level_2_location_company_presence_list {
+			li {
+				display: inline-block;
+				padding: 0 .25rem 0 0;
+				font-size: .8rem;
+				font-family: $sans_serif_font;
+				color: $gray;
+			}
+		}
+		&.active {
+			display: block;
+		}
+		.level_2_location_company_presence_list {}
+	} //level_2_location_company_presence_container
+
+	.level_2_location_job_count_container {
+		display: none;
+		vertical-align: middle;
+		padding: 1rem 1rem 1.5rem 1rem;
+		&.active {
+			display: inline-block;
+		}
+		.level_2_location_job_count_title {
+			display: block;
+			padding: 0 0 .25rem 0;
+			font-size: 1.15rem;
+			font-weight: 500;
+			font-family: $sans_serif_font;
+			color: $dark_blue;
+		}
+		.level_2_location_job_count {
+			vertical-align: middle;
+			padding: 0 0 0 .5rem;
+			font-size: 1.25rem;
+			font-family: $slab_font;
+			color: $light_blue;
+		}
+	} //level_2_location_company_presence_container
+
+	.level_2_location_wages_container {
+		display: none;
+		vertical-align: middle;
+		padding: 1rem 1rem 1.5rem 1rem;
+		&.active {
+			display: inline-block;
+		}
+		.level_2_location_wages_title {
+			display: block;
+			padding: 0 0 .25rem 0;
+			font-size: 1.15rem;
+			font-weight: 500;
+			font-family: $sans_serif_font;
+			color: $dark_blue;
+		}
+		.level_2_location_wages {
+			vertical-align: middle;
+			padding: 0 0 0 .5rem;
+			font-size: 1.25rem;
+			font-family: $slab_font;
+			color: $light_blue;
+		}
+	} //level_2_location_wages_container
+}
+
+.mobile_locations_info {
+	display: none;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	@include breakpoint(six_forty) {
+		display: block;
+	}
+
+	.logo_underlay {
+		position: fixed;
+		z-index: 500;
+		padding-top: 3.5rem;
+		right: -100%;
+		background: $white;
+		width: 100%;
+		height: 7.75rem;
+		@include transition( all .5s ease-in-out );
+		&.active {
+			right: 0;
+		}
+	}
+
+	.back_button {
+		position: fixed;
+		z-index: 900;
+		left: 100%;
+		margin: 0 0 0 1rem;
+		top: 4.75rem;
+		cursor: pointer;
+		@include transition( all .5s ease-in-out );
+		&.active {
+			left: 0;
+		}
+	} //back_button
+
+	.selected_company_logo {
+		position: fixed;
+		opacity: 1;
+		z-index: 700;
+		width: 100%;
+		right: -100%;
+		top: 4.65rem;
+		@include transition( right .5s ease-in-out );
+		&.active {
+			right: 0;
+		}
+		&.flinthillsresources {
+			background: url(/assets/images/logo_fhr_color.svg) center center no-repeat;
+			height: 31px;
+		}
+		&.georgiapacific {
+			background: url(/assets/images/logo_gp_color.svg) center center no-repeat;
+			height: 31px;
+		}
+		&.invista {
+			background: url(/assets/images/logo_invista_color.svg) center center no-repeat;
+			height: 30px;
+		}
+		&.kochagenergysolutions {
+			background: url(/assets/images/logo_kaes_color.svg) center center no-repeat;
+			height: 30px;
+		}
+		&.kochchemicaltechnologygroup {
+			background: url(/assets/images/logo_chemtech_color.svg) center center no-repeat;
+			height: 18px;
+			margin-top: 4px;
+		}
+		&.kochindustriesincandother {
+			background: url(/assets/images/logo_kii_color.svg) center center no-repeat;
+			height: 20px;
+			margin-top: 6px;
+		}
+		&.kochminerals {
+			background: url(/assets/images/logo_minerals_color.svg) center center no-repeat;
+			height: 35px;
+		}
+		&.kochpipelinecompany {
+			background: url(/assets/images/logo_pipeline_color.svg) center center no-repeat;
+			height: 35px;
+		}
+		&.kochsupplytrading {
+			background: url(/assets/images/logo_kst_color.svg) center center no-repeat;
+			height: 30px;
+		}
+		&.matadorcattlecompany {
+			background: url(/assets/images/logo_matador_color.svg) center center no-repeat;
+			height: 35px;
+		}
+		&.molex {
+			background: url(/assets/images/logo_molex_color.svg) center center no-repeat;
+			height: 29px;
+		}
+	} //selected_company_logo
+		
+
+	.level_1_location_info {
+		position: absolute;
+		z-index: 100;
+		top: 0;
+		right: -100%;
+		bottom: 0;
+		width: 100%;
+		background: $white;
+		@include transition( all .5s ease-in-out );
+		&.active {
+			right: 0;
+			overflow: scroll;
+		}
+
+		.intro_section {
+			padding: 4.5rem 2rem 1rem 2rem;
+		}
+
+		.companies_list {
+			li.companies_list_option {
+				position: relative;
+				span {
+					display: block;
+					padding: .75rem 2rem;				
+					font-family: $sans_serif_font;
+					font-size: .95rem;
+					color: $dark_gray;
+					border-top: 1px solid $dark_blue;
+					cursor: pointer;
+				}
+				.right_directional {
+					position: absolute;
+					top: .5rem;
+					right: 1rem;
+				}
+			} //li
+		} //companies_list
+	} //level_1_location_info
+
+	.level_2_location_info {
+		position: absolute;
+		z-index: 200;
+		top: 0;
+		right: -100%;
+		bottom: 0;
+		width: 100%;
+		padding-top: 7.75rem;
+		background: $white;
+		@include transition( all .5s ease-in-out );
+		&.active {
+			right: 0;
+			overflow: scroll;
+		}
+
+		.company_dropdown_container {
+			padding: 1rem 2rem;
+			.dropdown_list_container {
+				position: relative;
+			}
+			select.company_dropdown {
+				width: 100%;
+				padding: .5rem;
+				font-family: $sans_serif_font;
+				color: $dark_gray;
+				background: $light_gray;
+				border: none;
+				border-radius: 0%;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+				&:focus {
+					outline: none;
+				}
+				
+			}
+		} //company_dropdown_container
+
+		.countries_list {
+			li {
+				span {
+					display: block;
+					padding: .75rem 2rem;				
+					font-family: $sans_serif_font;
+					font-size: 1rem;
+					color: $dark_gray;
+					border-top: 1px solid $dark_blue;
+					cursor: pointer;
+				}
+			} //li
+		} //countries_list
+	} //level_2_location_info
+
+	.level_3_location_info_us_location {
+		position: absolute;
+		z-index: 400;
+		top: 0;
+		right: -100%;
+		bottom: 0;
+		width: 100%;
+		padding-top: 7.75rem;
+		background: $white;
+		@include transition( all .5s ease-in-out );
+		&.active {
+			right: 0;
+			overflow: scroll;
+		}
+			
+		.states_list {
+			li {
+				span {
+					display: block;
+					padding: .75rem 2rem;				
+					font-family: $sans_serif_font;
+					font-size: 1rem;
+					color: $dark_gray;
+					border-top: 1px solid $dark_blue;
+					cursor: pointer;
+				}
+			} //li
+		} //states_list
+	} //level_3_location_info_us_location
+
+	.level_3_location_info_non_us_location {
+		position: absolute;
+		z-index: 500;
+		top: 0;
+		right: -100%;
+		bottom: 0;
+		width: 100%;
+		padding-top: 3.5rem;
+		background: $white;
+		@include transition( all .5s ease-in-out );
+		&.active {
+			right: 0;
+			overflow: scroll;
+		}
+		.country_title {
+			position: fixed;
+			z-index: 100;
+			width: 100%;
+			top: 0;
+			padding: 4.75rem 2rem 1.25rem 2rem;
+			text-align: center;
+			background: $white;
+			span {
+				font-size: 2rem;
+				font-family: $slab_font;
+				color: $light_blue;
+				@include breakpoint(six_forty) {
+					font-size: 1.5rem;
+				}
+			} //span
+		} //country_title
+		.country_jobs_container {
+			position: relative;
+			padding: 5.25rem 2rem 1rem 2rem;
+			text-align: center;
+			background: $light_blue;
+			.jobs_header {
+				display: block;
+				text-transform: uppercase;
+				margin: 0;
+			}
+			span {
+				padding: .5rem 0 0 0;
+				font-family: $slab_font;
+				font-size: 1.5rem;
+				color: $white;
+				@include breakpoint(six_forty) {
+					font-size: 1.5rem;
+				}
+			}
+		} //country_jobs_container
+		.country_companies_container {
+			overflow: auto;
+			.companies_header {
+				display: block;
+				text-transform: uppercase;
+				margin: 0;
+				color: $gray;
+				text-align: center;
+				padding: 1rem 2rem; 
+				background: $light_gray;
+			}
+			span {
+				float: left;
+				width: 50%;	
+				font-family: $sans_serif_font;
+				color: $white;
+			}
+
+			.country_companies_list_container {
+				padding: 1rem 2rem;
+				p {
+					margin-bottom: .25rem;
+				}
+			}
+		} //country_companies_container
+	} //level_3_location_info_non_us_location
+
+	.level_4_location_info {
+		position: absolute;
+		z-index: 500;
+		top: 0;
+		right: -100%;
+		bottom: 0;
+		width: 100%;
+		padding-top: 3.5rem;
+		background: $white;
+		@include transition( all .5s ease-in-out );
+		&.active {
+			right: 0;
+			overflow: scroll;
+		}
+
+		.state_title {
+			position: fixed;
+			z-index: 100;
+			width: 100%;
+			top: 0;
+			padding: 4.75rem 2rem 1.25rem 2rem;
+			text-align: center;
+			background: $white;
+			span {
+				font-size: 2rem;
+				font-family: $slab_font;
+				color: $light_blue;
+				@include breakpoint(six_forty) {
+					font-size: 1.5rem;
+				}
+			} //span
+		} //state_title
+		.state_jobs_container {
+			margin-top: 4.25rem;
+			padding: 1rem 2rem;
+			text-align: center;
+			background: $light_blue;
+			.jobs_header {
+				display: block;
+				text-transform: uppercase;
+				margin: 0;
+			}
+			span {
+				padding: .5rem 0 0 0;
+				font-family: $slab_font;
+				font-size: 1.5rem;
+				color: $white;
+				@include breakpoint(six_forty) {
+					font-size: 1.5rem;
+				}
+			}
+		} //state_jobs_container
+		.state_wages {
+			padding: 1rem 2rem;
+			text-align: center;
+			background: $dark_blue;
+			.wages_header {
+				display: block;
+				margin: 0;
+				color: $light_gray;
+				text-transform: uppercase;
+			}
+			span {
+				padding: .5rem 0 0 0;
+				font-family: $slab_font;
+				font-size: 1.75rem;
+				color: $white;
+				@include breakpoint(six_forty) {
+					font-size: 1.5rem;
+				}
+			}
+		} //state_wages
+
+		.state_jobs_link_container {
+			padding: 1rem 0;
+			text-align: center;
+		} //jobs_link_container
+
+		.company_presence {
+			padding: 1rem 2rem;
+			text-transform: uppercase;
+			text-align: center;
+			background: $light_gray;
+			span {
+				color: $dark_gray;
+				font-family: $sans_serif_font;
+				text-transform: uppercase;
+			}
+		} //company_presence
+
+		.state_city_dropdown_container {
+			padding: 1rem 2rem;
+			.dropdown_list_container {
+				position: relative;
+			}
+			select.state_city_dropdown {
+				width: 100%;
+				padding: .5rem;
+				font-family: $sans_serif_font;
+				color: $dark_gray;
+				background: $light_gray;
+				border: none;
+				border-radius: 0%;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+				&:focus {
+					outline: none;
+				}
+			}
+		} //state_company_dropdown_container
+
+		.state_city_company_container {
+			padding: .5rem 0 0 0;
+			.companies_option {
+				display: none;
+			}
+			p { margin: .25rem 0; }
+			span {
+				display: inline-block;
+				width: 50%;
+				padding: .5rem.5rem .5rem 0;
+				font-family: $sans_serif_font;
+				font-weight: 600;
+				color: $dark_blue;
+			}
+		} //state_selected_company_cities_container
+
+		.city_companies {
+			display: none;
+			p {
+				display: inline-block;
+				width: 45%;
+				margin: 1%;
+				font-size: .9rem;
+				color: $dark_blue;
+				line-height: 1.2;
+				vertical-align: top;			
+			}
+		} //city_companies
+	} //level_4_location_infO
+
+} //mobile_locations_info

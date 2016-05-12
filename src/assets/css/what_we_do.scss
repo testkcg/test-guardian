@@ -1,0 +1,1692 @@
+/*--Variables and Mixins--*/
+  @import "variables_and_mixins.scss";
+/*--End Variables and Mixins--*/
+
+
+
+
+body.what_we_do {
+	-webkit-overflow-scrolling: touch;
+	.header_container {
+		position: fixed;
+		z-index: 1000;
+		@include breakpoint(ten_twenty_four) {
+			position: absolute;
+		}
+	} //header_container
+} //body.what_we_do 
+
+.slide_max_width_container {
+	position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 81.25rem;
+    margin: 0 auto;
+} //max_width_container
+
+.slide_content {					
+	position: absolute;
+	z-index: 500;
+	width: 50%;
+	max-width: 38.5rem;
+	padding: 3rem;
+	text-align: center;
+	@include breakpoint(ten_twenty_four) {
+		position: relative;
+		width: 100%;
+		max-width: 25rem;
+		padding: 4rem 2rem;
+	}
+	@include breakpoint(six_forty) {
+		position: relative;
+		width: 100%;
+		max-width: none;
+		padding: 2em;
+	}
+	&.top {
+		top: 4rem;
+	}
+	&.right {
+		right: 0;
+		@include breakpoint(ten_twenty_four) {
+			float: right;
+		}
+		@include breakpoint(six_forty) {
+			margin: 0 auto;
+		}
+	}
+	&.bottom {
+		bottom: 4rem;
+		@include breakpoint(ten_twenty_four) {
+			bottom: 0;
+		}
+	}
+	&.left {
+		left: 0;
+		@include breakpoint(ten_twenty_four) {
+			float: left;
+		}
+	}
+	&.center {
+		right: 0;
+		left: 0;
+		margin: 0 auto;
+	}
+	&.middle {
+		top: 50%;
+		@include transform( translateY(-50%) );
+		@include breakpoint(ten_twenty_four) {
+			top: 0;
+			@include transform( translateY(0%) );
+		}
+	}
+
+	p {
+		position: relative;
+		z-index: 500;
+		@include breakpoint(ten_twenty_four) {
+			color: $white;
+		}
+		@include breakpoint(six_forty) {
+			color: $dark_gray;
+		}
+	}
+	h2 {
+		position: relative;
+		z-index: 500;
+		font-family: $slab_font;
+		@include breakpoint(ten_twenty_four) {
+			color: $white;
+		}
+		@include breakpoint(six_forty) {
+			color: $blue;
+		}
+	}
+	&.white {
+		h2, p { color: $white; } //&.white
+		@include breakpoint(six_forty) {
+			h2 { color: $blue; }
+			p { color: $dark_gray; }
+		}
+	}
+
+} //slide_content
+
+.slide_count {
+	position: relative;
+	z-index: 500;
+	height: 3.125rem;
+	width: 3.125rem;
+	margin: 0 auto;
+	border-radius: 50%;
+	border: 2px solid $white;
+	@include breakpoint(six_forty) {
+		border: 2px solid $blue;
+	}
+	&.blue {
+		border: 2px solid $blue;
+		span { color: $blue; }
+		@include breakpoint(ten_twenty_four) {
+			border: 2px solid $white;
+			span { color: $white; }
+		}
+		@include breakpoint(six_forty) {
+			border: 2px solid $blue;
+			span { color: $blue; }
+		}
+	}
+	span {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		left: 0;
+		margin: 0 auto;
+		font-size: 1rem;
+		color: $white;
+		font-family: $sans_serif_font;
+		@include transform( translateY(-50%) );
+		@include breakpoint(ten_twenty_four) {
+			color: $white;
+		}
+		@include breakpoint(six_forty) {
+			color: $blue;
+		}
+	}
+} //slide_count
+
+.slides_container {
+	position: fixed;
+	z-index: 700;
+	height: 100%;
+	width: 100%;
+	@include breakpoint(ten_twenty_four) {
+		position: relative;
+	}
+} //slides_container
+
+.parallax_slide {
+	text-align: center;
+	video { vertical-align: bottom; }
+}
+
+.h_550 {
+	height: 34.375rem; //550px
+	@include breakpoint(ten_twenty_four)  {
+		height: auto;
+	}
+}
+.h_650 {
+	height: 40.625rem; //650px
+	@include breakpoint(ten_twenty_four)  {
+		height: auto;
+	}
+}
+.h_750 {
+	height: 46.875rem; //750px
+	@include breakpoint(ten_twenty_four)  {
+		height: auto;
+	}
+}
+
+.parallax_slide_header {
+	position: fixed;
+	z-index: 900;
+	top: 0%;
+	width: 100%;
+	height: 100%;
+	background: url( /assets/images/parallax_images/parallax_image_intro_bg.jpg ) center center no-repeat;
+	background-size: cover;
+	@include breakpoint(ten_twenty_four) {
+		position: relative;
+		background: url( /assets/images/parallax_images/parallax_image_intro_bg_1024.jpg ) center center no-repeat;
+		background-size: cover;
+	}
+	@include breakpoint(four_eighty) {
+		background: url( /assets/images/parallax_images/parallax_image_intro_bg_480.jpg ) center center no-repeat;
+		background-size: cover;
+	}
+
+	.parallax_slide_header_content {
+		position: absolute;
+		width: 100%;
+		max-width: 68.75rem; //1100px
+		top: 50%;
+		right: 0;
+		left: 0;
+		margin: 0 auto;
+		padding: 3rem;
+		@include transform( translateY(-50%) );
+		@include breakpoint(ten_twenty_four) {
+			width: 100%;
+			max-width: 35rem;
+			padding: 0 2rem;
+			margin: 0 auto;
+			top: calc( 47.5% + 1.25rem);
+		}
+		h1 {
+			display: block;
+			max-width: 35rem;
+			margin: 0 auto 2rem auto;
+			@include breakpoint(ten_twenty_four) {
+				margin: 0 auto 1rem auto;
+			}
+		}
+		p {
+			width: 100%;
+			max-width: 47.5rem;
+			margin: 0 auto;
+			color: $white;
+		}
+	} //parallax_slide_intro_content
+
+	.scroll_CTA {
+		position: absolute;
+		right: 0;
+		bottom: 2rem;
+		left: 0;
+		width: auto;
+		margin: 0 auto;
+		text-align: center;
+		cursor: pointer;
+		@include breakpoint(seven_sixty_eight) {
+			bottom: 1rem;
+		}
+		p {
+			font-size: .85rem;
+			color: $white;
+			text-transform: uppercase;
+		}
+		.scroll_icon {
+			display: block;
+			cursor: pointer;
+			position: relative;
+			width: 2.5rem;
+			margin: 0 auto;
+			img {
+				width: 100%;
+			}
+		} //scroll_icon
+	} //scroll_CTA
+
+} //parallax_slide_intro
+
+.slide_intro {
+	position: fixed;
+	z-index: 800;
+	opacity: 1;
+	height: 100%;
+	width: 100%;
+	background: rgba( 255,255,255,.95 );
+	@include breakpoint(ten_twenty_four) {
+		position: relative;
+		display: block;
+		height: auto;
+	}
+	@include breakpoint(six_forty) {
+		position: relative;
+		height: auto;
+		margin: 0;
+	}
+	h2 {
+		font-size: 3rem;
+		margin: 0;
+		color: $blue!important;
+		@include breakpoint(ten_twenty_four) {
+			font-size: 2.5rem;
+		}
+		@include breakpoint(six_forty) {
+			font-size: 2rem;
+		}
+	}
+	.slide_content {
+		max-width: 45rem;
+		padding: 2rem;
+		@include breakpoint(ten_twenty_four) {
+			position: relative;
+			padding: 6rem 2rem;
+		}
+		@include breakpoint(six_forty) {
+			padding: 3rem 2rem;
+		}
+	}
+} //slide_intro
+
+.slides_container {
+	@include breakpoint(six_forty) {
+		overflow-x: visible;
+	}
+}
+
+.parallax_slide.slide_1 {
+	position: relative;
+	overflow-x: hidden;
+	@include breakpoint(ten_twenty_four)  {
+		height: auto;
+		display: block;
+		overflow-x: visible;
+	}
+
+	&:before {
+		display: none;
+		content: '';
+		position: absolute;
+		z-index: 300;
+		width: 100%;
+		height: 100%;
+		background: rgba( 000,000,000, .3);
+		@include breakpoint(ten_twenty_four) {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+		@include breakpoint(six_forty) {
+			display: none;
+		}
+	}
+
+	.beef_video_container {
+		position: relative;
+		width: 100%;
+		height: 100vh;
+		max-width: 131.25rem; //2100px
+		margin: 0 auto;
+		text-align: center;
+		overflow: hidden;
+		@include breakpoint(ten_twenty_four) {
+			height: auto;
+		}
+		&:before {
+			content: '';
+		    position: absolute;
+		    z-index: 100;
+		    height: 100%;
+		    left: 0;
+		    width: 15%;
+		    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+99 */
+			background: -moz-linear-gradient(right,  rgba(000,000,000,0) 0%, rgba(000,000,000,1) 99%, rgba(000,000,000,1) 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(right,  rgba(000,000,000,0) 0%,rgba(000,000,000,1) 99%,rgba(000,000,000,1) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to left,  rgba(000,000,000,0) 0%,rgba(000,000,000,1) 99%,rgba(000,000,000,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+			@include breakpoint(two_thousand) {
+		    	display: none;
+		    }
+		}
+		&:after {
+			content: '';
+		    position: absolute;
+		    z-index: 100;
+		    height: 100%;
+		    width: 15%;
+		    right: 0;
+		    bottom: 0;
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+99 */
+			background: -moz-linear-gradient(left,  rgba(000,000,000,0) 0%, rgba(000,000,000,1) 99%, rgba(000,000,000,1) 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(left,  rgba(000,000,000,0) 0%,rgba(000,000,000,1) 99%,rgba(000,000,000,1) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to right,  rgba(000,000,000,0) 0%,rgba(000,000,000,1) 99%,rgba(000,000,000,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+			@include breakpoint(two_thousand) {
+		    	display: none;
+		    }
+		}
+	}
+
+	.beef_bg_image {
+		position: absolute;
+		height: 100vh;
+		width: 100%;
+		z-index: -1;
+		background: url( /assets/images/parallax_images/parallax_image_beef_bg.jpg ) bottom center no-repeat;
+		background-size: cover;			
+		@include breakpoint(ten_twenty_four) {
+			height: 100%;
+		}
+		@include breakpoint(six_forty) {
+			position: relative;
+			height: 12.5rem; //200px
+		}
+		&:before {
+			content: '';
+		    position: absolute;
+		    z-index: 100;
+		    height: 100%;
+		    left: 0;
+		    width: 15%;
+		    background: rgba(000, 000, 000, 1);
+		    @include breakpoint(two_thousand) {
+		    	display: none;
+		    }
+		}
+		&:after {
+			content: '';
+		    position: absolute;
+		    z-index: 100;
+		    height: 100%;
+		    width: 15%;
+		    right: 0;
+		    bottom: 0;
+			background: rgba(000, 000, 000, 1);
+			@include breakpoint(two_thousand) {
+				display: none;
+			}
+		}	
+	}
+
+	#beef_video {
+		position: absolute;
+		min-height: 100vh;
+		min-width: 100%;
+		left: 0;
+	}
+} //slide_1
+
+.slide_2 {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	&:before {
+		content: '';
+		position: absolute;
+		z-index: 300;
+		bottom: 0;
+		top: 50%;
+		right: 0;
+		left: 0;
+		opacity: .75;
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+16,000000+99&amp;0+16,1+95 */
+		/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+		background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxNiUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPgogICAgPHN0b3Agb2Zmc2V0PSI5NSUiIHN0b3AtY29sb3I9IiMwYzBjMGMiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSI5OSUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+		background: -moz-linear-gradient(top,  rgba(255,255,255,0) 16%, rgba(12,12,12,1) 95%, rgba(0,0,0,1) 99%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(16%,rgba(255,255,255,0)), color-stop(95%,rgba(12,12,12,1)), color-stop(99%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 16%,rgba(12,12,12,1) 95%,rgba(0,0,0,1) 99%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  rgba(255,255,255,0) 16%,rgba(12,12,12,1) 95%,rgba(0,0,0,1) 99%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  rgba(255,255,255,0) 16%,rgba(12,12,12,1) 95%,rgba(0,0,0,1) 99%); /* IE10+ */
+		background: linear-gradient(to bottom,  rgba(255,255,255,0) 16%,rgba(12,12,12,1) 95%,rgba(0,0,0,1) 99%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-8 */
+		@include breakpoint(ten_twenty_four) {
+			top: 0;
+			background: rgba( 000,000,000, .3);
+		}
+		@include breakpoint(six_forty) {
+			display: none;
+		}
+	}
+
+	.fertilizer_bg_image {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		background: url( /assets/images/parallax_images/parallax_image_wheat_bg.jpg ) bottom center no-repeat;
+		background-size: cover;
+		@include breakpoint(six_forty) {
+			position: relative;
+			height: 12.5rem; //200px
+		}
+		&:before {
+			content: '';
+		    position: absolute;
+		    z-index: 100;
+		    height: 100%;
+		    left: 0;
+		    width: 15%;
+		    background: rgba(000, 000, 000, 1);
+		    @include breakpoint(sixteen_hundred) {
+		    	display: none;
+		    }
+		}
+		&:after {
+			content: '';
+		    position: absolute;
+		    z-index: 100;
+		    height: 100%;
+		    width: 15%;
+		    right: 0;
+		    bottom: 0;
+			background: rgba(000, 000, 000, 1);
+			@include breakpoint(sixteen_hundred) {
+				display: none;
+			}
+		}
+	} //fertilizer_bg_image
+
+	.fertilizer_video_cover {
+		position: absolute;
+		z-index: 100;
+		opacity: 1;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: black;
+		background-size: cover;
+		@include breakpoint(ten_twenty_four) {
+			display: none;
+		}
+	} //fertilizer_video_cover
+
+	.fertilizer_video_container {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		max-width: 131.25rem; //2100px
+		margin: 0 auto;
+		text-align: center;
+		overflow: hidden;
+		@include breakpoint(ten_twenty_four) {
+			display: none;
+		}
+		&:before {
+			content: '';
+		    position: absolute;
+		    z-index: 100;
+		    height: 100%;
+		    left: 0;
+		    width: 15%;
+		    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+99 */
+			background: -moz-linear-gradient(right,  rgba(000,000,000,0) 0%, rgba(000,000,000,1) 99%, rgba(000,000,000,1) 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(right,  rgba(000,000,000,0) 0%,rgba(000,000,000,1) 99%,rgba(000,000,000,1) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to left,  rgba(000,000,000,0) 0%,rgba(000,000,000,1) 99%,rgba(000,000,000,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+			@include breakpoint(two_thousand) {
+		    	display: none;
+		    }
+		}
+		&:after {
+			content: '';
+		    position: absolute;
+		    z-index: 100;
+		    height: 100%;
+		    width: 15%;
+		    right: 0;
+		    bottom: 0;
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+99 */
+			background: -moz-linear-gradient(left,  rgba(000,000,000,0) 0%, rgba(000,000,000,1) 99%, rgba(000,000,000,1) 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(left,  rgba(000,000,000,0) 0%,rgba(000,000,000,1) 99%,rgba(000,000,000,1) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to right,  rgba(000,000,000,0) 0%,rgba(000,000,000,1) 99%,rgba(000,000,000,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+			@include breakpoint(two_thousand) {
+		    	display: none;
+		    }
+		}
+	} //fertilizer_video_container
+
+	#fertilizer_video {
+		position: absolute;
+		min-width: 100%;
+		left: 0;
+		@include transform( translateY(-20%) );
+	}
+} //slide_2
+
+.slide_3 {
+	position: relative;
+	overflow: hidden;
+	.lycra_bg_image {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background: url( /assets/images/slider_image_invista_1.jpg ) left center no-repeat;
+	    background-size: cover;
+	    &:before {
+			display: none;
+			content: '';
+			position: absolute;
+			z-index: 300;
+			width: 100%;
+			height: 100%;
+			background: rgba( 000,000,000, .3);
+			@include breakpoint(ten_twenty_four) {
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+			@include breakpoint(six_forty) {
+				display: none;
+			}
+		}
+		@include breakpoint(six_forty) {
+			position: relative;
+			height: 12.5rem; //200px
+		}
+	}
+} //slide_3
+
+.slide_4 {
+	position: relative;
+	width: 50%;
+	height: 34.375rem; //550px
+	float: left;
+	@include breakpoint(ten_twenty_four) {
+		height: 26rem; //450px
+	}
+	@include breakpoint(six_forty) {
+		height: auto;
+		width: 100%;
+	}
+	.building_materials_bg_image {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background: url( /assets/images/parallax_images/parallax_image_building_materials_bg.jpg ) bottom center no-repeat;
+		background-size: cover;
+		@include breakpoint(six_forty) {
+			position: relative;
+			height: 12.5rem; //200px
+			float: none;
+		}
+		@include breakpoint(four_eighty) {
+			background: url( /assets/images/parallax_images/parallax_image_building_materials_bg_480.jpg ) bottom center no-repeat;
+			background-size: cover;
+		}
+	}
+	.slide_content {
+		position: absolute;
+		max-width: 37.5rem; //600px
+		width: 100%;
+		top: 5rem;
+		right: 0;
+		padding: 0 10% 0 2rem;
+		text-align: center;
+		@include breakpoint(twelve_hundred) {
+			padding: 0 2rem;
+		}
+		@include breakpoint(ten_twenty_four) {
+			top: 0;
+			padding: 3rem 2rem;
+		}
+		@include breakpoint(six_forty) {
+			position: relative;
+			width: 100%;
+			max-width: none;
+			top: 0%;
+			padding: 2rem;
+			@include transform( translateY(0%) );
+		}
+		h2 {
+			@include breakpoint(ten_twenty_four) {
+				color: $blue;
+			}
+		}
+		p {
+			@include breakpoint(ten_twenty_four) {
+				color: $dark_gray;
+			}
+		}
+		.slide_count {
+			@include breakpoint(ten_twenty_four) {
+				border: 2px solid $blue;
+				span { color: $blue; }
+			}
+		}
+	}
+} //slide_4
+
+.slide_5 {
+	position: relative;
+	overflow: hidden;
+	width: 50%;
+	height: 34.375rem; //550px
+	float: right;
+	@include breakpoint(ten_twenty_four) {
+		height: 26rem; //450px
+	}
+	@include breakpoint(six_forty) {
+		height: auto;
+		width: 100%;
+	}
+	&:before {
+		display: none !important;
+	}
+	.airbags_bg_image {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background: url( /assets/images/parallax_images/parallax_image_airbags_bg.jpg ) bottom center no-repeat;
+		background-size: cover;
+		@include breakpoint(ten_twenty_four) {
+			background: url( /assets/images/parallax_images/parallax_image_airbags_bg_1024.jpg ) center center no-repeat;
+			background-size: cover;
+		}
+		@include breakpoint(six_forty) {
+			position: relative;
+			width: 100%;
+			height: 12.5rem; //200px
+			float: none;
+		}
+		@include breakpoint(four_eighty) {
+			background: url( /assets/images/parallax_images/parallax_image_airbags_bg_480.jpg ) bottom center no-repeat;
+			background-size: cover;
+		}
+	}
+
+	.slide_content {
+		position: absolute;
+		max-width: 37.5rem; //600px
+		z-index: 300;
+		width: 100%;
+		top: 5rem;
+		left: 0;
+		padding: 0 2rem 0 10%;
+		text-align: center;
+		@include breakpoint(twelve_hundred) {
+			padding: 0 2rem;
+		}
+		@include breakpoint(ten_twenty_four) {
+			padding: 3rem 2rem;
+		}
+		@include breakpoint(six_forty) {
+			position: relative;
+			width: 100%;
+			top: 0;
+			bottom: 0;
+			padding: 2rem;
+			@include transform( translateY(0%) );
+		}
+		h2 {
+			@include breakpoint(ten_twenty_four) {
+				color: $blue;
+			}
+		}
+		p {
+			@include breakpoint(ten_twenty_four) {
+				color: $dark_gray;
+			}
+		}
+		.slide_count {
+			@include breakpoint(ten_twenty_four) {
+				border: 2px solid $blue;
+			}
+			span {
+				@include breakpoint(ten_twenty_four) {
+					color: $blue;
+				}
+			}
+		}
+	}
+
+	.airbags_video_cover {
+		position: absolute;
+		z-index: 100;
+		opacity: 1;
+		width: 100%;
+		height: 100%;
+		background: black;
+		background-size: cover;
+		@include breakpoint(ten_twenty_four) {
+			display: none;
+		}
+	} //airbags_video_cover
+
+	.airbags_video_container {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		@include breakpoint(ten_twenty_four) {
+			display: none;
+		}
+		video {
+			position: absolute;
+			height: 140%;
+			width: 185%;
+			left: -42.5%;
+			top: -20%;
+		}
+	} //airbags_video
+} //slide_5
+
+.slide_6 {
+	position: relative;
+	clear: both;
+	overflow: hidden;
+	@include breakpoint(six_forty) {
+		background: $light_gray;
+	}
+	.parallax_image_1 {
+		position: absolute;
+		z-index: 200;
+		width: 50%;
+		top: 0;
+		right: 50%;
+		@include breakpoint(six_forty) {
+			position: relative;
+			right: 0;
+			left: 0;
+			padding: 0 0 1rem 0;
+			margin: 0 auto;
+		}
+	} //parallax_image_1
+
+	.parallax_image_2 {
+		position: absolute;
+		z-index: 100;
+		top: 25%;
+		left: 80%;
+		@include breakpoint(ten_twenty_four) {
+			display: none;
+		    top: 15rem;
+		    left: 44%;
+		    width: 64%;
+		}
+		@include breakpoint(six_forty) {
+			display: block;
+			top: 5rem;
+			left: 69%;
+		}
+	} //parallax_image_2
+
+	.slide_content {
+		@include breakpoint(six_forty) {
+			background: $white;
+		}
+		h2 {
+			@include breakpoint(ten_twenty_four) {
+				color: $blue;
+			}
+		}
+		p {
+			@include breakpoint(ten_twenty_four) {
+				color: $dark_gray;
+			}
+		}
+		.slide_count {
+			@include breakpoint(ten_twenty_four) {
+				border: 2px solid $blue;
+				span { color: $blue; }
+			}
+		}
+	}
+} //slide_6
+
+
+.slide_7 {
+	position: relative;
+	width: 50%;
+	height: 34.375rem; //550px
+	float: left;
+	@include breakpoint(ten_twenty_four) {
+		height: 26rem; //450px
+	}
+	@include breakpoint(six_forty) {
+		height: auto;
+		width: 100%;
+	}
+	&:before {
+		display: none;
+		content: '';
+		position: absolute;
+		z-index: 300;
+		width: 100%;
+		height: 100%;
+		background: rgba( 000,000,000, .3);
+		@include breakpoint(six_forty) {
+			display: none;
+		}
+	}
+
+	.fuel_bg_image {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: url( /assets/images/parallax_images/parallax_image_fuel_bg.jpg ) bottom center no-repeat;
+		background-size: cover;
+		@include breakpoint(six_forty) {
+			position: relative;
+			width: 100%;
+			height: 12.5rem; //200px
+			float: none;
+			background-position: top center;
+		}
+	}
+
+	.slide_content {
+		position: absolute;
+		z-index: 300;
+		max-width: 37.5rem; //600px
+		width: 100%;
+		top: 50%;
+		right: 0;
+		padding: 0 10% 0 2rem;
+		text-align: center;
+		@include transform( translateY(-50%) );
+		@include breakpoint(twelve_hundred) {
+			padding: 0 2rem;
+		}
+		@include breakpoint(six_forty) {
+			position: relative;
+			width: 100%;
+			top: 0;
+			bottom: 0;
+			padding: 2rem;
+			@include transform( translateY(0%) );
+		}
+		p {
+			@include breakpoint(six_forty) {
+				color: $dark_gray;
+			}
+		}
+	}
+} //slide_7
+
+.slide_8 {
+	position: relative;
+	width: 50%;
+	height: 34.375rem; //550px
+	float: left;
+	@include breakpoint(ten_twenty_four) {
+		height: 26rem; //450px
+	}
+	@include breakpoint(six_forty) {
+		height: auto;
+		width: 100%;
+	}
+	&:before {
+		display: none;
+		content: '';
+		position: absolute;
+		z-index: 300;
+		width: 100%;
+		height: 100%;
+		background: rgba( 000,000,000, .3);
+		@include breakpoint(six_forty) {
+			display: none;
+		}
+	}
+
+	.performance_parts_bg_image {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: url( /assets/images/parallax_images/parallax_image_performance_parts_bg.jpg ) bottom center no-repeat;
+		background-size: cover;
+		@include breakpoint(six_forty) {
+			position: relative;
+			width: 100%;
+			height: 12.5rem; //200px
+			float: none;
+		}
+	}
+
+	.slide_content {
+		position: absolute;
+		z-index: 300;
+		max-width: 37.5rem; //600px
+		width: 100%;
+		top: 50%;
+		left: 0;
+		padding: 0 2rem 0 10%;
+		text-align: center;
+		@include transform( translateY(-50%) );
+		@include breakpoint(twelve_hundred) {
+			padding: 0 2rem;
+		}
+		@include breakpoint(ten_twenty_four) {
+			top: 50%;
+			@include transform( translateY(-50%) );
+		}
+		@include breakpoint(six_forty) {
+			position: relative;
+			width: 100%;
+			top: 0;
+			bottom: 0;
+			padding: 2rem;
+			@include transform( translateY(0%) );
+		}
+		p {
+			@include breakpoint(six_forty) {
+				color: $dark_gray;
+			}
+		}
+	} //slide_content
+} //slide_8
+
+.slide_9 {
+	position: relative;
+	overflow: hidden;
+	clear: both;
+	&:before {
+		display: none;
+		content: '';
+		position: absolute;
+		z-index: 300;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: rgba( 000,000,000,.3);
+		@include breakpoint(ten_twenty_four) {
+			display: block;
+		}
+		@include breakpoint(six_forty) {
+			display: none;
+		}
+	}
+	.slide_9_bg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 100;
+		background: url( /assets/images/parallax_images/parallax_image_bedding_bg.jpg ) center center no-repeat;
+		background-size: cover;
+		@include transform( scale(1) );
+		@include breakpoint(six_forty) {
+			position: relative;
+			height: 12.5rem; //200px
+		}
+	}
+
+	.slide_content {
+		top: 6rem!important;
+		z-index: 300;
+		@include breakpoint(ten_twenty_four) {
+			top:inherit!important;
+		}
+	}
+
+	.foreground_image {
+		position: absolute;
+		z-index: 200;
+		right: 0;
+		bottom: -50%;
+		left: 0;
+		width: 100%;
+		margin: 0 auto;
+	} //foreground_image
+} //section_9
+
+.slide_10 {
+	position: relative;
+	overflow: hidden;
+	clear: both;
+	.tableware_bg_image {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background: url( /assets/images/parallax_images/parallax_image_tableware_bg.jpg ) center center no-repeat;
+		background-size: cover;
+		@include breakpoint(ten_twenty_four) {
+			left: 0;
+			width: 50%;
+			background: url( /assets/images/parallax_images/parallax_image_tableware_bg_1024.jpg ) 40% center no-repeat;
+			background-size: cover;
+		}
+		@include breakpoint(six_forty) {
+			position: relative;
+			width: 100%;
+			height: 12.5rem;
+		}
+		@include breakpoint(ten_twenty_four) {
+			background: url( p/assets/images/parallax_images/arallax_image_tableware_bg_480.jpg ) right center no-repeat;
+			background-size: cover;
+		}
+	}
+	.slide_content {
+		@include breakpoint(ten_twenty_four) {
+			position: relative;
+			float: right;
+			width: 50%;
+			max-width: none;
+		}
+		@include breakpoint(six_forty) {
+			float: none;
+			width: 100%;
+		}
+	}
+	h2 {
+		color: $white;
+		@include breakpoint(ten_twenty_four) {
+			color: $blue;
+		}
+	}
+	p {
+		color: $white;
+		@include breakpoint(ten_twenty_four) {
+			color: $dark_gray;
+		}
+	}
+	.slide_count {
+		@include breakpoint(ten_twenty_four) {
+			border: 2px solid $blue;
+		}
+		span {
+			@include breakpoint(ten_twenty_four) {
+				color: $blue;
+			}
+		}
+	}
+} //section_10
+
+.slide_11 {
+	position: relative;
+	overflow: hidden;
+	clear: both;
+	background: $white;
+	background-size: cover;
+	&:before {
+		display: none;
+		content: '';
+		position: absolute;
+		z-index: 300;
+		width: 100%;
+		height: 100%;
+		background: rgba( 000,000,000, .3);
+		@include breakpoint(ten_twenty_four) {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+		@include breakpoint(six_forty) {
+			display: none;
+		}
+	}
+	p {
+		color: $white;
+		@include breakpoint(six_forty) {
+			color: $dark_gray;
+		}
+	}
+
+	.filtration_bg_image {
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: url( /assets/images/parallax_images/parallax_image_filtration_bg.jpg ) center center no-repeat;
+		background-size: cover;
+		@include breakpoint(ten_twenty_four) {
+			background: url( /assets/images/parallax_images/parallax_image_filtration_bg_1024.jpg ) top center no-repeat;
+			background-size: cover;
+		}
+		@include breakpoint(six_forty) {
+			position: relative;
+			height: 12.5rem; //200px
+		}
+		@include breakpoint(four_eighty) {
+			background: url( /assets/images/parallax_images/parallax_image_filtration_bg_480.jpg ) top center no-repeat;
+			background-size: cover;
+		}
+		&:before {
+			content: '';
+		    position: absolute;
+		    z-index: 100;
+		    height: 100%;
+		    left: 0;
+		    width: 15%;
+		    background: rgba(000, 000, 000, 1);
+		    @include breakpoint(sixteen_hundred) {
+		    	display: none;
+		    }
+		}
+		&:after {
+			content: '';
+		    position: absolute;
+		    z-index: 100;
+		    height: 100%;
+		    width: 15%;
+		    right: 0;
+		    bottom: 0;
+			background: rgba(000, 000, 000, 1);
+			@include breakpoint(sixteen_hundred) {
+				display: none;
+			}
+		}
+	}
+
+	.filtration_video_cover {
+		position: absolute;
+		z-index: 200;
+		opacity: 1;
+		width: 100%;
+		height: 100%;
+		background: $black;
+		@include breakpoint(ten_twenty_four) {
+			display: none;
+		}
+	}
+
+	.filtration_video_container {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		max-width: 131.25rem; //2100px
+		margin: 0 auto;
+		text-align: center;
+		overflow: hidden;
+		@include breakpoint(ten_twenty_four) {
+			display: none;
+		}
+		&:before {
+			content: '';
+		    position: absolute;
+		    z-index: 100;
+		    height: 100%;
+		    left: 0;
+		    width: 15%;
+		    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+99 */
+			background: -moz-linear-gradient(right,  rgba(000,000,000,0) 0%, rgba(000,000,000,1) 99%, rgba(000,000,000,1) 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(right,  rgba(000,000,000,0) 0%,rgba(000,000,000,1) 99%,rgba(000,000,000,1) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to left,  rgba(000,000,000,0) 0%,rgba(000,000,000,1) 99%,rgba(000,000,000,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+			@include breakpoint(two_thousand) {
+		    	display: none;
+		    }
+		}
+		&:after {
+			content: '';
+		    position: absolute;
+		    z-index: 100;
+		    height: 100%;
+		    width: 15%;
+		    right: 0;
+		    bottom: 0;
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+99 */
+			background: -moz-linear-gradient(left,  rgba(000,000,000,0) 0%, rgba(000,000,000,1) 99%, rgba(000,000,000,1) 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(left,  rgba(000,000,000,0) 0%,rgba(000,000,000,1) 99%,rgba(000,000,000,1) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to right,  rgba(000,000,000,0) 0%,rgba(000,000,000,1) 99%,rgba(000,000,000,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+			@include breakpoint(two_thousand) {
+		    	display: none;
+		    }
+		}
+	}
+	
+	#filtration_video {
+		position: absolute;
+		min-width: 100%;
+		left: 0;
+		@include transform( translateY(-20%) );
+	}
+
+} //section_11
+
+.slide_12 {
+	position: relative;
+	overflow: hidden;
+	clear: both;
+	&:before {
+		display: none;
+	}
+	.slide_12_bg_1 {
+		position: absolute;
+		width: 50%;
+		height: 100%;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 100;
+		background: url( /assets/images/parallax_images/parallax_image_peformance_fabrics_bg_1.jpg ) top center no-repeat;
+		background-size: cover;
+		@include breakpoint(ten_twenty_four) {
+			position: relative;
+			height: 25rem; //200px
+			float: left;
+		}
+		@include breakpoint(six_forty) {
+			height: 12.5rem;
+		}
+	}
+	.slide_12_bg_2 {
+		position: absolute;
+		width: 50%;
+		height: 100%;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		z-index: 100;
+		background: url( /assets/images/parallax_images/parallax_image_peformance_fabrics_bg_2.jpg ) top center no-repeat;
+		background-size: cover;
+		@include breakpoint(ten_twenty_four) {
+			position: relative;
+			height: 25rem; //200px
+			float: right;
+		}
+		@include breakpoint(six_forty) {
+			height: 12.5rem;
+		}
+	}
+	.foreground_image {
+		position: absolute;
+		z-index: 300;
+		left: 1rem;
+		bottom: 2.5rem;
+		width: 35%;
+		width: 28.125rem; //450px
+		@include breakpoint(ten_twenty_four) {
+			width: 15.625rem;
+			left: 0rem;
+		}
+	}
+
+	.slide_max_width_container {
+		@include breakpoint(ten_twenty_four) {
+			clear: both;
+		}
+	}
+
+	.slide_content_container {
+		position: relative;
+		z-index: 200;
+		height: 34.375rem; //550px
+		width: 34.375rem; //550px
+		top: -20%;
+		margin: 0 auto;
+		background: $white;
+		border-radius: 50%;
+		@include breakpoint(ten_twenty_four) {
+			background: none;
+			z-index: 300;
+			height: auto;
+			width: 100%;
+			top: 0%;
+		}
+		.slide_content {
+			position: absolute;
+			top: 58.5%;
+			right: 0;
+			left: 0;
+			width: 72.5%;
+			max-width: 35rem!important;
+			margin: 0 auto;
+			padding: 0;
+			@include transform( translateY(-50%) );
+			@include breakpoint(ten_twenty_four) {
+				position: relative;
+				padding: 2rem;
+				margin: 0 auto;
+				width: auto;
+				top: 0;
+				@include transform( translateY(0%) );
+			}
+			@include breakpoint(six_forty) {
+				position: relative;
+				padding: 2rem;
+			}
+
+			h2 {
+				@include breakpoint(ten_twenty_four) {
+					color: $blue;
+				}
+			}
+			p {
+				@include breakpoint(ten_twenty_four) {
+					color: $dark_gray;
+				}
+			}
+			.slide_count {
+				@include breakpoint(ten_twenty_four) {
+					border: 2px solid $blue;
+				}
+				span {
+					@include breakpoint(ten_twenty_four) {
+						color: $blue;
+					}
+				}
+			}
+		} //slide_content
+	} //slide_content_container
+} //section_12
+
+.slide_13 {
+	position: relative;
+	overflow: hidden;
+	clear: both;
+	&:before {
+		display: none;
+		content: '';
+		position: absolute;
+		z-index: 300;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: rgba( 000,000,000,.3 );
+		@include breakpoint(ten_twenty_four) {
+			display: block;
+		}
+		@include breakpoint(six_forty) {
+			display: none;
+		}
+	}
+	.slide_13_bg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: url( /assets/images/parallax_images/parallax_image_packaging_bg.jpg ) left center no-repeat;
+		background-size: cover;
+		@include transform( scale(1.15) );
+		@include breakpoint(six_forty) {
+			position: relative;
+			height: 12.5rem; //200px
+			background-position: left center;
+		}
+	} //slide_13_bg
+} //section_13
+
+.slide_14 {
+	position: relative;
+	overflow: hidden;
+	clear: both;
+	&:before {
+		display: none;
+		content: '';
+		position: absolute;
+		z-index: 300;
+		 p: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: rgba( 000,000,000,.3 );
+		@include breakpoint(seven_sixty_eight) {
+			display: none;
+		}
+	}
+	.foreground_images {
+		position: absolute;
+		overflow: hidden;
+		width: 50%;
+		max-width: 46.875rem; //750px
+		right: 0;
+		top: 0;
+		bottom: 0;
+		@include breakpoint(six_forty) {
+			position: relative;
+			width: 100%;
+			height: 12.5rem; //200px
+		}
+		li {
+			position: relative;
+			float: left;
+			width: 33.333%;
+			&:first-child {
+				margin-top: 46.875rem; //750px
+				@include breakpoint(ten_twenty_four) {
+					margin-top: 0px;
+				}
+			};
+			&:nth-child(2) {
+				margin-top: -46.875rem; //750px
+				@include breakpoint(ten_twenty_four) {
+					margin-top: 0px;
+				}
+			};
+			&:last-child {
+				margin-top: 46.875rem; //750px
+				@include breakpoint(ten_twenty_four) {
+					margin-top: 0px;
+				}
+			};
+		} //li
+	} //foreground_images
+	.slide_content {
+		@include breakpoint(ten_twenty_four) {
+			width: 100%;
+			max-width: 50%;
+			p {
+				color: $dark_gray;
+			}
+			h2 {
+				color: $blue
+			}
+			.slide_count {
+				border: 2px solid $blue;
+				span {
+					color: $blue;
+				}
+			}
+		}
+		@include breakpoint(six_forty) {
+			max-width: none;
+		}
+	}
+} //section_14
+
+.slide_15 {
+	position: relative;
+	overflow: hidden;
+	clear: both;
+	.foreground_image {
+		width: 75%;
+		@include breakpoint(six_forty) {
+			display: none;
+		}
+	}
+	.dispenser_bg_image {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		background: url( /assets/images/parallax_images/parallax_image_pt_bg.jpg ) center center no-repeat;
+		background-size: cover;
+		@include breakpoint(six_forty) {
+			position: relative;
+			height: 12.5rem; //200px
+			background: url( /assets/images/slider_image_gp_4_480.jpg ) bottom center no-repeat;
+		}
+	} // pt_bg_image
+
+	.dispenser_video_container {
+		position: absolute;
+		z-index: 100;
+		top: 50%;
+		width: 100%;
+		height: 100%;
+		@include transform(translateY(-50%));
+		@include breakpoint(ten_twenty_four) {
+			display: none;
+		}
+	}
+} //section_15
+
+.slide_16 {
+	position: relative;
+	overflow: hidden;
+	clear: both;
+
+	.slide_16_bg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: url( /assets/images/parallax_images/parallax_image_asphalt_bg.jpg ) bottom center no-repeat;
+		background-size: cover;
+		@include breakpoint(six_forty) {
+			position: relative;
+			height: 12.5rem; //200px
+		}
+		&:before {
+			display: none;
+			content: '';
+			position: absolute;
+			z-index: 300;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: rgba( 000,000,000,.3 );
+			@include breakpoint(ten_twenty_four) {
+				display: block;
+			}
+			@include breakpoint(six_forty) {
+				display: none;
+			}
+		}
+	} //slide_16_bg
+
+	.slide_content.bottom {
+		bottom: 3rem!important;
+		@include breakpoint(ten_twenty_four) {
+			bottom: auto!important;
+		}
+	}
+} //section_16
+
+
+
+
+
+// loader Gif
+	#load {
+	   height: 100vh;
+	   width: 100%;
+	   background-color: #fff;
+	   position: fixed;
+	   opacity: 1;
+	   animation: loader .25s forwards;
+	   @include transform( all 1s ease-in-out );
+	   z-index: 901;
+	   @include breakpoint(six_forty) {
+	   	display: none;
+	   }
+	   div {
+	       width: auto;
+	       @include transform( translate( -50%, -50%) );
+	       top: 50%;
+	       left: 50%;
+	       position: absolute;
+	   }
+	   span {
+	       height: 0.3125rem;
+	       width: 0.3125rem;
+	       float: left;
+	       margin-left: 0.3125rem;
+	       border-radius: 50%;
+	       background-color: $blue;
+	       position: relative;
+	       animation: upDownLoader .5s cubic-bezier(0, 0, 0, 0) infinite;
+	       &:first-child {
+	           margin-left: 0;
+	       }
+	       &:nth-child(1) {
+	           -webkit-animation-delay: 0.0s;
+	           -o-animation-delay: 0.0s;
+	           animation-delay: 0.0s;
+	       }
+	       &:nth-child(2) {
+	           -webkit-animation-delay: 0.1s;
+	           -o-animation-delay: 0.1s;
+	           animation-delay: 0.1s;
+	       }
+	       &:nth-child(3) {
+	           -webkit-animation-delay: 0.15s;
+	           -o-animation-delay: 0.15s;
+	           animation-delay: 0.15s;
+	       }
+	       &:nth-child(4) {
+	           -webkit-animation-delay: 0.2s;
+	           -o-animation-delay: 0.2s;
+	           animation-delay: 0.2s;
+	       }
+	       &:nth-child(5) {
+	           -webkit-animation-delay: 0.25s;
+	           -o-animation-delay: 0.25s;
+	           animation-delay: 0.25s;
+	       }
+	   }
+	   p {
+	       position: relative;
+	       width: 100%;
+	       text-align: center;
+	       color: $dark_gray;
+	       padding-top: 1rem;
+	   }
+	}
+	@keyframes upDownLoader {
+	   0% {
+	       bottom: 0;
+	   }
+	   50% {
+	       bottom: 0.625rem;
+	   }
+	   100% {
+	       bottom: 0;
+	   }
+	}
+	@keyframes loader {
+	   0% {
+	       opacity: 0;
+	   }
+	   100% {
+	       opacity: 1;
+	   }
+	}
+// END loader gif
+
+
+
+
+
+
+
+

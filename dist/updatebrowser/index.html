@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+    <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+    <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+    <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+    <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+    <head>
+        <link rel="icon" href="http://www.kochind.com/files/favicon.ico" type="image/x-icon" />
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Browser Upgrade - Koch Industries</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- css: -->
+        <link rel="stylesheet" href="../assets/css/style.css">
+        <link rel="stylesheet" href="../assets/css/upgrade_browser.css">
+        <!-- endcss -->
+        
+        <!-- HeaderJS: -->
+        <script src="../assets/js/modernizr.js"></script>
+        <!-- endHeaderJS -->
+
+        <!--FONTS-->
+            <script src="https://use.typekit.net/ecp2sks.js"></script>
+            <script>try{Typekit.load({ async: true });}catch(e){}</script>
+        <!-- END FONT-->
+
+        <!--GOOGLE ANALYTICS-->
+            <script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+             
+              ga('create', 'UA-73653542-1', 'auto');
+              ga('send', 'pageview');
+            </script>
+        <!--END GOOGLE ANALYTICS-->
+
+        <!--PIXEL SCROLLING CODE-->
+          <script>
+            //*****************************************************************
+            /** Predefined variables **/
+            EventNONInteraction = false; // This variable determines the event will be a noninertact event or not
+            Frequency = 10; // This variable determines the Frequency the event will be fired, MAKE SURE THE NUMBER ENTERED CAN BE DIVIDED BY 100 (10 means each 10 precent the event will fire)
+             
+            GA_EventCategory = 'Page Interaction'; // Google Analytics event category
+            GA_EventAction = 'Scroll Down'; // Google Analytics event action.
+             
+            /************ DON'T EDIT BELOW THIS PART ************/
+            _frequency = Frequency;
+            _repentance = 100 / Frequency;
+            var _scrollMatrix = new Array();
+            for (ix = 0; ix < _repentance; ix++) {
+                _scrollMatrix[ix] = [_frequency, 'false'];
+                _frequency = Frequency + _frequency;
+            }
+
+            document.onscroll = function (e) {
+                var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+
+                for (iz = 0; iz < _scrollMatrix.length; iz++) {
+                    if ( (scrollTop + window.outerHeight >= window.innerHeight * _scrollMatrix[iz][0] / 100 )  && (_scrollMatrix[iz][1]== 'false') ) {
+                        _scrollMatrix[iz][1] = 'true';
+                        ga('send', 'event', GA_EventCategory, GA_EventAction, _scrollMatrix[iz][0]+'%'); 
+                    }
+                }
+            };
+          </script>
+        <!--END PIXEL SCROLLING CODE-->
+
+        <meta property="og:title" content="Koch Industries">
+        <meta property="og:description" content="Food. Shelter. Clothing. Transportation. Creating life’s basic necessities for people around the world through various businesses in multiple industries.">
+        <meta property="og:image" content='http://www.kochind.com/assets/images/homepage_bg_image_480.jpg' />
+
+        <link rel="canonical" href="http://www.kochind.com/updatebrowser/" />
+    </head>
+        
+    <body>
+
+        <article role="main">   
+
+        <section class="header_container">
+            <div class="header_bar_container">
+                <div class="logo_container">
+                    <a href="/">
+                        <img src="/assets/images/logo_kii_white.png" alt="Koch Industries logo" />
+                    </a>
+                </div> <!--logo_container-->
+            </div> <!--logo_nav_icon_container-->      
+        </section>
+
+            <div class="footer_page_container text_align_center">
+                <h6 class="blue">
+                    Please Update Your Browser
+                </h6>
+                <p>
+                    To access this site and its contents, you’ll need to update your current browser.
+                </p>
+           
+                <a
+                    class="button button_style_2"
+                    href="http://browsehappy.com/"
+                    target="_blank"
+                    onclick="ga('send', 'event', 'Browser Upgrade', 'click', 'Browser Upgrade');">Update your browser
+                </a>
+             
+            </div>
+            
+        </article>
+    </body>
+</html>
