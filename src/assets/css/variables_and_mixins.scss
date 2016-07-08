@@ -227,6 +227,23 @@
   }
 }
 
+.dark_blue_to_blue_grad {
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#002e5d+1,0088b2+100 */
+        background: #002e5d; /* Old browsers */
+        background: -moz-linear-gradient(left,  #002e5d 1%, #0088b2 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left,  #002e5d 1%,#0088b2 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right,  #002e5d 1%,#0088b2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002e5d', endColorstr='#0088b2',GradientType=1 ); /* IE6-9 */
+    }
+}
+
 .texture_bg {
   background: url( /assets/images/texture.jpg );
 } //texture_bg
@@ -243,5 +260,9 @@
     background: url( /assets/images/military_texture.jpg );
     background-size: cover;
   }
+}
+
+.text_shadow {
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
 }
 /*--END MIXINS--*/

@@ -5,6 +5,22 @@
     <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 
     <head>
+        
+        <!--GOOGLE EXPERIMENTS CODE-->
+            <script>function utmx_section(){}function utmx(){}(function(){var
+            k='116847560-1',d=document,l=d.location,c=d.cookie;
+            if(l.search.indexOf('utm_expid='+k)>0)return;
+            function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+            indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+            length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+            '<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+            '://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+            '&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+            valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+            '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+            </script><script>utmx('url','A/B');</script>
+        <!--END GOOGLE EXPERIMENTS CODE-->
+        
         <link rel="icon" href="http://www.kochind.com/files/favicon.ico" type="image/x-icon" />
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -48,18 +64,6 @@
                 }
             </style>
         <!--END CRITICAL CSS-->
-
-        <!-- Start Visual Website Optimizer Asynchronous Code -->
-            <script type='text/javascript'>
-            var _vwo_code=(function(){
-            var account_id=233252,
-            settings_tolerance=2000,
-            library_tolerance=2500,
-            use_existing_jquery=false,
-            // DO NOT EDIT BELOW THIS LINE
-            f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
-            </script>
-        <!-- End Visual Website Optimizer Asynchronous Code -->
        
     </head>
         
@@ -73,9 +77,8 @@
                 <div class="slide bg_video_slide"> 
                     <div class="video_cover"></div>
                     <div class="slide_cover"></div>
-                    
                     <div class="jwplayer_container">
-                        <script src="http://video.kochcreativegroupdev.com/players/iCldG7Xv-x2n83pVM.js"></script>    
+                        <script src="http://video.kochcreativegroupdev.com/players/iCldG7Xv-x2n83pVM.js"></script>
                     </div>
                                        
                     <div class="slide_content_display_type">
@@ -86,14 +89,14 @@
                             Made Better
                         </h1>
                         <p>
-                            <b>Food. Shelter. Clothing. Transportation.</b> Koch is essential to creating life’s basic necessities for people the world over. While relentlessly exploring <a href="whatwedo/index.html" onclick="ga('send', 'event', 'Ways to do it even better - text link', 'click', 'Homepage');">ways to do it even better.</a>
+                            <b>Food. Shelter. Clothing. Transportation.</b> Koch is essential to creating life’s basic necessities for people the world over. While relentlessly exploring <a class="text_link_U blue" href="whatwedo/index.html" onclick="ga('send', 'event', 'Ways to do it even better - text link', 'click', 'Homepage - Control');">ways to do it even better.</a>
                         </p>
                     </div> <!--slide_content_display_type-->
 
                     <a
                         class="scroll_icon"
                         href="#campaign"
-                        onclick="ga('send', 'event', 'Scroll Icon', 'click', 'Homepage');">
+                        onclick="ga('send', 'event', 'Scroll Icon', 'click', 'Homepage - Control');">
                           <img
                             class="blue_directional"
                             src="/assets/images/icon_blue_arrow.svg"
@@ -122,25 +125,28 @@
                 id="campaign"
                 class="homepage_campaign_section">
 
-                <div class="homepage_campaign_intro_hero kruse_bg"></div> <!--homepage_campaign_intro_hero-->
+                <div class="homepage_campaign_intro_hero manny_bg">
+                    <img
+                        class="wak_image_tag"
+                        src="/assets/images/wak_image_tag.svg"
+                        alt="We Are Koch - Koch Industries, Inc. campaign" />
+                </div> <!--homepage_campaign_intro_hero-->
 
                 <div class="homepage_campaign_intro_content_container">
-                    <div class="homepage_campaign_intro_content right">
-                        <h2 class="dark_gray">
-                          Growing a Stronger Planet
+                    <div class="homepage_campaign_intro_content">
+                        <h2 class="white">
+                          Quenching a Thirsty Planet
                         </h2>
-                        <p>
-                          As humans, our population is rapidly expanding. Our planet, however, is not. In a world where many already go hungry, we all have a very clear, very daunting challenge on our hands. Fortunately, we also have people like John Kruse.
+                        <p class="white">
+                          Two thirds of our globe is covered with water. Yet people in communities all over the world still profoundly suffer from lack of clean drinking water. Meet Manny Singh, one of our scientists who innovates new and better ways to solve this crisis. 
                         </p>
                         <div
-                            class="play_cta_2 play_cta"
-                            data-url="https://www.youtube.com/embed/mqZr4Ed39vU"
-                            onclick="ga('send', 'event', 'Campaign Intro video - John Kruse', 'click', 'Homepage');">
-                            <i
-                                class="fa fa_play_button play_button_3 md active"
-                                data-url="https://www.youtube.com/embed/mqZr4Ed39vU"
-                                onclick="ga('send', 'event', 'Campaign Intro video - John Kruse', 'click', 'Homepage');"></i>
-                            <span class="cta dark_blue">View John's Mission</span>
+                            class="play_cta"
+                            video-id="a5LnX3B5"
+                            onclick="ga('send', 'event', 'Campaign Intro video - Manny', 'click', 'Homepage - Control');">
+                            <i class="fa fa_play_button play_button_1 md">
+                            </i>
+                            <span class="cta white">See Manny's Mission</span>
                         </div>
                     </div>
                 </div> <!--homepage_campaign_intro_content_container-->
@@ -164,50 +170,50 @@
                         </div>
 
                         <div class="info_mod">
-                            <div class="info_mod_content_container image right background_image_1">
-                                <div class="info_mod_info_image_content_container center">
-                                    <i
-                                        class="fa fa_play_button play_button_3 active"
-                                        data-url="https://www.youtube.com/embed/-SFXZyjeNwg"
-                                        onclick="ga('send', 'event', 'Campaign Support Video - Manny', 'click', 'Homepage');">
-                                    </i>
-                                </div>
-                            </div>
-
                             <div class="info_mod_content_container copy left">
                               <div class="copy_container">
-                                <h6 class="cta dark_blue">Advanced Filtration</h6>
+                                <h6 class="cta dark_blue">Growing More Naturally</h6>
                                 <p>
-                                    At <a class="text_link_U blue" href="/chemtech/" onclick="ga('send', 'event', 'Koch Membrane link - text link', 'click', 'Homepage');">Koch Membrane Systems</a>, scientists like Manny Singh create the latest technology to filter surface and wastewater into clean drinking water for areas affected by drought. 
+                                    At <a class="text_link_U blue" href="http://www.kochagronomicservices.com/" taret="_blank" onclick="ga('send', 'event', 'KAES link - text link', 'click', 'Homepage - Control');">Koch Agronomic Services</a>, scientists like John Kruse research promising new ways to stimulate plant performance and crop yield using microbes found naturally in the soil itself.
                                 </p>
                               </div>
+                            </div>
+
+                            <div class="info_mod_content_container image right background_image_4">
+                                <div class="info_mod_info_image_content_container center">
+                                    <i
+                                        class="fa fa_play_button play_button_1"
+                                        video-id="RkHg5kIc"
+                                        onclick="ga('send', 'event', 'Campaign Supprt Video - John Kruse', 'click', 'Homepage - Control');">
+                                    </i>
+                                </div>
                             </div>
                         </div>
 
                         <div class="info_mod">
-                            <div class="info_mod_content_container image left background_image_2"></div>
-
                             <div class="info_mod_content_container copy right">
                               <div class="copy_container">
                                 <h6 class="dark_blue">HAVE YOUR STEAK AND ETHANOL, TOO</h6>
                                 <p>
-                                  At <a class="text_link_U blue" href="/fhr/" onclick="ga('send', 'event', 'FHR link - text link', 'click', 'Homepage');">Flint Hills Resources</a>, we produce ethanol from corn. One major byproduct is dried distillers grains, power-packed nutrition used to feed livestock all over the world.  
+                                  At <a class="text_link_U blue" href="https://www.fhr.com" target="_blank" onclick="ga('send', 'event', 'FHR link - text link', 'click', 'Homepage - Control');">Flint Hills Resources</a>, we produce ethanol from corn. One major byproduct is dried distillers grains, power-packed nutrition used to feed livestock all over the world.  
                                 </p>
                               </div>
                             </div>
+
+                            <div class="info_mod_content_container image left background_image_2"></div>
                         </div>
 
                         <div class="info_mod">
-                            <div class="info_mod_content_container image right background_image_3"></div>
-
                             <div class="info_mod_content_container copy left">
                               <div class="copy_container">
                                 <h6 class="dark_blue">Fertilizer 2.0</h6>
                                 <p>
-                                  <a class="text_link_U blue" href="/kaes/" onclick="ga('send', 'event', 'KAES link - text link', 'click', 'Homepage');">Koch Agronomic Services</a> creates enhanced efficiency fertilizers that more precisely deliver nutrients to plants – optimizing yields while reducing nitrogen loss to the environment.
+                                  <a class="text_link_U blue" href="http://www.kochfertilizer.com/" target="_blank" onclick="ga('send', 'event', 'KAES link - text link', 'click', 'Homepage - Control');">Koch Agronomic Services</a> creates enhanced efficiency fertilizers that more precisely deliver nutrients to plants – optimizing yields while reducing nitrogen loss to the environment.
                                 </p>
                               </div>
                             </div>
+
+                            <div class="info_mod_content_container image right background_image_3"></div>
                         </div>
                     </div>
 
@@ -215,7 +221,7 @@
                       <a
                         href="/whatwedo/"
                         class="dark_blue"
-                        onclick="ga('send', 'event', 'Explor more CTA - section link', 'click', 'Homepage');">
+                        onclick="ga('send', 'event', 'Explor more CTA - section link', 'click', 'Homepage - Control');">
                           <span>Explore more of the ways we’re making the goods that make life better.</span>
                           <img
                             class="blue_directional right"
@@ -235,12 +241,12 @@
                             <h2 class="white">Responsibility Thrives</h2>
                             <p class="white"> 
                                 For two years in a row, the Environmental Protection Agency has named Koch Industries the number one U.S.-based parent company in pollution prevention initiatives.<br/>
-                                <a class="text_link_U white" href="/responsibility/" target="" onclick="ga('send', 'event', 'Responsibility link - text link', 'click', 'Homepage');">See our responsibility story.</a>
+                                <a class="text_link_U white" href="/responsibility/" target="" onclick="ga('send', 'event', 'Responsibility link - text link', 'click', 'Homepage - Control');">See our responsibility story.</a>
                             </p>
                         </div>
-
+                        
                     </section>
-                    
+
                     <div
                         class="breadcrumb_container texture_bg white_gradient_bottom"
                         itemscope
@@ -268,8 +274,8 @@
                             <meta itemprop="position" content="1" />
                         </p>
                     </div> <!--breadcrumb_container-->
-                    
-                    <!--(bake /includes/footer.html)--> 
+
+                    <!--(bake /includes/footer.html)-->
 
                 </div> 
             </section> <!--homepage_campaign_section-->

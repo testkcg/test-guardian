@@ -1,0 +1,87 @@
+/*--Variables and Mixins--*/
+  @import "variables_and_mixins.scss";
+/*--End Variables and Mixins--*/
+
+
+* {
+    box-sizing: border-box;
+}
+
+.form-buttons-wrapper { 
+    margin : 0!important;
+}
+
+.form-line {
+    display : inline-block;
+    padding : 0 .5rem;
+    margin : .5rem 0;
+    text-align : left;
+    vertical-align : bottom;
+    @include breakpoint(six_forty) {
+        padding: 0;
+    }
+}
+.form-line input {
+    width : 100%;
+    padding : .5rem 1rem;
+    font-family : "proxima-nova",sans-serif;
+    border : 1px solid #00a8e1;
+    border-radius : .15rem;
+}
+.form-line input:focus {
+    outline : 0;
+}
+.form-all {
+    margin : 1rem 0;
+    text-align : left;
+    background : transparent;
+}
+.form-submit-button {
+    display : inline-block;
+    padding : .75em 1.75rem!important;
+    margin : 0!important;
+    box-shadow : none!important;
+    font-weight : 800;
+    color : #002d5b;
+    text-transform : uppercase;
+    background : #fff;
+    border : 1px solid #00a8e1;
+    border-radius : .15rem;
+}
+.form-submit-button:hover {
+    color : #00a8e1;
+    background : #002d5b;
+    border : 1px solid #002d5b;
+    text-shadow : none!important;
+}
+.form-line-error .form-error-message {
+    display : none !important;
+} /* Injected CSS Code */
+
+
+.supernova .form-all, .form-all {
+    background-color: transparent!important;
+}
+
+.form-left, .form-right {
+    display: inline-block;
+    vertical-align: top;
+    width: 49%;
+    padding: 0 .5rem;
+    @include breakpoint(six_forty) {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+#id_2, #id_3, #id_4, #id_5, #id_6 {
+    width: 100%;
+}
+
+label {
+    display: inline-block;
+    margin: 0 0 .25rem 0;
+    color: $dark_blue;
+    font-size: .9rem;
+    font-family : "proxima-nova",sans-serif;
+}

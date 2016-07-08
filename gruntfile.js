@@ -25,7 +25,7 @@ module.exports = function(grunt) {
         },
         files: {
           'dist/index.html' : ['dist/assets/css/style.css', 'dist/assets/css/slick.css'],
-          'dist/homepage_v2/index.html' : ['dist/assets/css/style.css', 'dist/assets/css/slick.css'],
+          'dist/home/index.html' : ['dist/assets/css/style.css', 'dist/assets/css/slick.css'],
           'dist/business/index.html' : ['dist/assets/css/style.css'],
           'dist/californiasupply/index.html' : ['dist/assets/css/style.css'],
           'dist/careers/index.html' : ['dist/assets/css/style.css'],
@@ -58,7 +58,8 @@ module.exports = function(grunt) {
           'dist/vendors/index.html' : ['dist/assets/css/style.css'],
           'dist/veterans/index.html' : ['dist/assets/css/style.css'],
           'dist/whatwedo/index.html' : ['dist/assets/css/style.css', 'dist/assets/css/what_we_do.css'],
-          'dist/404.html' : ['dist/assets/css/style.css']
+          'dist/404.html' : ['dist/assets/css/style.css'],
+          'dist/takingastand/index.html' : ['dist/assets/css/style.css', 'dist/assets/css/jotforms.css']
         }
       },
 
@@ -70,7 +71,7 @@ module.exports = function(grunt) {
         },
         files: {
           'dist/index.html' : ['dist/assets/js/modernizr.js'],
-          'dist/homepage_v2/index.html' : ['dist/assets/js/modernizr.js'],
+          'dist/home/index.html' : ['dist/assets/js/modernizr.js'],
           'dist/business/index.html' : ['dist/assets/js/modernizr.js'],
           'dist/californiasupply/index.html' : ['dist/assets/js/modernizr.js'],
           'dist/careers/index.html' : ['dist/assets/js/modernizr.js'],
@@ -102,7 +103,8 @@ module.exports = function(grunt) {
           'dist/vendors/index.html' : ['dist/assets/js/modernizr.js'],
           'dist/veterans/index.html' : ['dist/assets/js/modernizr.js'],
           'dist/whatwedo/index.html' : ['dist/assets/js/modernizr.js'],
-          'dist/404.html' : ['dist/assets/js/modernizr.js']
+          'dist/404.html' : ['dist/assets/js/modernizr.js'],
+          'dist/takingastand/index.html' : ['dist/assets/js/modernizr.js'],
         }
       },
 
@@ -114,7 +116,7 @@ module.exports = function(grunt) {
         },
         files: {
           'dist/index.html' : ['dist/assets/js/main.js', 'dist/assets/js/slick.js'],
-          'dist/homepage_v2/index.html' : ['dist/assets/js/main.js', 'dist/assets/js/slick.js'],
+          'dist/home/index.html' : ['dist/assets/js/main.js', 'dist/assets/js/slick.js'],
           'dist/business/index.html' : ['dist/assets/js/main.js'],
           'dist/californiasupply/index.html' : ['dist/assets/js/main.js'],
           'dist/careers/index.html' : ['dist/assets/js/main.js' ],
@@ -147,7 +149,8 @@ module.exports = function(grunt) {
           'dist/vendors/index.html' : ['dist/assets/js/main.js'],
           'dist/veterans/index.html' : ['dist/assets/js/main.js'],
           'dist/whatwedo/index.html' : ['dist/assets/js/main.js', 'dist/assets/js/skrollr.js'],
-          'dist/404.html' : ['dist/assets/js/main.js']
+          'dist/404.html' : ['dist/assets/js/main.js'],
+          'dist/takingastand/index.html': ['dist/assets/js/main.js']
         }
       }
     },
@@ -168,7 +171,8 @@ module.exports = function(grunt) {
           'dist/assets/css/upgrade_browser.css': 'src/assets/css/upgrade_browser.scss',
           'dist/assets/css/variables_and_mixins.css': 'src/assets/css/variables_and_mixins.scss',
           'dist/assets/css/what_we_do.css': 'src/assets/css/what_we_do.scss',
-          'dist/assets/css/icon_font/scss/font-awesome.css': 'src/assets/css/icon_font/scss/font-awesome.scss'
+          'dist/assets/css/jotforms.css': 'src/assets/css/jotforms.scss',
+          'dist/assets/css/icon_font/scss/font-awesome.css': 'src/assets/css/icon_font/scss/font-awesome.scss'        
         }
       }
     },
@@ -180,7 +184,7 @@ module.exports = function(grunt) {
             options: {},
             files: {
               "dist/index.html": "src/index.html",
-              "dist/homepage_v2/index.html": "src/homepage_v2/index.html",
+              "dist/home/index.html": "src/home/index.html",
               "dist/business/index.html": "src/business/index.html",
               "dist/californiasupply/index.html": "src/californiasupply/index.html",
               "dist/careers/index.html": "src/careers/index.html",
@@ -213,7 +217,8 @@ module.exports = function(grunt) {
               "dist/vendors/index.html": "src/vendors/index.html",
               "dist/veterans/index.html": "src/veterans/index.html",
               "dist/whatwedo/index.html": "src/whatwedo/index.html",
-              'dist/404.html' : ['src/404.html']
+              'dist/404.html' : ['src/404.html'],
+              'dist/takingastand/index.html' : ['src/takingastand/index.html']
             }
         }
     },
@@ -233,6 +238,17 @@ module.exports = function(grunt) {
           {src: ['src/assets/js/slick.js'], dest: 'dist/assets/js/slick.js'},
           {src: ['src/assets/images/*'], dest: 'dist/assets/images/*'}
         ]
+      }
+    },
+
+    imagemin: {
+      dynamic: {                         // Another target 
+        files: [{
+          expand: true,                  // Enable dynamic expansion 
+          cwd: 'src/',                   // Src matches are relative to this path 
+          src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match 
+          dest: 'dist/'                  // Destination path prefix 
+        }]
       }
     },
 
@@ -269,5 +285,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-injector');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-sync');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
 };

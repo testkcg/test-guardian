@@ -438,6 +438,11 @@
     text-align: center!important;
     margin: 0 auto;
   }
+  .v_center {
+      position: absolute;
+      top: 50%;
+      @include transform( translateY(-50%) );
+  }
 /*--END ONE OFF STYLINGS--*/
 
 
@@ -459,71 +464,17 @@
     cursor: pointer;
 
     &.button_style_1 {
-      color: $soft_blue;
-      border: 1px solid $white;
-      background: rgba( 255, 255, 255, .25);
-      &:hover {
-        color: $soft_blue;
-        background: $dark_blue;
-        border: 1px solid $dark_blue;
-      }
-      @include breakpoint(ten_twenty_four) {
-        color: $blue;
-        background: rgba( 255, 255, 255, 1 );
-        border: 1px solid $blue;
-        color: $blue;
-        &:hover {
-          color: $white;
-          background: $blue;
-          border: 1px solid $blue;
-        }
-      }
-    } //button_style_1
-
-    &.button_style_2 {
       color: $dark_blue;
       border: 1px solid $blue;
-      background: rgba( 255, 255, 255, .25);
+      background: rgba( 255, 255, 255, 1);
       &:hover {
-        color: $soft_blue;
-        background: $dark_blue;
-        border: 1px solid $dark_blue;
-      }
-      @include breakpoint(ten_twenty_four) {
-        color: $blue;
-        background: rgba( 255, 255, 255, 1 );
+        color: $white;
+        background: $blue;
         border: 1px solid $blue;
-        color: $blue;
-        &:hover {
-          color: $white;
-          background: $blue;
-          border: 1px solid $blue;
-        }
       }
-    } //button_style_2
-
-    &.button_style_3 {
-      color: $dark_blue;
-      border: 1px solid $white;
-      background: rgba( 255, 255, 255, .25);
-      &:hover {
-        color: $soft_blue;
-        background: $dark_blue;
-        border: 1px solid $dark_blue;
-      }
-      @include breakpoint(ten_twenty_four) {
-        color: $blue;
-        background: rgba( 255, 255, 255, 1 );
-        border: 1px solid $blue;
-        color: $blue;
-        &:hover {
-          color: $white;
-          background: $blue;
-          border: 1px solid $blue;
-        }
-      }
-    } //button_style_3
+    } //button_style_1
   } //button
+
   .download_button {
     display: inline-block;
     position: relative;
@@ -860,7 +811,6 @@
           top: 0;
           left: 0;
         }
-
         img {
           width: 100%;
         }
@@ -1518,20 +1468,38 @@
           background-size: cover;
         }
       }
+
+      .wak_image_tag {
+        position: absolute;
+        width: 10rem;
+        right: 0;
+        bottom: 12.5%;
+        @include breakpoint(ten_twenty_four) {
+          width: 8rem;
+          bottom: 2rem;
+        }
+      }
     } //homepage_campaign_intro
 
     .homepage_campaign_intro_content_container {
       position: absolute;
       z-index: 100;
-      top: 22.5%;
+      top: 25%;
       right: 0;
       left: 0;
       width: 100%;
       max-width: 75rem;
       margin: 0 auto;
       text-align: center;
+      @include breakpoint(twelve_hundred) {
+        top: 20%;
+      }
       @include breakpoint(ten_twenty_four) {
-        top: 5rem;
+        top: 6.5rem;
+      }
+      @include breakpoint(six_forty) {
+        position: relative;
+        top: auto;
         &:before {
           content: '';
           position: absolute;
@@ -1546,10 +1514,6 @@
           border-left: 15px solid transparent;
           border-bottom: 15px solid $white;
         }
-      }
-      @include breakpoint(six_forty) {
-        position: relative;
-        top: auto;
       }
 
       .homepage_campaign_intro_content {
@@ -1570,6 +1534,7 @@
           padding: 2rem;
           width: 100%;
           max-width: inherit;
+          text-align: left;
           p,h2 {
             color: $dark_gray!important;
           }
@@ -1585,9 +1550,15 @@
           }
           @include breakpoint(six_forty) {
             right: auto;
+            text-align: left;
           }
         }
-      }
+        .cta.white {
+          @include breakpoint(six_forty) {
+            color: $dark_blue!important;
+          }
+        }
+      } //homepage_campaign_intro_content
 
       .content_section_image_container {
         position: relative;
@@ -1595,15 +1566,6 @@
         img {
           position: relative;
           z-index: 100;
-        }
-        .fa_play_button {
-          position: absolute;
-          z-index: 200;
-          top: 50%;
-          right: 0;
-          left: 0;
-          margin: 0 auto;
-          @include transform( translateY(-50%) );
         }
       }
     } //homepage_campaign_intro_content_container
@@ -1688,7 +1650,7 @@
             text-align: right;
             @include breakpoint(six_forty) {
               float: none;
-              text-align: center;
+              text-align: left;
             }
             .copy_container { right: 0; }
           }
@@ -1704,7 +1666,7 @@
             text-align: left;
             @include breakpoint(six_forty) {
               float: none;
-              text-align: center;
+              text-align: left;
             }
             .copy_container { left: 0; }
           }
@@ -1832,7 +1794,11 @@
 
     .homepage_campaign_divider {
       position: relative;
-      padding: 2rem;
+      &:hover {
+        span {
+          color: $blue!important;
+        }
+      }
       @include breakpoint(six_forty) {
         background: $light_gray!important;
       }
@@ -1859,6 +1825,7 @@
         font-family: $slab_font;
         font-size: 1.5rem;
         vertical-align: middle;
+        padding: 2rem;
       }
       span {
         display: inline-block;
@@ -1868,6 +1835,7 @@
       img {
         display: inline-block;
         vertical-align: middle;
+        margin: .5rem 0 0 0;
       }
     } //homepage_campaign_divider
 
@@ -2224,6 +2192,18 @@
         background-size: cover;
       }
     } //subpage_header_mod.giving_header_image
+    &.wwsf_header {
+      background: url( /assets/images/header_image_wwsf.jpg ) center center no-repeat;
+      background-size: cover;
+      @include breakpoint(ten_twenty_four) {
+        background: url( /assets/images/header_image_wwsf_1024.jpg ) left center no-repeat;
+        background-size: cover;
+      }
+      @include breakpoint(four_eighty) {
+        background: url( /assets/images/header_image_wwsf_480.jpg ) left center no-repeat;
+        background-size: cover;
+      }
+    } //subpage_header_mod.business_philosophy_header
   }
   &.sm {
     position: relative;
@@ -3426,6 +3406,18 @@ i.click_logo_cta {
         background-size: cover;
       }
     }
+    &.feature_bg.matador_2 {
+      background: url( /assets/images/feature_image_matador_2.jpg ) right center no-repeat;
+      background-size: cover;
+      @include breakpoint(ten_twenty_four) {
+        background: url( /assets/images/feature_image_matador_2_1024.jpg ) right center no-repeat;
+        background-size: cover;
+      }  
+      @include breakpoint(four_eighty) {
+        background: url( /assets/images/feature_image_matador_2_480.jpg ) center center no-repeat;
+        background-size: cover;
+      }
+    }
     &.feature_bg.minerals_1 {
       background: url( /assets/images/feature_image_minerals_1.jpg ) center center no-repeat;
       background-size: cover;
@@ -3715,6 +3707,12 @@ i.click_logo_cta {
                 max-width: 4.6875rem; //75px;
               }
             } //img.rufy 
+            img.up {
+              max-width: 5.9375rem; //95px;
+              @include breakpoint(eight_fifty) {
+                max-width: 4.6875rem; //75px;
+              }
+            }
             img.ye {
               max-width: 8.75rem; //140px
               @include breakpoint(eight_fifty) {
@@ -3829,6 +3827,10 @@ i.click_logo_cta {
         }
         &.giving_5 {
           background: url( /assets/images/highlights_image_giving_8.jpg ) center center no-repeat;
+          background-size: cover;
+        }
+        &.giving_9 {
+          background: url( /assets/images/highlights_image_giving_9.jpg ) center center no-repeat;
           background-size: cover;
         }
         &.gp_1 {
@@ -5339,12 +5341,6 @@ i.click_logo_cta {
         .hover_container {
           opacity: 1;
           visibility: visible;
-          a {
-            border: 1px solid $white;
-            @include breakpoint(eight_fifty) {
-              border: 1px solid $blue;
-            }
-          }
         }
       } //&:hover
     } //li
@@ -5434,6 +5430,351 @@ i.click_logo_cta {
   } // giving_community_mod
 // END GIVIING COMMUNITY MOD
 
+
+
+
+// WHAT WE STAND FOR - SPLIT SCROLL SECTION
+    .tabs_overall_wrapper {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+         &.loading {
+            &:before {
+                content: '';
+                z-index: 300;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: white;
+            }
+        }
+    } //tabs_overall_wrapper
+    
+    .tabs_controls_container {
+        position: relative;
+        z-index: 200;
+        overflow: visible;
+        width: 100%;
+        .tab {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            width: 33.333%;
+            padding: 1rem .5rem;
+            text-align: center; 
+            font-family: $sans_serif_font;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: $dark_blue;
+            background: $light_gray;
+            border-right: 2px solid $white;
+            cursor: pointer;
+            @include transition ( all .5s ease-in-out );
+            &:last-child {
+                border-right: none;
+            }
+            @include breakpoint(ten_twenty_four) {
+                font-size: .8rem;
+            }
+            @include breakpoint(four_eighty) {
+                height: 4rem;
+            }
+            &:before {
+                content: '';
+                position: absolute;
+                z-index: 100;
+                opacity: 0;
+                top: auto;
+                right: 0;
+                bottom: -20px;
+                left: 0;
+                width: 0;
+                height: 0;
+                margin: 0 auto;
+                border-top: 20px solid $blue;
+                border-right: 20px solid transparent;
+                border-bottom: none;
+                border-left: 20px solid transparent;
+                @include transition ( all .5s ease-in-out );
+                @include breakpoint(six_forty) {
+                    bottom: -15px;
+                    border-top: 15px solid $blue;;
+                    border-right: 15px solid transparent;
+                    border-bottom: none;
+                    border-left: 15px solid transparent;
+                }
+            } //&:before
+            &.active {
+                background: $blue;
+                color: $white;
+                &:before {
+                    opacity: 1;
+                }
+            } //&.active
+        } //tab
+    } //tabs_controls_container
+        
+    .tabs_content_container {
+        position: relative;
+        overflow: auto;
+        height: 100%;
+        left: 0;
+        @include transition ( all .75s ease-in-out );
+        @include breakpoint(ten_twenty_four) {
+            overflow: hidden;
+        }
+        
+        .tab_section_container {
+            float: left;
+            position: relative;
+            opacity: 1;
+            z-index: 100;
+            width: 33.333%;
+        } //tab_section_content_container
+        
+        .tab_section_content_container {
+            position: relative;
+            width: 100%;
+            height: 50rem;
+            @include breakpoint(twelve_hundred) {
+                height: 52.5rem;
+            }
+            @include breakpoint(ten_twenty_four) {
+                height: auto;
+            }
+        } //tab_section_container
+               
+        .split_tab_section {
+           position: relative;
+           height: 100%;
+           h2.title {
+               position: relative;
+               z-index: 100;
+           }
+           
+           &.right {
+               position: relative;
+               top: 0;
+               left: 40%;
+               bottom: 0;
+               width: 60%;
+               @include breakpoint(ten_twenty_four) {
+                   float: none;
+                   width: 100%;
+                   left: 0;
+               }
+           } //&.right
+           &.left {
+               position: absolute;
+               top: 0;
+               left: 0;
+               bottom: 0;
+               width: 40%;
+               @include breakpoint(ten_twenty_four) {
+                   position: relative;
+                   width: 100%;
+               }
+               
+               .tab_number {
+                   position: absolute;
+                   top: 0;
+                   right: 0;
+                   span {
+                       display: block;
+                       padding: .5rem 1.5rem;
+                       background: $blue;
+                       color: $white;
+                       font-family: $slab_font;
+                       font-size: 2.5rem;
+                       font-weight: 500;
+                       @include breakpoint(six_forty) {
+                           font-size: 1.75rem;
+                           padding: .25rem 1rem;
+                       }
+                   }
+               }
+           } //&.left
+           
+           &.copy {
+               .copy_content_section {
+                    position: absolute;
+                    width: 100%;
+                    max-width: 1100px;
+                    padding: 4rem 15% 4rem 4rem;
+                    top: 50%;
+                    @include transform( translateY(-63%) );
+                    @include breakpoint(twelve_hundred) {
+                        padding: 2rem 4rem;
+                    }
+                    @include breakpoint(ten_twenty_four) {
+                        position: relative;
+                        top: 0%;
+                        max-width: inherit;
+                        padding: 3rem 10%;
+                        @include transform( translateY(0%) );
+                    }
+                    @include breakpoint(seven_sixty_eight) {
+                        padding: 3rem 2rem;
+                    }
+                    @include breakpoint(six_forty) {
+                        padding: 2rem;
+                    }        
+                } //copy_content_section
+           } // copy
+            &.image {
+                .copy_overlay {
+                    position: absolute;
+                    width: 100%;
+                    max-width: 380px;
+                    top: 50%;
+                    right: 0;
+                    left: 0;
+                    margin: 0 auto;
+                    @include transform( translateY(-50%) );
+                    @include breakpoint(ten_twenty_four) {
+                        position: relative;
+                        padding: 6rem 0;
+                        top: 0;
+                        @include transform( translateY(0%) );
+                    } 
+                    b { text-transform: uppercase; }
+                    a {
+                        display: block;
+                        margin: .5rem 0 0 0;
+                        font-size: 1rem;
+                        font-style: italic;
+                    }
+                    p {
+                        font-size: 1.5rem;
+                        @include breakpoint(seven_sixty_eight) {
+                            font-size: 1.25rem;
+                        }
+                    }
+                } //copy_overlay
+            } // image
+            
+            .bottom_support_content {
+                position: absolute;
+                vertical-align: bottom;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                padding: 2rem 15% 2rem 4rem;
+                background: rgba( 000, 000, 000, .5);
+                @include breakpoint(twelve_hundred) {
+                    padding: 2rem 4rem;
+                }
+                @include breakpoint(ten_twenty_four) {
+                    position: relative;
+                    padding: 3rem 10%;
+                }
+                @include breakpoint(seven_sixty_eight) {
+                    padding: 3rem 2rem;
+                }
+                @include breakpoint(six_forty) {
+                    padding: 2rem;
+                }
+            } // bottom_support_content
+       } //split_tab_section
+       
+       .tab_section_container_1 {
+            .split_tab_section.image {
+                background: url("/assets/images/wwsf_incarceration_image.jpg") bottom left no-repeat;
+                background-size: cover;
+                @include breakpoint(ten_twenty_four) {
+                    background: url("/assets/images/wwsf_incarceration_image_1024.jpg") bottom right no-repeat;
+                    background-size: cover;    
+                }
+                @include breakpoint(four_eighty) {
+                    background: url("/assets/images/wwsf_incarceration_image_480.jpg") center center no-repeat;
+                    background-size: cover;    
+                }
+            }
+        } //split_scroll_inner_container_1
+
+        .tab_section_container_2 {
+            .split_tab_section.image {
+                background: url("/assets/images/wwsf_corporate_welfare_image.jpg") top right no-repeat;
+                background-size: cover;
+                @include breakpoint(ten_twenty_four) {
+                    background: url("/assets/images/wwsf_corporate_welfare_image_1024.jpg") bottom right no-repeat; 
+                    background-size: cover;   
+                }
+                @include breakpoint(four_eighty) {
+                    background: url("/assets/images/wwsf_corporate_welfare_image_480.jpg") center center no-repeat; 
+                    background-size: cover;   
+                }
+            } //&.image
+        } //split_scroll_inner_container_2
+        
+        .tab_section_container_3 {
+            .split_tab_section.image {
+                background: url("/assets/images/wwsf_education_reform_image.jpg") top left no-repeat;
+                background-size: cover;
+                @include breakpoint(ten_twenty_four) {
+                    background: url("/assets/images/wwsf_education_reform_image_1024.jpg") bottom left no-repeat;
+                    background-size: cover;
+                }
+                @include breakpoint(four_eighty) {
+                    background: url("/assets/images/wwsf_education_reform_image_480.jpg") bottom left no-repeat;
+                    background-size: cover;
+                }
+            } //&.image
+        } //split_scroll_inner_container_3
+        
+        .tab_content_support_container {
+            position: relative;
+            padding: 3rem;
+            background: $light_gray;
+            text-align: center;
+            @include breakpoint(six_forty) {
+                padding: 2rem;
+            }
+            .learn_more_support_resources {
+                margin: 1.5rem auto 0 auto;
+                @include breakpoint(ten_twenty_four) {
+                    margin: 1rem auto 0 auto;
+                }
+                li {
+                    position: relative;
+                    display: inline-block;
+                    width: auto;
+                    min-height: 4.5rem;
+                    max-width: 33%;
+                    width: auto;
+                    vertical-align: top;
+                    padding: 0 2rem;   
+                    text-align: left;  
+                    border-left: 1px solid $dark_blue;
+                    &:first-child {
+                        padding-left: 0;
+                        border: none;
+                    }
+                    &:last-child {
+                        padding-right: 0;
+                    }
+                    @include breakpoint(six_forty) {
+                        display: block;
+                        width: 100%;
+                        max-width: none;
+                        padding: .5rem 0;
+                        text-align: center;
+                        border: none;
+                    }
+                    p {
+                        font-size: 1rem;
+                        font-style: italic;
+                    }
+                    a {
+                        display: block;
+                        font-size: 1rem;
+                        font-style: italic;
+                    }
+                } //li
+            } //learn_more_support_resources
+        } //tab_content_support_container        
+    } //.tabs_content_container
+// END WHAT WE STAND FOR - SPLIT SCROLL SECTION
 
 
 
@@ -5760,18 +6101,16 @@ footer {
       margin: 0 auto;
       @include transform( translateY(-50%) );
       @include breakpoint(ten_twenty_four) {
-        top: 3.25rem;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: auto;
-        @include transform( translateY(0%) );
+        height: 0;
+        padding-bottom: 50%;
       }
     }
     iframe {
       width: 100%;
       height: 100%;
+      @include breakpoint(ten_twenty_four) {
+        position: absolute;
+      }
     } //iframe
     .close_button {
       @include breakpoint(ten_twenty_four) {
@@ -5903,7 +6242,6 @@ footer {
   .col_6-12 {
     display: inline-block;
     width: 49.75%;
-    text-align: left;
     @include breakpoint(ten_twenty_four) {
       width: 100%;
       margin: 0 auto;
@@ -6271,8 +6609,8 @@ footer {
     vertical-align: middle;
     z-index: 300;
     margin: .5rem auto;
-    height: 65px;
-    width: 65px;
+    height: 55px;
+    width: 55px;
     border-radius: 50%;
     cursor: pointer;
     text-align: center;
@@ -6285,19 +6623,19 @@ footer {
       right: 0;
       bottom: 0;
       left: 0;
-      width: 20px;
-      height: 33px;
+      width: 17px;
+      height: 32px;
       margin: auto;
-      font-size: 2rem!important;
+      font-size: 1.9rem!important;
       @include breakpoint(seven_sixty_eight) {
         width: 16px;
-        height: 27px;
+        height: 29px;
         font-size: 1.75rem!important;
       }
     }
     @include breakpoint(seven_sixty_eight) {
-      height: 55px;
-      width: 55px;
+      height: 50px;
+      width: 50px;
       margin: .5rem auto 0 auto;
     }
     
@@ -6323,92 +6661,9 @@ footer {
     
     //COLOR CLASSES
     &.play_button_1 {
-      color: $soft_blue;
-      border: 1px solid $white;
-      background: rgba(255, 255, 255, .25);
-      &:hover {
-        color: $soft_blue;
-        background: $dark_blue;
-        border: 1px solid $dark_blue;
-      }
-      @include breakpoint(ten_twenty_four) {
-        color: $blue;
-        border: 1px solid $blue;
-        background: rgba(255, 255, 255, 1);
-        &:hover {
-          color: $white;
-          background: $blue;
-          border: 2px solid $blue;
-        }
-      }
-      &.active {
-        color: $blue;
-        border: 1px solid $blue;
-        background: rgba(255, 255, 255, 1);
-      }
-    } //play_button_1
-
-    &.play_button_2 {
       color: $dark_blue;
       border: 1px solid $blue;
-      background: rgba(255, 255, 255, .25);
-      &:hover {
-        color: $soft_blue;
-        background: $dark_blue;
-        border: 2px solid $dark_blue;
-      }
-      @include breakpoint(ten_twenty_four) {
-        color: $blue;
-        border: 1px solid $blue;
-        background: rgba(255, 255, 255, 1);
-        &:hover {
-          color: $white;
-          background: $blue;
-          border: 1px solid $blue;
-        }
-      }
-      &.active {
-        color: $white;
-        border: 1px solid $blue;
-        background: $blue;
-      }
-    } //play_button_2
-
-    &.play_button_3 {
-      color: $dark_blue;
-      border: 1px solid $white;
-      background: rgba(255, 255, 255, .25);
-      &:hover {
-        color: $soft_blue;
-        background: $dark_blue;
-        border: 1px solid $dark_blue;
-      }
-      @include breakpoint(ten_twenty_four) {
-        color: $blue;
-        border: 1px solid $blue;
-        background: rgba(255, 255, 255, 1);
-        &:hover {
-          color: $white;
-          background: $blue;
-          border: 1px solid $blue;
-        }
-      }
-      &.active {
-        color: $white;
-        border: 1px solid $dark_blue;
-        background: rgba(0, 42, 92, 1);
-        &:hover {
-          color: $white;
-          background: $blue;
-          border: 1px solid $blue;
-        }
-      }
-    } //play_button_3
-
-    &.play_button_4 {
-      color: $dark_blue;
-      background: rgba(255, 255, 255, .25);
-      border: 1px solid $white;
+      background: rgba(255, 255, 255, 1);
       &:hover {
         color: $white;
         background: $blue;
@@ -6416,15 +6671,10 @@ footer {
       }
       &.active {
         color: $dark_blue;
+        border: 1px solid $blue;
         background: rgba(255, 255, 255, 1);
-        border: 1px solid $white;
-        &:hover {
-          color: $white;
-          background: $blue;
-          border: 1px solid $blue;
-        }
       }
-    } //play_button_4
+    } //play_button_1
   } //fa_play_button
 
   .play_cta {
@@ -6438,9 +6688,9 @@ footer {
     }
     &:hover {
       .fa_play_button.play_button_1 {
-        color: $soft_blue;
-        background: $dark_blue;
-        border: 1px solid $dark_blue;
+        color: $white;
+        background: $blue;
+        border: 1px solid $blue;
       }
       .fa_play_button.play_button_2 {
         color: $soft_blue;
