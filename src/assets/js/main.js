@@ -381,6 +381,7 @@
 	function fullScreenVideo() {
 		var playButton = $('.fa_play_button'),
 			playCTA = $('.play_cta'),
+			textLinkPlay = $('.text_link_play');
 
 			fullScreenVideoContainer = $('.full_screen_video_container'),
 			videoIframeContainer = $('.full_screen_video_container .video'),
@@ -389,6 +390,7 @@
 
 		playButton
 			.add(playCTA)
+			.add(textLinkPlay)
 			.click( function(event) {
 				var videoID = $(this).attr("video-id");
 				var videoURL = "http://video.kochcreativegroupdev.com/players/"+videoID+"-quhcId2B.html";

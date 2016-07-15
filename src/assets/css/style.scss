@@ -443,6 +443,9 @@
       top: 50%;
       @include transform( translateY(-50%) );
   }
+  .text_link_play {
+    cursor: pointer;
+  }
 /*--END ONE OFF STYLINGS--*/
 
 
@@ -1566,6 +1569,15 @@
         img {
           position: relative;
           z-index: 100;
+        }
+        .fa_play_button {
+          z-index: 100;
+          position: absolute;
+          top: 50%;
+          right: 0;
+          left: 0;
+          margin: 0 auto;
+          @include transform( translateY(-50%) );
         }
       }
     } //homepage_campaign_intro_content_container
@@ -3725,6 +3737,12 @@ i.click_logo_cta {
                 max-width: 6.25rem; //100px;
               }
             } //img.bgc
+            img.jump_start {
+              max-width: 8.75rem; //140px
+              @include breakpoint(eight_fifty) {
+                max-width: 6.25rem; //100px;
+              }
+            } //img.bgc
             
             p {
               display: inline-block;
@@ -3831,6 +3849,10 @@ i.click_logo_cta {
         }
         &.giving_9 {
           background: url( /assets/images/highlights_image_giving_9.jpg ) center center no-repeat;
+          background-size: cover;
+        }
+        &.giving_10 {
+          background: url( /assets/images/highlights_image_giving_10.jpg ) center center no-repeat;
           background-size: cover;
         }
         &.gp_1 {
@@ -6650,8 +6672,8 @@ footer {
       }
     } //&.md
     &.sm {
-      height: 27px!important;
-      width: 27px!important;
+      height: 30px!important;
+      width: 30px!important;
       &:before {
         height: 16px!important;
         width: 10px!important;

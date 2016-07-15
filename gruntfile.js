@@ -172,7 +172,8 @@ module.exports = function(grunt) {
           'dist/assets/css/variables_and_mixins.css': 'src/assets/css/variables_and_mixins.scss',
           'dist/assets/css/what_we_do.css': 'src/assets/css/what_we_do.scss',
           'dist/assets/css/jotforms.css': 'src/assets/css/jotforms.scss',
-          'dist/assets/css/icon_font/scss/font-awesome.css': 'src/assets/css/icon_font/scss/font-awesome.scss'        
+          'dist/assets/css/icon_font/scss/font-awesome.css': 'src/assets/css/icon_font/scss/font-awesome.scss',
+          'dist/buildingopportunity/assets/css/style.css': 'src/buildingopportunity/assets/css/style.scss'        
         }
       }
     },
@@ -236,7 +237,8 @@ module.exports = function(grunt) {
           {src: ['src/assets/js/main.js'], dest: 'dist/assets/js/main.js'},
           {src: ['src/assets/js/skrollr.js'], dest: 'dist/assets/js/skrollr.js'},
           {src: ['src/assets/js/slick.js'], dest: 'dist/assets/js/slick.js'},
-          {src: ['src/assets/images/*'], dest: 'dist/assets/images/*'}
+          {src: ['src/assets/images/*'], dest: 'dist/assets/images/*'},
+          {src: ['src/buildingopportunity/assets/js/main.js'], dest: 'dist/buildingopportunity/assets/js/main.js'}
         ]
       }
     },
@@ -252,11 +254,9 @@ module.exports = function(grunt) {
       }
     },
 
-
-
     watch: {
       sass: {
-        files: ['src/assets/css/*.scss'],
+        files: ['src/assets/css/*.scss', 'src/buildingopportunity/assets/css/style.scss'],
         tasks: ['newer:sass'],
         options : { nospawn : true, relative:true }
       },
@@ -265,7 +265,7 @@ module.exports = function(grunt) {
         tasks: ['newer:bake', 'injector']
       },
       copy: {
-        files: ['src/assets/js/*.js', 'src/assets/js/*.json'],
+        files: ['src/assets/js/*.js', 'src/buildingopportunity/assets/js/*.js', 'src/assets/js/*.json'],
         tasks: ['newer:copy']
       }
     }

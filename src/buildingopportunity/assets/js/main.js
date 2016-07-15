@@ -71,7 +71,7 @@ function appendCompanyInfo(clickedCompany) {
 	};
 	var kaes = {
 		company: "Koch Agronomic Services",
-		desc: ["Koch Turf and Ornamental enhanced-efficiency fertilizer will be used throughout the yard to maximize plant performance. The product is environmentally responsible, reducing the potential of nutrient loss. It's the same Koch EEF technology that is used at Kauffman Stadium and Fenway Park, the respective homes of the Kansas City Royals and Boston Red Socks."],
+		desc: ["Koch Turf and Ornamental enhanced-efficiency fertilizer will be used throughout the yard to maximize plant performance. The product is environmentally responsible, reducing the potential of nutrient loss. It's the same Koch EEF technology that is used at Kauffman Stadium and Fenway Park."],
 		link: "http://www.kochind.com/kaes"
 	};  
 	var molex = {

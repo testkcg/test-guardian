@@ -21,7 +21,7 @@ function setStateNames(stateDefiner) {
     case "AR":
         fullStateName = "Arkansas",
         stateJobLinkNumber = "520840082077",
-        factSheetReference = "StateFactSheets_AL.pdf";
+        factSheetReference = "StateFactSheets_AR.pdf";
         break;
 
     case "CA":
