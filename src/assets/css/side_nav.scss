@@ -1,0 +1,58 @@
+/*--Variables and Mixins--*/
+  @import "variables_and_mixins.scss";
+/*--End Variables and Mixins--*//*--SIDE NAV--*/
+
+  .side_nav_mod {
+    @include breakpoint(eight_fifty) {
+      display: none;
+    }
+    li {
+      cursor: pointer;  
+      margin: 0 0 .25rem 0;
+      &:last-child {
+        margin: 0;
+      } 
+      &:hover {
+        a { 
+          background: $ye_green; 
+          color: $white;
+          @include transition( all .25s ease-in-out );
+        }
+      } 
+      &.active {
+        a { 
+          background: $ye_green;
+          color: $white 
+        }
+      }
+      a { 
+        display: block;
+        padding: .5rem 1rem;
+        font-weight: 700;
+        font-family: $sans_serif;
+        color: $ye_dk_gray;
+
+      }
+    }
+  } //SIDE NAV_nav_mod
+
+  .side_nav_sections_container {
+    position: relative;
+    right: 0;
+    p {
+      margin: 0 0 1.5rem 0;
+      &:last-child {
+        margin: 0;
+      }
+    }
+    .side_nav_section_title {
+      padding: 1.5rem 0 0 0;
+      &:first-of-type {
+        padding: 0;
+      }
+      &:last-of-type {
+        padding: 1.5rem 0 0 0;
+      } 
+    }
+  } //SIDE NAV_content_mod
+/*--END SIDE NAV--*/

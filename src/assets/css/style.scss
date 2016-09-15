@@ -2,7 +2,7 @@
 /*--Variables and Mixins--*/
   @import "variables_and_mixins.scss";
 /*--End Variables and Mixins--*/
-
+fl
 
 
 
@@ -372,6 +372,20 @@
       background: $light_gray;
       pointer-events: none;
     }
+  } 
+  .quote_cred {
+    font-size: 1.065rem;
+    font-family: $sans_serif_font;
+    color: $dark_gray;
+    background: none;
+    background-clip: initial;
+    -webkit-background-clip: initial;
+    -moz-background-clip: initial;
+    -o-background-clip: initial;
+    text-fill-color: initial;
+    -webkit-text-fill-color: initial;
+    -moz-text-fill-color: initial;
+    -o-text-fill-color: initial;
   }
 /*--END HTML ELEMENTS--*/
 
@@ -1472,8 +1486,8 @@
         }
       }
 
-      .wak_image_tag {
-        position: absolute;
+      .wak_image_tag { 
+        position: absolute; 
         width: 10rem;
         right: 0;
         bottom: 12.5%;
@@ -2259,14 +2273,14 @@
       }
     } //careers_header
     &.accounting_header {
-      background: url( /assets/images/header_image_accounting.jpg ) right center no-repeat;
+      background: url( /assets/images/header_image_accounting2.jpg ) center center no-repeat;
       background-size: cover;
       @include breakpoint(ten_twenty_four) {
-        background: url( /assets/images/header_image_accounting_1024.jpg ) center center no-repeat;
+        background: url( /assets/images/header_image_accounting2_1024.jpg ) center center no-repeat;
         background-size: cover;
       }
       @include breakpoint(four_eighty) {
-        background: url( /assets/images/header_image_accounting_480.jpg ) right center no-repeat;
+        background: url( /assets/images/header_image_accounting2_480.jpg ) center center no-repeat;
         background-size: cover;
       }
     } //subpage_header_mod.accounting_header
@@ -2330,6 +2344,35 @@
         background-size: cover;
       }
     } //subpage_header_mod.veterans_header
+    &.military_header {
+      background: url( /assets/images/Military-Tips_WebPage.jpg ) right center no-repeat;
+      background-size: cover;
+      @include breakpoint(ten_twenty_four) {
+        background: url( /assets/images/Military-Tips_WebPage.jpg ) left center no-repeat;
+        background-size: cover;
+      }
+      @include breakpoint(six_forty) {
+        background: url( /assets/images/Military-Tips_WebPage640.jpg ) center center no-repeat;
+        background-size: cover;
+      }
+      .mission_title {
+        width: 850px;
+        margin-top: 2.5rem;
+        @include breakpoint(sixteen_hundred) {
+          width: 700px;
+        }
+        @include breakpoint(twelve_hundred) {
+          width: 600px;
+        }
+        @include breakpoint(seven_sixty_eight) {
+          width: 400px;
+        }
+        @include breakpoint(six_forty) {
+          display: none;
+          width: 100%;
+        }
+      } 
+    } //subpage_header_mod.military_header
     &.sustainability_header {
       background: url( /assets/images/header_image_what_we_do.jpg ) center center no-repeat;
       background-size: cover;
@@ -3280,6 +3323,18 @@ i.click_logo_cta {
         background-size: cover;
       }
     }
+    &.feature_bg.military {
+      background: url( /assets/images/Military-Tips_WebPage.jpg ) center center no-repeat;
+      background-size: cover;
+      @include breakpoint(ten_twenty_four) {
+        background: url( /assets/images/Military-Tips_WebPage.jpg ) center center no-repeat;
+        background-size: cover;
+      }  
+      @include breakpoint(four_eighty) {
+        background: url( /assets/images/Military-Tips_WebPage.jpg ) center center no-repeat;
+        background-size: cover;
+      }
+    }
     
   // Companies
     &.feature_bg.chemtech_1 {
@@ -3855,6 +3910,10 @@ i.click_logo_cta {
           background: url( /assets/images/highlights_image_giving_10.jpg ) center center no-repeat;
           background-size: cover;
         }
+        &.giving_11 {
+          background: url( /assets/images/highlights_image_giving_11.jpg ) center center no-repeat;
+          background-size: cover;
+        }
         &.gp_1 {
           background: url( /assets/images/highlights_image_gp_1.jpg ) top right no-repeat;
           background-size: cover;
@@ -3982,7 +4041,15 @@ i.click_logo_cta {
           @include breakpoint(four_eighty) {
             max-width: 15rem;
           }
-
+          &.ta_l {
+            text-align: left!important;
+          }
+          &.ta_c {
+            text-align: center!important;
+          }
+          &.ta_r {
+            text-align: right!important;
+          }
           &.left {
             left: 10%;
             max-width: inherit;
@@ -6861,7 +6928,269 @@ footer {
      }
   }
 // END loader gif
+  .side_nav_mod {
+    @include breakpoint(eight_fifty) {
+      //display: none;
+      margin-bottom: 1rem; 
+    }
+    li {
+      cursor: pointer;  
+      margin: 0 0 .25rem 0;
+      &:last-child {
+        margin: 0;
+      } 
+      &:hover {
+        a { 
+          background: $blue; 
+          color: $white;
+          @include transition( all .25s ease-in-out );
+        }
+      } 
+      &.active {
+        a { 
+          background: $blue;
+          color: $white 
+        }
+      }
+      a { 
+        display: block;
+        padding: .5rem 1rem;
+        font-weight: 700;
+        font-family: $sans_serif_font;
+        color: $dark_blue;
 
+      }
+    }
+  } //SIDE NAV_nav_mod
+  .pad4 {
+    padding: 0 4rem 5rem;
+    text-align: center;
+    max-width: 850px;
+    margin:0 auto;
+    @include breakpoint(six_forty) {
+      padding: 0 0 2rem;
+    }
+  }
+  .worksheet_img {
+    float: right;
+    margin: 0 0 1rem 1rem;
+    position: relative;
+    z-index: 105;
+    @include breakpoint(six_forty) {
+      float: none;
+      margin: 1rem auto 2rem;
+      display: block;
+    } 
+  }
+  .side_nav_sections_container {
+    position: relative;
+    right: 0;
+    p {
+      margin: 0 0 1.5rem 0;
+      &:last-child {
+        margin: 0;
+      }
+    }
+    .side_nav_section_title {
+      color: $blue;
+      padding: 5rem 0 0 0;
+      @include breakpoint(eight_fifty) {
+        padding:1rem 0 0 0;
+      }
+      &:first-of-type {
+        padding: 0;
+      }
+      &:last-of-type {
+        // padding: 1.5rem 0 0 0;
+      } 
+    }
+    .sub {
+      color: $dark_gray;
+    }
+    h4 {
+      padding: 2rem 0 .75rem 0;
+      @include breakpoint(eight_fifty) {
+        padding:1rem 0 0 0; 
+      }
+    }
+    table { 
+      width: 100%;
+      color: $dark_gray;
+      tr {
+        &:first-child {
+          background: $koch_ind_light_gray;
+          font-weight: 600;
+        }
+        &:nth-child(even) {
+          background: $koch_ind_soft_blue;
+        }
+        td {
+          padding: 5px 10px;
+          width: 50%;
+        }
+      }
+    }
+    ul {
+      list-style-type: disc;
+      padding: 0 0 2rem 2rem;
+      margin: 0;
+    }
+  } //SIDE NAV_content_mod
+  /*--GRID--*/
+  .row {
+    width: 100%;
+    overflow: hidden;
+    padding: 6rem 2rem 7rem;
+    position: relative;
+    @include breakpoint(seven_sixty_eight) {
+      padding: 4rem 2rem;
+    }
+    @include breakpoint(four_eighty) {
+      padding: 2rem;
+    }
+  } //row
+  .nav_offset {
+    padding: 0;
+    height: 91px;
+  }
+  
+  .mcol {
+    float: left;
+    padding: 0 5% 0 0;
+    text-align: left;
+    &:last-child {
+      padding-right: 0rem;
+    }
+    @include breakpoint(eight_fifty) {
+      padding: 0 0 5% 0;
+      &:last-child {
+        padding: 0rem;
+      }
+    }
+    &.no_p {
+      padding: 0;
+    }
+    p {
+      text-align: left;
+    }
+  } //col
+  .col_1-16 { width: 6.25%; }
+  .col_2-16 { width: 12.5%; }
+  .col_3-16 { width: 18.75%; }
+  .col_4-16 { width: 25%; }
+  .col_5-16 { width: 31.25%; }
+  .col_6-16 {
+    width: 37.5%;
+    @include breakpoint(eight_fifty) {
+      width: 100%;
+    }
+  }
+  .col_7-16 { width: 43.75%; }
+  .col_8-16 {
+    width: 50%;
+    @include breakpoint(eight_fifty) {
+      width: 100%;
+    }
+  }
+  .col_9-16 { width: 56.25%; }
+  .col_10-16 {
+    width: 62.5%;
+    @include breakpoint(eight_fifty) {
+      width: 100%;
+    }
+  }
+  .col_11-16 {
+    width: 68.75%;
+    @include breakpoint(eight_fifty) {
+      width: 100%;
+    }
+  }
+  .col_12-16 {
+    width: 75%;
+    @include breakpoint(eight_fifty) {
+      width: 100%;
+    }
+  }
+  .col_13-16 {
+    width: 81.25%;
+    @include breakpoint(eight_fifty) {
+      width: 100%;
+    }
+  }
+  .col_14-16 {
+    width: 87.5%;
+    @include breakpoint(eight_fifty) {
+      width: 100%;
+    }
+  }
+  .col_15-16 {
+    width: 93.75%;
+    @include breakpoint(eight_fifty) {
+      width: 100%;
+    }
+  }
+  .col_16-16 { width: 100%; }
+
+  .col_1-3 { width: 33.333%; }
+  .col_2-3 { width: 66.666%; }
+
+  .offset_1-16 {
+    margin-left: 6.25%;
+    @include breakpoint(eight_fifty) {
+      margin-left: 0;
+    }
+  }
+  .offset_2-16 {
+    margin-left: 12.5%;
+    @include breakpoint(eight_fifty) {
+      margin-left: 0;
+    }
+  }
+  .offset_3-16 {
+    margin-left: 18.75%;
+    @include breakpoint(eight_fifty) {
+      margin-left: 0;
+    }
+  }
+  .offset_4-16 {
+    margin-left: 25%;
+    @include breakpoint(eight_fifty) {
+      margin-left: 0;
+    }
+  }
+  .offset_5-16 {
+    margin-left: 31.25%;
+    @include breakpoint(eight_fifty) {
+      margin-left: 0;
+    }
+  }
+  .offset_6-16 {
+    margin-left: 37.5%;
+    @include breakpoint(eight_fifty) {
+      margin-left: 0;
+    }
+  }
+  .offset_7-16 {
+    margin-left: 43.75%;
+    @include breakpoint(eight_fifty) {
+      margin-left: 0;
+    }
+  }
+  .offset_8-16 {
+    margin-left: 50%;
+    @include breakpoint(eight_fifty) {
+      margin-left: 0;
+    }
+  }
+  .offset_9-16 {
+    margin-left: 56.25%;
+    @include breakpoint(eight_fifty) {
+      margin-left: 0;
+    }
+  }
+/*--END GRID--*/
+
+/*--END SIDE NAV--*/
 
 /*--
 @media (max-width: 64em) {

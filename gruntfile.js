@@ -57,7 +57,9 @@ module.exports = function(grunt) {
           'dist/updatebrowser/index.html' : ['dist/assets/css/style.css', 'dist/assets/css/upgrade_browser.css'],
           'dist/vendors/index.html' : ['dist/assets/css/style.css'],
           'dist/veterans/index.html' : ['dist/assets/css/style.css'],
+          'dist/veterans/military_tips.html' : ['dist/assets/css/style.css',],
           'dist/whatwedo/index.html' : ['dist/assets/css/style.css', 'dist/assets/css/what_we_do.css'],
+          'dist/wichitaataglance/index.html' : ['dist/assets/css/style.css'],
           'dist/404.html' : ['dist/assets/css/style.css'],
           'dist/takingastand/index.html' : ['dist/assets/css/style.css', 'dist/assets/css/jotforms.css']
         }
@@ -102,7 +104,9 @@ module.exports = function(grunt) {
           'dist/termsofuse/index.html' : ['dist/assets/js/modernizr.js'],
           'dist/vendors/index.html' : ['dist/assets/js/modernizr.js'],
           'dist/veterans/index.html' : ['dist/assets/js/modernizr.js'],
+          'dist/veterans/military_tips.html' : ['dist/assets/js/modernizr.js'],
           'dist/whatwedo/index.html' : ['dist/assets/js/modernizr.js'],
+          'dist/wichitaataglance/index.html' : ['dist/assets/js/modernizr.js'],
           'dist/404.html' : ['dist/assets/js/modernizr.js'],
           'dist/takingastand/index.html' : ['dist/assets/js/modernizr.js'],
         }
@@ -148,7 +152,9 @@ module.exports = function(grunt) {
           'dist/updatebrowser/index.html' : ['dist/assets/js/main.js'],
           'dist/vendors/index.html' : ['dist/assets/js/main.js'],
           'dist/veterans/index.html' : ['dist/assets/js/main.js'],
+          'dist/veterans/military_tips.html' : ['dist/assets/js/main.js', 'dist/assets/js/side_nav.js'],
           'dist/whatwedo/index.html' : ['dist/assets/js/main.js', 'dist/assets/js/skrollr.js'],
+          'dist/wichitaataglance/index.html' : ['dist/assets/js/main.js', 'dist/assets/js/skrollr.js'],
           'dist/404.html' : ['dist/assets/js/main.js'],
           'dist/takingastand/index.html': ['dist/assets/js/main.js']
         }
@@ -168,6 +174,7 @@ module.exports = function(grunt) {
           'dist/assets/css/locations.css': 'src/assets/css/locations.scss',
           'dist/assets/css/slick.css': 'src/assets/css/slick.scss',
           'dist/assets/css/style.css': 'src/assets/css/style.scss',
+          'dist/assets/css/side_nav.css': 'src/assets/css/side_nav.scss',
           'dist/assets/css/upgrade_browser.css': 'src/assets/css/upgrade_browser.scss',
           'dist/assets/css/variables_and_mixins.css': 'src/assets/css/variables_and_mixins.scss',
           'dist/assets/css/what_we_do.css': 'src/assets/css/what_we_do.scss',
@@ -217,7 +224,9 @@ module.exports = function(grunt) {
               "dist/updatebrowser/index.html": "src/updatebrowser/index.html",
               "dist/vendors/index.html": "src/vendors/index.html",
               "dist/veterans/index.html": "src/veterans/index.html",
+              "dist/veterans/military_tips.html": "src/veterans/military_tips.html",
               "dist/whatwedo/index.html": "src/whatwedo/index.html",
+              "dist/wichitaataglance/index.html": "src/wichitaataglance/index.html",
               'dist/404.html' : ['src/404.html'],
               'dist/takingastand/index.html' : ['src/takingastand/index.html']
             }
@@ -235,6 +244,7 @@ module.exports = function(grunt) {
           {src: ['src/assets/js/locations_mobile.js'], dest: 'dist/assets/js/locations_mobile.js'},
           {src: ['src/assets/js/location_data.json'], dest: 'dist/assets/js/location_data.json'},
           {src: ['src/assets/js/main.js'], dest: 'dist/assets/js/main.js'},
+          {src: ['src/assets/js/side_nav.js'], dest: 'dist/assets/js/side_nav.js'},
           {src: ['src/assets/js/skrollr.js'], dest: 'dist/assets/js/skrollr.js'},
           {src: ['src/assets/js/slick.js'], dest: 'dist/assets/js/slick.js'},
           {src: ['src/assets/images/*'], dest: 'dist/assets/images/*'},
@@ -242,7 +252,7 @@ module.exports = function(grunt) {
         ]
       }
     },
-
+ 
     imagemin: {
       dynamic: {                         // Another target 
         files: [{
@@ -254,7 +264,7 @@ module.exports = function(grunt) {
       }
     },
 
-    watch: {
+    watch: { 
       sass: {
         files: ['src/assets/css/*.scss', 'src/buildingopportunity/assets/css/style.scss'],
         tasks: ['newer:sass'],
@@ -269,7 +279,7 @@ module.exports = function(grunt) {
         tasks: ['newer:copy']
       }
     }
-    
+     
 
   });
 

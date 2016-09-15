@@ -45,25 +45,54 @@
         <!--CRITICAL CSS-->
             <!--Inline CSS included here to get the homepage image to user as fast as possible for low connection areas-->
             <style>
-                .homepage_slider_container .jwplayer {
-                    position: absolute;
-                    min-width: 100%;
-                    min-height: 40rem;
-                    top: 50%;
-                    right: 0;
-                    left: 0;
+                .homepage_slider_container {
+                    background: url( /assets/images/homepage_bg_image_1600.jpg ) center top no-repeat;
+                    background-size: 100%;
+                }
+                .html5-video-player {
+                    background-color: transparent!important;
+                }
+                .ytp-watermark {
+                    display: none!important:;
+                }
+                .video-background {
+                  background: #000;
+                  position: fixed;
+                  top: 0; right: 0; bottom: 0; left: 0;
+                  z-index: -99;
+                }
+                .video-foreground,
+                .video-background embed {
+                  position: absolute;
+                  top: 50%;
+                  left: 0;
+                  width: 100%;
+                  height: 160%;
+                  pointer-events: none;
                     margin: 0 auto;
-                    background: url( /assets/images/homepage_bg_image_1600.jpg ) center center no-repeat;
-                    background-size: cover;
+                    background: url( /assets/images/homepage_bg_image_1600.jpg ) center top no-repeat;
+                    background-size: 100%;
                     -webkit-transform: translateY(-50%);
                     -moz-transform: translateY(-50%);
                     -ms-transform: translateY(-50%);
                     -o-transform: translateY(-50%);
                     transform: translateY(-50%);
                 }
+                @media (min-aspect-ratio: 16/9) {
+                  .video-foreground { height: 115%; /*top: -100%;*/ }
+                }
+                @media (max-aspect-ratio: 16/9) {
+                  .video-foreground { width: 150%; left: -25%; }
+                }
+                .video_cover {
+                    display: none; 
+                }
                 @media (max-width: 64em) {
-                    .homepage_slider_container .jwplayer {
+                    .homepage_slider_container .jwplayer .youtube_container {
                         display: none;
+                    }
+                    .video_cover {
+                    display: block; 
                     }
                 }
             </style>
@@ -78,11 +107,13 @@
         <article class="homepage_template" role="main">
 
             <section class="homepage_slider_container">
-                <div class="slide bg_video_slide"> 
+                <div class="slide bg_video_slide video-background"> 
                     <div class="video_cover"></div>
                     <div class="slide_cover"></div>
-                    <div class="jwplayer_container">
-                        <script src="http://video.kochcreativegroupdev.com/players/iCldG7Xv-x2n83pVM.js"></script>
+                    <div class="video-foreground">
+                        <!-- <script src="http://video.kochcreativegroupdev.com/players/iCldG7Xv-x2n83pVM.js"></script> -->
+                        <!-- <iframe id="homepageVideo" frameborder="0" width=”16″ height=”9″  src="https://www.youtube.com/embed/sgnPmZeYA-g?wmode=transparent&controls=0&showinfo=0&autohide=1&autoplay=1&loop=1&feature=oembed&playlist=sgnPmZeYA-g"></iframe> -->
+                        <embed src="http://www.youtube.com/v/sgnPmZeYA-g?loop=1&hl=en_US&rel=0&autohide=1&autoplay=1&playlist=sgnPmZeYA-g" wmode="transparent" type="application/x-shockwave-flash" width="100%" height="100%" allowfullscreen="true" title="Adobe Flash Player">
                     </div>
                                        
                     <div class="slide_content_display_type">
@@ -291,6 +322,5 @@
         
         <!-- FooterJS: -->
         <!-- endFooterJS -->
-
     </body>
 </html>
