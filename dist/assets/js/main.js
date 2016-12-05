@@ -232,20 +232,20 @@
 
 					homepageCampaignIntroAnchorTiming;
 
-
+					// 20160916 M.A.R. - Removed because currently there is no campaign hero
 					//If the user has scrolled the height of the campaign intro stick it to the top
-					if (pixelsScrolled >= homepageCampaignIntroHeight) {
-						homepageCampaignIntro.css({'position':'fixed', 'top':'0px'});
-						homepageCampaignSupport.css({'top':homepageCampaignIntroHeight});
-						homepageCampaignIntroContentContainer.css({'position':'fixed'});
-						homepageSliderContainer.css({'opacity':'0'});
-					}
-					else {
-						homepageCampaignIntro.css({'position':'relative'});
-						homepageCampaignSupport.css({'top':'auto'});
-						homepageCampaignIntroContentContainer.css({'position':'absolute'});
-						homepageSliderContainer.css({'opacity':'1'});
-					}
+					// if (pixelsScrolled >= homepageCampaignIntroHeight) {
+					// 	homepageCampaignIntro.css({'position':'fixed', 'top':'0px'});
+					// 	homepageCampaignSupport.css({'top':homepageCampaignIntroHeight});
+					// 	homepageCampaignIntroContentContainer.css({'position':'fixed'});
+					// 	homepageSliderContainer.css({'opacity':'0'});
+					// }
+					// else {
+					// 	homepageCampaignIntro.css({'position':'relative'});
+					// 	homepageCampaignSupport.css({'top':'auto'});
+					// 	homepageCampaignIntroContentContainer.css({'position':'absolute'});
+					// 	homepageSliderContainer.css({'opacity':'1'});
+					// }
 
 					//Define how long the intro section should be stuck at the top
 					homepageCampaignIntroAnchorTiming = (homepageCampaignSupport.offset().top-pixelsScrolled)+homepageCampaignSupportFirstContentHeight;
@@ -825,17 +825,25 @@
 /*--END SPLIT SCREEN SCROLL WWSF--*/
 
 
+/*--NEXT ARTICLE CTA--*/
+    var scrollTrigger = false;
+    console.log($(document).height()*.1);
+    console.log($(document).height());
 
+    $(window).scroll(function() {
+        if ($(this).scrollTop() >= ($(document).height()*.2) && !scrollTrigger ) { // this refers to window
+            $('.next_article_cta_container').removeClass('hidden');
+            scrollTrigger = true;
+        }
+    });
 
+    $('.close_next_article_cta_container_icon').click(function(event){
+        $('.next_article_cta_container').addClass('teased');
+        event.stopPropagation();
+    });
 
-
-
-
-
-
-
-
-
-
-
-
+    $('.next_article_tease_button').click(function(event){
+        $('.next_article_cta_container').removeClass('teased')
+        event.stopPropagation();
+    });
+/*--END NEXT ARTICLE CTA--*/

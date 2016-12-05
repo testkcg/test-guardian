@@ -41,7 +41,7 @@
             </div>  
         </span>
 
-        <article role="main">
+        <article id="map-container" role="main">
 
             <div class="inactive_map_cover"></div>
 
@@ -101,7 +101,7 @@
                 </h4>
 
                 <p class="checklist_intro"> 
-                    Koch companies employ over 100,000 people across more than 60 countries. Click any business below to see its locations.
+                    Koch companies employ over 100,000 people across more than 60 countries.
                 </p>
                 
                 <div class="company_checkbox_container">
@@ -507,28 +507,32 @@
                 class="breadcrumb_container texture_bg white_gradient_bottom"
                 itemscope
                 itemtype="http://schema.org/BreadcrumbList">
-                <div
-                    class="house_icon"
-                    itemprop="itemListElement"
-                    itemscope
-                    itemtype="http://schema.org/ListItem">
-                    <a itemprop="item" href="/">
-                        <img
-                            src="/assets/images/house_icon.svg"
-                            alt="Breadcrumb house icon" />
-                        <span itemprop="name" style="display: none;">Home</span>
-                    </a>
+                <div class="row column collapse text-align-left fix">
+                    <div class="large-12 columns">
+                        <div
+                            class="house_icon"
+                            itemprop="itemListElement"
+                            itemscope
+                            itemtype="http://schema.org/ListItem">
+                            <a itemprop="item" href="/">
+                                <img
+                                    src="/assets/images/house_icon.svg"
+                                    alt="Breadcrumb house icon" />
+                                <span itemprop="name" style="display: none;">Home</span>
+                            </a>
+                        </div>
+                        <p
+                            class="breadcrumb_link"
+                            itemprop="itemListElement"
+                            itemscope 
+                            itemtype="http://schema.org/ListItem">
+                            <a itemprop="item" href="http://www.kochind.com/locations/">
+                                <span itemprop="name">Locations</span>
+                            </a>
+                            <meta itemprop="position" content="1" />
+                        </p>
+                    </div>
                 </div>
-                <p
-                    class="breadcrumb_link"
-                    itemprop="itemListElement"
-                    itemscope 
-                    itemtype="http://schema.org/ListItem">
-                    <a itemprop="item" href="http://www.kochind.com/locations/">
-                        <span itemprop="name">Locations</span>
-                    </a>
-                    <meta itemprop="position" content="1" />
-                </p>
             </div> <!--breadcrumb_container-->
             
             <!--(bake /includes/footer.html)-->

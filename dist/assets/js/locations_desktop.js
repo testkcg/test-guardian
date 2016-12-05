@@ -988,6 +988,7 @@ function initialize() {
                             // if the state has a fact sheet associated with it
                               if ( countryLevelInfoArray[i][0].stateLevelInfo[a][0].stateFactSheetReference != '') {
                                 DOMlocationLevel2DownloadButton.css('display', 'block').attr('href', '../files/statefactsheets/'+countryLevelInfoArray[i][0].stateLevelInfo[a][0].stateFactSheetReference);
+                                DOMlocationLevel2DownloadButton.css('display', 'block').attr('onclick', 'ga("send", "event", "'+selectedState+'_stateFactSheet", "click", "download")');
                               }
 
                             // if the state head count does not equal 0

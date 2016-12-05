@@ -5,287 +5,684 @@
     <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 
     <head>
-        
-        <!--GOOGLE EXPERIMENTS CODE-->
-            <script>function utmx_section(){}function utmx(){}(function(){var
-            k='116847560-1',d=document,l=d.location,c=d.cookie;
-            if(l.search.indexOf('utm_expid='+k)>0)return;
-            function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
-            indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
-            length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
-            '<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
-            '://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
-            '&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
-            valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
-            '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
-            </script><script>utmx('url','A/B');</script>
-        <!--END GOOGLE EXPERIMENTS CODE-->
-        
         <link rel="icon" href="http://www.kochind.com/files/favicon.ico" type="image/x-icon" />
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Koch Industries</title>
-        <meta name="description" content="Food. Shelter. Clothing. Transportation. Creating life’s basic necessities for people around the world through various businesses in multiple industries.">
+        <title>Contact - Koch Industries</title>
+        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
         <!-- css: -->
+        <link rel="stylesheet" href="../assets/css/style.css">
         <!-- endcss -->
 
         <!-- HeaderJS: -->
+        <script src="../assets/js/modernizr.js"></script>
         <!-- endHeaderJS -->
 
-        <!--(bake /includes/head_tag_references.html)-->
+        <!--FONTS-->
+        	<script src="https://use.typekit.net/ecp2sks.js"></script>
+        	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+        <!-- END FONT-->
+
+        <!--GOOGLE ANALYTICS-->
+        	<script>
+        	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        	  ga('create', 'UA-73653542-1', 'auto');
+        	  ga('send', 'pageview');
+        	</script>
+        <!--END GOOGLE ANALYTICS-->
+
+        <!--PIXEL SCROLLING CODE-->
+          <script>
+            //*****************************************************************
+            /** Predefined variables **/
+            EventNONInteraction = false; // This variable determines the event will be a noninertact event or not
+            Frequency = 10; // This variable determines the Frequency the event will be fired, MAKE SURE THE NUMBER ENTERED CAN BE DIVIDED BY 100 (10 means each 10 precent the event will fire)
+
+            GA_EventCategory = 'Page Interaction'; // Google Analytics event category
+            GA_EventAction = 'Scroll Down'; // Google Analytics event action.
+
+            /************ DON'T EDIT BELOW THIS PART ************/
+            _frequency = Frequency;
+            _repentance = 100 / Frequency;
+            var _scrollMatrix = new Array();
+            for (ix = 0; ix < _repentance; ix++) {
+                _scrollMatrix[ix] = [_frequency, 'false'];
+                _frequency = Frequency + _frequency;
+            }
+
+            document.onscroll = function (e) {
+            	var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+
+                for (iz = 0; iz < _scrollMatrix.length; iz++) {
+                    if ( (scrollTop + window.outerHeight >= window.innerHeight * _scrollMatrix[iz][0] / 100 )  && (_scrollMatrix[iz][1]== 'false') ) {
+                        _scrollMatrix[iz][1] = 'true';
+                        ga('send', 'event', GA_EventCategory, GA_EventAction, _scrollMatrix[iz][0]+'%'); 
+                    }
+                }
+            };
+          </script>
+        <!--END PIXEL SCROLLING CODE-->
+
+        <!--[if lt IE 9 ]>
+            <script>
+            window.location = '/updatebrowser/index.html';
+            </script>
+        <![endif]--> 
+
 
         <meta property="og:title" content="Koch Industries">
         <meta property="og:description" content="Food. Shelter. Clothing. Transportation. Creating life’s basic necessities for people around the world through various businesses in multiple industries.">
         <meta property="og:image" content='http://www.kochind.com/assets/images/homepage_bg_image_480.jpg' />
-
-        <link rel="canonical" href="http://www.kochind.com" />
         
-        <!--CRITICAL CSS-->
-            <!--Inline CSS included here to get the homepage image to user as fast as possible for low connection areas-->
-            <style>
-                .homepage_slider_container {
-                    background: url( /assets/images/homepage_bg_image_1600.jpg ) center top no-repeat;
-                    background-size: 100%;
-                }
-                .html5-video-player {
-                    background-color: transparent!important;
-                }
-                .ytp-watermark {
-                    display: none!important:;
-                }
-                .video-background {
-                  background: #000;
-                  position: fixed;
-                  top: 0; right: 0; bottom: 0; left: 0;
-                  z-index: -99;
-                }
-                .video-foreground,
-                .video-background embed {
-                  position: absolute;
-                  top: 50%;
-                  left: 0;
-                  width: 100%;
-                  height: 160%;
-                  pointer-events: none;
-                    margin: 0 auto;
-                    background: url( /assets/images/homepage_bg_image_1600.jpg ) center top no-repeat;
-                    background-size: 100%;
-                    -webkit-transform: translateY(-50%);
-                    -moz-transform: translateY(-50%);
-                    -ms-transform: translateY(-50%);
-                    -o-transform: translateY(-50%);
-                    transform: translateY(-50%);
-                }
-                @media (min-aspect-ratio: 16/9) {
-                  .video-foreground { height: 115%; /*top: -100%;*/ }
-                }
-                @media (max-aspect-ratio: 16/9) {
-                  .video-foreground { width: 150%; left: -25%; }
-                }
-                .video_cover {
-                    display: none; 
-                }
-                @media (max-width: 64em) {
-                    .homepage_slider_container .jwplayer .youtube_container {
-                        display: none;
-                    }
-                    .video_cover {
-                    display: block; 
-                    }
-                }
-            </style>
-        <!--END CRITICAL CSS-->
-       
+        <link rel="canonical" href="http://www.kochind.com/contact/" />
     </head>
         
-    <body class="homepage">
-        
-        <!--(bake /includes/navigation_header.html)-->
+    <body>
 
-        <article class="homepage_template" role="main">
+        <!-- Google Tag Manager -->
+        <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NDC8QG"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NDC8QG');</script>
+        <!-- End Google Tag Manager -->
+        <div class="mobile_nav_icon">
+            <div></div>
+        </div>
 
-            <section class="homepage_slider_container">
-                <div class="slide bg_video_slide video-background"> 
-                    <div class="video_cover"></div>
-                    <div class="slide_cover"></div>
-                    <div class="video-foreground">
-                        <!-- <script src="http://video.kochcreativegroupdev.com/players/iCldG7Xv-x2n83pVM.js"></script> -->
-                        <!-- <iframe id="homepageVideo" frameborder="0" width=”16″ height=”9″  src="https://www.youtube.com/embed/sgnPmZeYA-g?wmode=transparent&controls=0&showinfo=0&autohide=1&autoplay=1&loop=1&feature=oembed&playlist=sgnPmZeYA-g"></iframe> -->
-                        <embed src="http://www.youtube.com/v/sgnPmZeYA-g?loop=1&hl=en_US&rel=0&autohide=1&autoplay=1&playlist=sgnPmZeYA-g" wmode="transparent" type="application/x-shockwave-flash" width="100%" height="100%" allowfullscreen="true" title="Adobe Flash Player">
-                    </div>
-                                       
-                    <div class="slide_content_display_type">
-                        <h1 class="top_type">
-                            Goods
-                        </h1>
-                        <h1 class="bottom_type">
-                            Made Better
-                        </h1>
-                        <p>
-                            <b>Food. Shelter. Clothing. Transportation.</b> Koch is essential to creating life’s basic necessities for people the world over. While relentlessly exploring <a class="text_link_U blue" href="whatwedo/index.html" onclick="ga('send', 'event', 'Ways to do it even better - text link', 'click', 'Homepage - Control');">ways to do it even better.</a>
-                        </p>
-                    </div> <!--slide_content_display_type-->
+        <section class="header_container">
 
-                    <a
-                        class="scroll_icon"
-                        href="#campaign"
-                        onclick="ga('send', 'event', 'Scroll Icon', 'click', 'Homepage - Control');">
-                          <img
-                            class="blue_directional"
-                            src="/assets/images/icon_blue_arrow.svg"
-                            alt="Click here to scroll to the Koch Ind. campaign section" />
+            <div class="header_bar_container" role="banner">
+                <div class="logo_container">
+                    <a href="/">
+                        <img src="/assets/images/logo_kii_white.svg" alt="Koch Industries logo" />
                     </a>
+                </div> <!--logo_container-->
+            </div> <!--logo_nav_icon_container-->
 
-                </div> <!--slide-->
+            <div class="links_container">
 
-                <!-- <div class="slide slide_image">
-                    <div class="slide_content">
-                        <h1>
-                            Slide 2 - CTA
-                        </h1>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur eligendi architecto in obcaecati pariatur dolore sapiente perferendis cumque.
-                        </p>
-                        <a href="" class="button_style_2">
-                            Click Here
-                        </a>
-                    </div>
-                </div> -->
+                <div class="sub_level_nav_cover"></div>
+                <div class="mobile_nav_icon_cover"></div>
 
-            </section> <!--homepage_slider_container-->
+                <div class="sub_level_nav_back_button">
+                    <div class="left_directional light"><div></div></div>
+                </div>
 
-            <section
-                id="campaign"
-                class="homepage_campaign_section">
-
-                <div class="homepage_campaign_intro_hero manny_bg">
-                    <img
-                        class="wak_image_tag"
-                        src="/assets/images/wak_image_tag.svg"
-                        alt="We Are Koch - Koch Industries, Inc. campaign" />
-                </div> <!--homepage_campaign_intro_hero-->
-
-                <div class="homepage_campaign_intro_content_container">
-                    <div class="homepage_campaign_intro_content">
-                        <h2 class="white">
-                          Quenching a Thirsty Planet
-                        </h2>
-                        <p class="white">
-                          Two thirds of our globe is covered with water. Yet people in communities all over the world still profoundly suffer from lack of clean drinking water. Meet Manny Singh, one of our scientists who innovates new and better ways to solve this crisis. <a href="http://kochstories.com/articles/ripple-effect" target="_blank" class="text_link_U blue" onclick="ga('send', 'event', 'Text link - See Full Story Manny', 'click', 'Homepage - Control');">See the full story.</a>
-                        </p>
-                        <div
-                            class="play_cta"
-                            video-id="a5LnX3B5"
-                            onclick="ga('send', 'event', 'Campaign Intro video - Manny', 'click', 'Homepage - Control');">
-                            <i class="fa fa_play_button play_button_1 md">
-                            </i>
-                            <span class="cta white">See Manny's Mission</span>
-                        </div>
-                    </div>
-                </div> <!--homepage_campaign_intro_content_container-->
-
-                <div class="homepage_campaign_support">
-
-                    <div class="homepage_campaign_support_bg"></div> <!--homepage_campaign_support_bg-->
-
-                    <div class="max_width_container">
-                        <div class="info_mod">
-                            <div class="info_mod_content_container center homepage_campaign_support_first_content">
-                              <div class="copy_container">
-                                <h2 class="dark_blue">Abundant Food.<br/>Clean Water.</h2>
-                                <span class="dark_gray">WE’RE WORKING HARD TO SECURE BOTH.</span>
-                                <span class="divider"></span>
-                                <p>
-                                  By the year 2050, Earth will be home to 9 billion people. At Koch Industries, we’re innovating ways to help producers meet the increased demand for reliable supplies of delicious, nourishing food. And the potable water to wash it down.
-                                </p>
-                              </div>
-                            </div>
-                        </div>
-
-                        <div class="info_mod">
-                            <div class="info_mod_content_container copy left">
-                              <div class="copy_container">
-                                <h6 class="cta dark_blue">Growing More Naturally</h6>
-                                <p>
-                                    At <a class="text_link_U blue" href="http://www.kochagronomicservices.com/" taret="_blank" onclick="ga('send', 'event', 'KAES link - text link', 'click', 'Homepage - Control');">Koch Agronomic Services</a>, scientists like John Kruse research promising new ways to stimulate plant performance and crop yield using microbes found naturally in the soil itself. <a href="http://kochstories.com/articles/growing-a-stronger-planet" target="_blank" class="text_link_U blue" onclick="ga('send', 'event', 'Text link - See Full Story John Kruse', 'click', 'Homepage - Control');">See the full story.</a>
-                                </p>
-                              </div>
-                            </div>
-
-                            <div class="info_mod_content_container image right background_image_4">
-                                <div class="info_mod_info_image_content_container center">
-                                    <i
-                                        class="fa fa_play_button play_button_1"
-                                        video-id="RkHg5kIc"
-                                        onclick="ga('send', 'event', 'Campaign Supprt Video - John Kruse', 'click', 'Homepage - Control');">
-                                    </i>
+                <div class="external_links_container">
+                    <ul class="site_links">
+                        <li>
+                            <a
+                                href="http://www.kochstories.com"
+                                target="_blank"
+                                onclick="ga('send', 'event', 'Koch Stories logo', 'click', 'Navigation');">
+                                <div class="koch_stories_logo">
+                                    <p>
+                                        KOCHstories
+                                    </p>
                                 </div>
-                            </div>
-                        </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="http://www.kochnews.com"
+                                target="_blank"
+                                onclick="ga('send', 'event', 'Koch News logo', 'click', 'Navigation');">
+                                <div class="koch_news_logo">
+                                    <p>
+                                        News
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="social_media_links">
+                        <li>
+                            <a
+                                class="fa fa-facebook"
+                                href="https://www.facebook.com/KochIndustries"
+                                target="_blank"
+                                onclick="ga('send', 'event', 'Facebook logo', 'click', 'Navigation');"
+                                alt="Koch Industries - Facebook">
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                class="fa fa-linkedin"
+                                href="https://www.linkedin.com/company/koch-industries"
+                                target="_blank"
+                                onclick="ga('send', 'event', 'LinkedIn logo', 'click', 'Navigation');"
+                                alt="Koch Industries - Linkedin">
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                class="fa fa-twitter"
+                                href="https://twitter.com/Koch_Industries"
+                                target="_blank"
+                                onclick="ga('send', 'event', 'Twitter logo', 'click', 'Navigation');"
+                                alt="Koch Industries - Twitter">
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                class="fa fa-youtube-play"
+                                href="https://www.youtube.com/user/KochCompanies"
+                                target="_blank"
+                                onclick="ga('send', 'event', 'Youtube logo', 'click', 'Navigation');"
+                                alt="Koch Industries - Youtube">
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                class="glassdoor_icon"
+                                href="https://www.glassdoor.com/Overview/Working-at-Koch-Industries-EI_IE2864.11,26.htm"
+                                target="_blank"
+                                onclick="ga('send', 'event', Glassdoor logo', 'click', 'Navigation');"
+                                alt="Koch Industries - Glassdoor">
+                            </a>
+                        </li>
+                        <li>
+                            <a  class="fa fa-google-plus"
+                                href="https://plus.google.com/+kochindustries"
+                                target="_blank"
+                                onclick="ga('send', 'event', Google+ logo', 'click', 'Contact Page');"
+                                alt="Koch Industries - Google+">
+                            </a>
+                        </li>
+                    </ul>
+                </div> <!--external_nav_container-->
 
-                        <div class="info_mod">
-                            <div class="info_mod_content_container copy right">
-                              <div class="copy_container">
-                                <h6 class="dark_blue">HAVE YOUR STEAK AND ETHANOL, TOO</h6>
-                                <p>
-                                  At <a class="text_link_U blue" href="https://www.fhr.com" target="_blank" onclick="ga('send', 'event', 'FHR link - text link', 'click', 'Homepage - Control');">Flint Hills Resources</a>, we produce ethanol from corn. One major byproduct is dried distillers grains, power-packed nutrition used to feed livestock all over the world.  
-                                </p>
-                              </div>
-                            </div>
+                <nav role="navigation">
 
-                            <div class="info_mod_content_container image left background_image_2"></div>
-                        </div>
+                    <ul> 
+                        <li class="about_nav_item top_level_nav_item">
+                            About 
+                            <i class="fa fa-angle-down"></i> 
+                            <ul class="nav_dropdown" itemscope itemtype="http://www.schema.org/SiteNavigationElement"> 
+                                <li class="sub_level_nav_item" itemprop="name">
+                                    <a itemprop="url" href="/whatwedo/"> 
+                                        What We Do
+                                    </a> 
+                                </li>
+                                <li class="sub_level_nav_item" itemprop="name"> 
+                                    <a itemprop="url" href="/philosophy/">
+                                        Philosophy 
+                                    </a>
+                                </li>  
+                                <li class="sub_level_nav_item" itemprop="name"> 
+                                    <a itemprop="url" href="/locations/">
+                                        Our Locations 
+                                    </a>
+                                </li> 
+                                <li class="sub_level_nav_item" itemprop="name"> 
+                                    <a itemprop="url" href="/takingastand/">
+                                        Taking a Stand
+                                    </a>
+                                </li>
+                            </ul> 
+                        </li> 
+                        <li class="companies_nav_item top_level_nav_item" itemprop="name">
+                            Companies
+                            <i class="fa fa-angle-down"></i>
+                            <ul class="nav_dropdown" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+                                <li class="current sub_level_nav_item" itemprop="name"> 
+                                    <a class='current' href="/companies/">
+                                        Companies Overview 
+                                    </a>
+                                </li> 
+                                <li class="sub_level_nav_item" itemprop="name">
+                                    <a itemprop="url" href="/fhr/"> 
+                                        Flint Hills Resources
+                                    </a> 
+                                </li>
+                                <li class="sub_level_nav_item" itemprop="name"> 
+                                    <a itemprop="url" href="/gp/">
+                                        Georgia-Pacific 
+                                    </a>
+                                </li> 
+                                <li class="sub_level_nav_item" itemprop="name">
+                                    <a itemprop="url" href="/invista/"> 
+                                        INVISTA
+                                    </a> 
+                                </li>
+                                <li class="sub_level_nav_item" itemprop="name"> 
+                                    <a itemprop="url" href="/molex/">
+                                        Molex 
+                                    </a>
+                                </li> 
+                                <li class="sub_level_nav_item" itemprop="name">
+                                    <a itemprop="url" href="/kaes/"> 
+                                        Koch Ag &amp; Energy Solutions
+                                    </a> 
+                                </li>
+                                <li class="sub_level_nav_item" itemprop="name"> 
+                                    <a itemprop="url" href="/chemtech/">
+                                        Koch Chemical Technology Group 
+                                    </a>
+                                </li> 
+                                <li class="sub_level_nav_item" itemprop="name">
+                                    <a itemprop="url" href="/minerals/"> 
+                                        Koch Minerals
+                                    </a> 
+                                </li>
+                                <li class="sub_level_nav_item" itemprop="name"> 
+                                    <a itemprop="url" href="/kpl/">
+                                        Koch Pipeline 
+                                    </a>
+                                </li> 
+                                <li class="sub_level_nav_item" itemprop="name">
+                                    <a itemprop="url" href="/kst/"> 
+                                        Koch Supply &amp; Trading
+                                    </a> 
+                                </li>
+                                <li class="sub_level_nav_item" itemprop="name"> 
+                                    <a itemprop="url" href="/matador/">
+                                        Matador Cattle Company 
+                                    </a>
+                                </li> 
+                            </ul>
+                        </li> 
+                        <li class="careers_nav_item top_level_nav_item" itemprop="name">
+                            Careers 
+                            <i class="fa fa-angle-down"></i> 
+                            <ul class="nav_dropdown" itemscope itemtype="http://www.schema.org/SiteNavigationElement"> 
+                                <li class="sub_level_nav_item" itemprop="name">
+                                    <a itemprop="url" href="/careers/"> 
+                                        How We Work
+                                    </a> 
+                                </li>
+                                <li class="sub_level_nav_item" itemprop="name"> 
+                                    <a itemprop="url" href="/finance/">
+                                        Accounting, Finance &amp; Tax 
+                                    </a>
+                                </li> 
+                                <li class="sub_level_nav_item" itemprop="name">
+                                    <a itemprop="url" href="/engineering/"> 
+                                        Engineering
+                                    </a> 
+                                </li>
+                                <li class="sub_level_nav_item" itemprop="name"> 
+                                    <a itemprop="url" href="/it/">
+                                        Information Technology 
+                                    </a>
+                                </li> 
+                                <li class="sub_level_nav_item" itemprop="name">
+                                    <a itemprop="url" href="/operations/"> 
+                                        Operations &amp; Skilled Trades
+                                    </a> 
+                                </li>
+                                <li class="sub_level_nav_item" itemprop="name"> 
+                                    <a itemprop="url" href="/business/">
+                                        Business &amp; More 
+                                    </a>
+                                </li> 
+                                <li class="sub_level_nav_item" itemprop="name">
+                                    <a itemprop="url" href="/veterans/"> 
+                                        Veterans
+                                    </a> 
+                                </li>
+                                <li class="sub_level_nav_item" itemprop="name"> 
+                                    <a
+                                        itemprop="url"
+                                        href="http://www.kochcollegerecruiting.com"
+                                        target="_blank"
+                                        onclick="ga('send', 'event', 'Koch College Recruiting', 'click', 'Navigation');"> College 
+                                    </a>
+                                </li> 
+                                <li class="sub_level_nav_item" itemprop="name">
+                                    <a
+                                        itemprop="url" 
+                                        class="sub_level_nav_item_cta" 
+                                        href="https://kochcareers.referrals.selectminds.com/" 
+                                        target="_blank"> 
+                                        Apply Now
+                                    </a> 
+                                </li>
+                            </ul> <!--ul--> 
+                        </li>
+                        <li class="responsibility_nav_item top_level_nav_link" itemscope itemtype="http://www.schema.org/SiteNavigationElement" itemprop="name"> 
+                            <a itemprop="url" href="/responsibility/">
+                                Responsibility 
+                            </a>
+                        </li> 
+                        <li class="giving_nav_item top_level_nav_link" itemscope itemtype="http://www.schema.org/SiteNavigationElement" itemprop="name">
+                            <a itemprop="url" href="/giving/"> 
+                                Giving
+                            </a> 
+                        </li>
+                    </ul> 
 
-                        <div class="info_mod">
-                            <div class="info_mod_content_container copy left">
-                              <div class="copy_container">
-                                <h6 class="dark_blue">Fertilizer 2.0</h6>
-                                <p>
-                                  <a class="text_link_U blue" href="http://www.kochfertilizer.com/" target="_blank" onclick="ga('send', 'event', 'KAES link - text link', 'click', 'Homepage - Control');">Koch Agronomic Services</a> creates enhanced efficiency fertilizers that more precisely deliver nutrients to plants – optimizing yields while reducing nitrogen loss to the environment.
-                                </p>
-                              </div>
-                            </div>
-
-                            <div class="info_mod_content_container image right background_image_3"></div>
-                        </div>
+                    <div class="mobile_external_links_container">
+                        <ul class="site_links">
+                            <li>
+                                <a
+                                    href="http://www.kochstories.com"
+                                    target="_blank"
+                                    onclick="ga('send', 'event', 'Koch Stories logo', 'click', 'Navigation');">
+                                    <div class="koch_stories_logo">
+                                        <p>
+                                            KOCHstories
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="http://www.kochnews.com"
+                                    target="_blank"
+                                    onclick="ga('send', 'event', 'Koch News logo', 'click', 'Navigation');">
+                                    <div class="koch_news_logo">
+                                        <p>
+                                            News
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="social_media_links">
+                            <li>
+                                <a
+                                    class="fa fa-facebook"
+                                    href="https://www.facebook.com/KochIndustries"
+                                    target="_blank"
+                                    onclick="ga('send', 'event', 'Facebook logo', 'click', 'Mobile Navigation');"
+                                    alt="Koch Industries - Facebook">
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    class="fa fa-linkedin"
+                                    href="https://www.linkedin.com/company/koch-industries"
+                                    target="_blank"
+                                    onclick="ga('send', 'event', 'LinkedIn logo', 'click', 'Mobile Navigation');"
+                                    alt="Koch Industries - Linkedin">
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    class="fa fa-twitter"
+                                    href="https://twitter.com/Koch_Industries"
+                                    target="_blank"
+                                    onclick="ga('send', 'event', 'Twitter logo', 'click', 'Mobile Navigation');"
+                                    alt="Koch Industries - Twitter">
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    class="fa fa-play"
+                                    href="https://www.youtube.com/user/KochCompanies"
+                                    target="_blank"
+                                    onclick="ga('send', 'event', 'Youtube logo', 'click', 'Mobile Navigation');"
+                                    alt="Koch Industries - Youtube">
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    class="glassdoor_icon"
+                                    href="https://www.glassdoor.com/Overview/Working-at-Koch-Industries-EI_IE2864.11,26.htm"
+                                    target="_blank"
+                                    onclick="ga('send', 'event', Glassdoor logo', 'click', 'Mobile Navigation');"
+                                    alt="Koch Industries - Glassdoor">
+                                </a>
+                            </li>
+                            <li>
+                                <a 
+                                    class="fa fa-google-plus"
+                                    href="https://plus.google.com/+kochindustries"
+                                    target="_blank"
+                                    onclick="ga('send', 'event', Google+ logo', 'click', 'Mobile Navigation');"
+                                    alt="Koch Industries - Google+">
+                                </a>
+                            </li>
+                        </ul>
                     </div>
 
-                    <section class="homepage_campaign_divider text_align_center bg_white white_gradient_top">
-                      <a
-                        href="/whatwedo/"
-                        class="dark_blue"
-                        onclick="ga('send', 'event', 'Explor more CTA - section link', 'click', 'Homepage - Control');">
-                          <span>Explore more of the ways we’re making the goods that make life better.</span>
-                          <img
-                            class="blue_directional right"
-                            src="/assets/images/icon_blue_arrow.svg"
-                            alt="Click here to view the What We Do page" />
-                      </a>
-                    </section>
+                    <div class="mobile_nav_footer_container">
+                        <ul class="mobile_nav_site_footer_links">
+                            <li>
+                                <a href="/contact/">
+                                    Contact Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/termsofuse/">
+                                    Terms of Use
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/privacypolicy/">
+                                    Privacy Policy
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/californiasupply/">
+                                    California Supply
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/vendors/">
+                                    Vendors
+                                </a>
+                            </li>
+                        </ul>
 
-                    <section class="homepage_campaign_tertiary_container">
-                        
-                        <div class="tertiary_bg_image responsibility"></div>
+                        <p class="copyright white">
+                            Koch Industries, Inc. All rights reserved. 
+                        </p>
+                    </div> <!-- mobile_nav_footer_links -->
 
-                        <div class="homepage_campaign_tertiary_content text_align_center">
-                            <img
-                                src="/assets/images/icon_responsibility_award_white.svg"
-                                alt="Koch Industries - Environmental Protection Agency Award" />
-                            <h2 class="white">Responsibility Thrives</h2>
-                            <p class="white"> 
-                                For two years in a row, the Environmental Protection Agency has named Koch Industries the number one U.S.-based parent company in pollution prevention initiatives.<br/>
-                                <a class="text_link_U white" href="/responsibility/" target="" onclick="ga('send', 'event', 'Responsibility link - text link', 'click', 'Homepage - Control');">See our responsibility story.</a>
-                            </p>
-                        </div>
-                        
-                    </section>
+                </nav>
+            </div> <!--links_container-->
 
-                    <div
-                        class="breadcrumb_container texture_bg white_gradient_bottom"
-                        itemscope
-                        itemtype="http://schema.org/BreadcrumbList">
+        </section> <!--navigation_container-->
+
+
+
+        <article>         
+
+            <div class="footer_page_container" role="main">    
+                
+                <h6>General inquiries:</h6>
+                <ul class="contact_list">
+                    <li>
+                       <!-- <a
+                            class="text_link"
+                            href="mailto:info@kochind.com"
+                            target="_top">info@kochind.com</a> -->
+                        <p>
+                            KOCH INDUSTRIES, INC.
+                        </p>
+                        <p>
+                            P.O. Box 2256
+                        </p>
+                        <p>
+                            Wichita, KS 67201-2256
+                        </p>
+                    </li>
+                </ul>
+
+            <!-- TEST SALESFORCE FORM -->
+            <section>
+                <script type="text/javascript" src="https://form.jotform.com/jsform/63064595166159"></script>
+            </section>
+                
+                <!--<h6>Media inquiries:</h6>
+                <ul class="contact_list">
+                    <li>
+                        <p class="contact_company">Koch Industries, Inc. </p>
+                        <p class="contact_name">Dave Dziok – Director, Communications</p>
+                        <a
+                            class="text_link"
+                            href="mailto:david.dziok@kochps.com"
+                            target="_top">david.dziok@kochps.com</a>
+                    </li>
+                    <!-- <li>
+                        <p class="contact_company">Advocacy and Public Policy Communications</p>
+                        <p class="contact_name">Dave Dziok – Director, Communications</p>
+                        <a
+                            class="text_link"
+                            href="mailto:david.dziok@kochps.com"
+                            target="_top">david.dziok@kochps.com</a>
+                    </li> -->
+                    <!-- <li>
+                        <p class="contact_company">Kansas Media</p>
+                        <p class="contact_name">Keturah Austin - Manager, Corporate Communications</p>
+                        <a
+                            class="text_link"
+                            href="mailto:keturah.austin@kochps.com"
+                            target="_top">keturah.austin@kochps.com</a>
+                    </li> -->
+                    <!-- <li>
+                        <p class="contact_company">Koch Ag &amp; Energy Solutions, Koch Minerals, Koch Supply &amp; Trading, Koch Equity Development and Koch Business Solutions</p>
+                        <p class="contact_name">Rob Carlton - Manager, Business Communications</p>
+                        <a
+                            class="text_link"
+                            href="mailto:rob.carlton@kochps.com"
+                            target="_top">rob.carlton@kochps.com</a>
+                    </li>
+                    <li>
+                        <p class="contact_company">Koch Chemical Technology Group</p>
+                        <p class="contact_name">Deborah Gladney – Manager, Business Communications</p>
+                        <a
+                            class="text_link"
+                            href="mailto:deborah.gladney@kochps.com"
+                            target="_top">deborah.gladney@kochps.com</a>
+                    </li>
+                    <li>
+                        <p class="contact_company">Flint Hills Resources</p>
+                        <p class="contact_name">Jake Reint - Director, Public Affairs</p>
+                        <a
+                            class="text_link"
+                            href="mailto:jake.reint@kochps.com"
+                            target="_top">jake.reint@kochps.com</a>
+                    </li>
+                    <li>
+                        <p class="contact_company">Koch Pipeline Company and Matador Cattle Company</p>
+                        <p class="contact_name">Deanna Altenhoff - Director, Public Affairs</p>
+                        <a
+                            class="text_link"
+                            href="mailto:deanna.altenhoff@kochps.com"
+                            target="_top">deanna.altenhoff@kochps.com</a>
+                    </li>
+                </ul>
+
+                <!-- <h6>Marketing and Advertising Inquiries</h6>
+                <ul class="contact_list">
+                    <li>
+                        <p class="contact_name">Steve Lombardo - Marketing</p>
+                        <a
+                            class="text_link"
+                            href="mailto:Steve.Lombardo@kochps.com"
+                            target="_top">Steve.Lombardo@kochps.com</a>
+                    </li>
+                </ul> -->
+
+                <h6>
+                    EMPLOYMENT OPPORTUNITIES
+                </h6>
+                <p>
+                    If you are interested in an employment opportunity with Koch companies, please visit <a class="text_link" href="../careers/" onclick="ga('send', 'event', 'Text link-Koch Careers', 'click', 'Contact Us');">Koch Careers</a>.
+                </p>
+
+                <p><i>
+                    Koch companies do not solicit potential candidates by text message and do not request financial or banking information at any time during the interview process.
+                </i></p>
+
+
+                <div class="grant_request_form_container">
+                    <h6>Grant Inquiries</h6>
+                    <p>
+                        To review guidelines or apply for a grant, <a href="#grant_request_form" class="grant_request_display_cta" onclick="ga('send', 'event', 'Text link-Grant Inquiries', 'click', 'Contact Us');">click here</a>.
+                    </p>
+                    <iframe
+                        id="grant_request_form"
+                        src="http://grantrequest.kochps.com/"
+                        frameborder="0"
+                        scrolling="no"
+                        role="form">
+                    </iframe>
+                </div>
+
+                <h6>
+                    Follow Koch on social media   
+                </h6>
+                <ul class="contact_list social_list">
+                    <li>
+                        <a
+                            class="fa fa-facebook active"
+                            href="https://www.facebook.com/KochIndustries"
+                            target="_blank"
+                            onclick="ga('send', 'event', Facebook logo', 'click', 'Contact Page');"
+                            alt="Koch Industries - Facebook">
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            class="fa fa-linkedin active"
+                            href="https://www.linkedin.com/company/koch-industries"
+                            target="_blank"
+                            onclick="ga('send', 'event', LinkedIn logo', 'click', 'Contact Page');"
+                            alt="Koch Industries - Linkedin">
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            class="fa fa-twitter active"
+                            href="https://twitter.com/Koch_Industries"
+                            target="_blank"
+                            onclick="ga('send', 'event', Twitter logo', 'click', 'Contact Page');"
+                            alt="Koch Industries - Twitter">
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            class="fa fa-play active"
+                            href="https://www.youtube.com/user/KochCompanies"
+                            target="_blank"
+                            onclick="ga('send', 'event', Youtube logo', 'click', 'Contact Page');"
+                            alt="Koch Industries - Youtube">
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            class="glassdoor_icon active"
+                            href="https://www.glassdoor.com/Overview/Working-at-Koch-Industries-EI_IE2864.11,26.htm"
+                            target="_blank"
+                            onclick="ga('send', 'event', Glassdoor logo', 'click', 'Navigation');"
+                            alt="Koch Industries - Glassdoor">
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            class="fa fa-google-plus active"
+                            href="https://plus.google.com/+kochindustries"
+                            target="_blank"
+                            onclick="ga('send', 'event', Google+ logo', 'click', 'Contact Page');"
+                            alt="Koch Industries - Google+">
+                        </a>
+                    </li>
+                </ul>
+                
+
+
+
+            <!-- END TEST SALESFORCE FORM -->
+            </div>
+            <div
+                class="breadcrumb_container texture_bg white_gradient_bottom"
+                itemscope
+                itemtype="http://schema.org/BreadcrumbList">
+                <div class="row column collapse text-align-left fix">
+                    <div class="large-12 columns">                
                         <div
                             class="house_icon"
                             itemprop="itemListElement"
@@ -303,24 +700,117 @@
                             itemprop="itemListElement"
                             itemscope 
                             itemtype="http://schema.org/ListItem">
-                            <a itemprop="item" href="http://www.kochind.com">
-                                <span itemprop="name">Home</span>
+                            <a itemprop="item" href="http://www.kochind.com/contact/">
+                                <span itemprop="name">Contact</span>
                             </a>
                             <meta itemprop="position" content="1" />
                         </p>
-                    </div> <!--breadcrumb_container-->
+                    </div>
+                </div>                
+            </div> <!--breadcrumb_container-->
 
-                    <!--(bake /includes/footer.html)-->
+            <footer role="contentinfo">
+                <div class="column row footer-info-container">
+                    <div class="large-12 columns">
+                        <div class="logo_container">
+                            <a href="/">
+                                <img src="/assets/images/logo_kii_color.svg" alt="Koch Industries logo" />
+                            </a>
+                        </div>
+                    </div>
 
-                </div> 
-            </section> <!--homepage_campaign_section-->
+                </div>
+                <div class="column row footer-info-container">
+                    <div class="large-4 medium-5 small-12 columns">
 
-        </article> <!--home_template-->
+                        <p>Food. Shelter. Clothing. Transportation. Koch Industries creates life’s basic necessities, while innovating ways to make them even better. Yet our advocacy for a free and open society is what truly sets us apart.</p>
+                        <p>Follow Koch Industries</p>
+                        <ul class="follow">
+                            <li><a target="_blank" href="http://www.facebook.com/KochIndustries" onclick="ga('send', 'event', 'Footer - Facebook Link', 'click', 'Footer');"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a target="_blank" href="http://www.twitter.com/Koch_Industries" onclick="ga('send', 'event', 'Footer - Twitter Link', 'click', 'Footer');"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a target="_blank" href="https://www.linkedin.com/company/koch-industries" onclick="ga('send', 'event', 'Footer - LinkedIn Link', 'click', 'Footer');"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                            <li><a target="_blank" href="https://www.youtube.com/user/KochCompanies" onclick="ga('send', 'event', 'Footer - YouTube Link', 'click', 'Footer');"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                            <li><a target="_blank" href="https://www.glassdoor.com/Overview/Working-at-Koch-Industries-EI_IE2864.11,26.htm" class="glassdoor_icon" onclick="ga('send', 'event', 'Footer - Glassdoor Link', 'click', 'Footer');"></a></li>
+                            <li><a target="_blank" href="https://plus.google.com/+kochindustries" onclick="ga('send', 'event', 'Footer - Google Plus Link', 'click', 'Footer');"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="large-3 medium-4 small-12 medium-offset-1 columns end footer-nav">
+                        <ul>
+                            <li><a href="/whatwedo/" onclick="ga('send', 'event', 'Footer - What We Do', 'click', 'Footer');">What We Do</a></li>
+                            <li><a href="/philosophy/" onclick="ga('send', 'event', 'Footer - Philosophy', 'click', 'Footer');">Philosophy</a></li>
+                            <li><a href="/locations/" onclick="ga('send', 'event', 'Footer - Locations', 'click', 'Footer');">Locations</a></li>
+                            <li><a href="/companies/" onclick="ga('send', 'event', 'Footer - Companies', 'click', 'Footer');">Companies</a></li>
+                            <li><a href="/responsibility/" onclick="ga('send', 'event', 'Footer - Responsibility', 'click', 'Footer');">Responsibility</a></li>
+                        </ul>
 
-        <!--(bake /includes/scroll_cta.html)--> 
-        <!--(bake /includes/video_overlay.html)--> 
+                        <ul>   
+                            <li><a href="/takingastand/" onclick="ga('send', 'event', 'Footer - Taking Stand', 'click', 'Footer');">Taking A Stand</a></li>             
+                            <li><a href="/giving/" onclick="ga('send', 'event', 'Footer - Giving', 'click', 'Footer');">Giving</a></li>
+                            <li><a href="/careers/" onclick="ga('send', 'event', 'Footer - Careers', 'click', 'Footer');">Careers</a></li>
+                            <li><a target="_blank" href="http://www.kochnews.com/" onclick="ga('send', 'event', 'Footer - Koch News', 'click', 'Footer');">News</a></li>
+                            <li><a target="_blank" href="http://kochstories.com/" onclick="ga('send', 'event', 'Footer - Koch Stories', 'click', 'Footer');">Stories</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row column">
+                    <div class="medium-6 columns">
+                        <ul class="site_footer_links">
+                            <li>
+                                <a href="/contact/" onclick="ga('send', 'event', 'Footer - Contact Us', 'click', 'Footer');">Contact Us</a>
+                            </li>
+                            <li>
+                                <a href="/termsofuse/" onclick="ga('send', 'event', 'Footer - Terms of Use', 'click', 'Footer');">Terms of Use</a>
+                            </li>
+                            <li>
+                                <a href="/privacypolicy/" onclick="ga('send', 'event', 'Footer - Privacy Policy', 'click', 'Footer');">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="http://www.kochcoc.com/" target="_blank" onclick="ga('send', 'event', 'Footer - Code of Conduct', 'click', 'Footer');">Code of Conduct</a>
+                            </li>
+                            <li> 
+                                <a href="/californiasupply/" onclick="ga('send', 'event', 'Footer - California Supply', 'click', 'Footer');">California Supply</a>
+                            </li>
+                            <li>
+                                <a href="/vendors/" onclick="ga('send', 'event', 'Footer - Vendors', 'click', 'Footer');">Vendors</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="medium-6 columns">
+                        <p class="copyright dark_blue"> Koch Industries, Inc. All rights reserved.</p>
+                    </div>
+
+
+                </div>
+
+            </footer>
+            
+        </article>
+
+        <div class="scroll_cta">
+            <p>Scroll</p> 
+            <div class="down_directional light">
+                <div></div>
+            </div>
+        </div> 
+         <div class="full_screen_video_container highight feature bg">
+            <div class="close_button light">
+                <div></div>
+            </div>
+            <div class="video">
+                <iframe
+                    width="100%"
+                    height="100%"
+                    src=""
+                    allowfullscreen
+                    frameborder="0">
+                </iframe>
+            </div>
+        </div> <!--feature_video_container--> 
         
         <!-- FooterJS: -->
+        <script src="../assets/js/main.js"></script>
         <!-- endFooterJS -->
+   
     </body>
 </html>
